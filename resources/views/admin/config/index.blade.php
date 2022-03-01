@@ -54,7 +54,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="slug">Địa chỉ:</label>
-                                        <input type="text" class="form-control" value="{{ old('address'),$settings['ADDRESS'] }}"
+                                        <input type="text" class="form-control" value="{{ old('address',$settings['ADDRESS']) }}"
                                             name="address">
                                     </div>
                                     <div class="form-group">

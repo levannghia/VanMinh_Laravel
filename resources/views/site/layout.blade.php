@@ -57,6 +57,9 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css">
     <link rel="stylesheet" href="{{ asset('site/css/style.css?v-'.time()) }}">
     <title>@yield('SEO_title')</title>
+    {!! $settings['ANALYTICS'] !!}
+    {!! $settings['WEB_MASTER_TOOL'] !!}
+    {!! $settings['HEAD_JS'] !!}
 </head>
 
 <body>

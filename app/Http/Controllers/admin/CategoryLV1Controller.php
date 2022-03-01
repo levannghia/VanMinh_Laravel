@@ -4,26 +4,18 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use App\Models\Category;
 use App\Models\Category_LV1;
 
-class CategoryController extends Controller
+class CategoryLV1Controller extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $row = json_decode(json_encode([
             "title" => "Categories",
-            "desc" => "Danh mục sản phẩm"
+            "desc" => "Danh mục sản phẩm cấp 1"
         ]));
-        $category = Category::select('categories.id','categories.name','categories.created_at','categories.status','categories.noi_bac','categories.slug','categories.stt','categories_lv1.title')
-        ->leftJoin('categories_lv1', 'categories_lv1.id', '=', 'categories.category_lv1_id')->orderBy('stt','ASC')->get();
-        return view('admin.category.index',compact('category','row'));
+        $category = Category_LV1::orderBy('stt','ASC')->get();
+        return view('admin.categoryLV1.index',compact('category','row'));
     }
 
     /**
@@ -37,8 +29,7 @@ class CategoryController extends Controller
             "title" => "Create categories",
             "desc" => "Thêm danh mục"
         ]));
-        $category_lv1 = Category_LV1::orderBy('stt','ASC')->get();
-        return view('admin.category.add', compact('row','category_lv1'));
+        return view('admin.categoryLV1.add', compact('row'));
     }
 
     /**
@@ -51,25 +42,22 @@ class CategoryController extends Controller
     {
 
         $this->validate($request, [
-            'name' => 'required|unique:categories,name|max:40',
-            'slug' => 'required|unique:categories,slug|max:255',
+            'title' => 'required|unique:categories_lv1,title|max:255',
+            'slug' => 'required|unique:categories_lv1,slug|max:255',
             'status' => 'required'
         ],[
-                "name.required" => "Vui lòng nhập tên danh mục",
-                "name.unique" => "Danh mục đã tồn tại",
-                "name.max" => "Tên danh mục không quá 40 ký tự",
+                "title.required" => "Vui lòng nhập tên danh mục",
+                "title.unique" => "Danh mục đã tồn tại",
+                "title.max" => "Tên danh mục không quá 255 ký tự",
                 "slug.required" => "Vui lòng nhập slug",
                 "slug.unique" => "Slug đã tồn tại",
                 "slug.max" => "Slug không quá 255 ký tự",
                 "status.required" => "Vui lòng chọn trạng thái"
         ]);
 
-        $category = new Category;
-        $category->name = $request->name;
-        $category->category_lv1_id = $request->category_lv1_id;
+        $category = new Category_LV1;
+        $category->title = $request->title;
         $category->status = $request->status;
-        $category->description = $request->description;
-        $category->keywords = $request->keywords;
         $category->slug = $request->slug;
         $category->stt = $request->stt;
         $category->noi_bac = 0;
@@ -102,13 +90,12 @@ class CategoryController extends Controller
     public function edit($id)
     {
         
-        $category = Category::find($id);
+        $category = Category_LV1::find($id);
         $row = json_decode(json_encode([
             "title" => "Update category",
             "desc" => "Cập nhật - " . $category->name
         ]));
-        $category_lv1 = Category_LV1::orderBy('stt','ASC')->get();
-        return view('admin.category.edit', compact('category','row','category_lv1'));
+        return view('admin.categoryLV1.edit', compact('category','row'));
     }
 
     /**
@@ -120,26 +107,23 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = Category::find($id);
+        $category = Category_LV1::find($id);
         $this->validate($request, [
-            'name' => 'required|unique:categories,name,'.$category->id.'|max:40',
-            'slug' => 'required|unique:categories,slug,'.$category->id.'|max:255',
+            'title' => 'required|unique:categories_lv1,title,'.$category->id.'|max:40',
+            'slug' => 'required|unique:categories_lv1,slug,'.$category->id.'|max:255',
             'status' => 'required'
         ],[
-                "name.required" => "Vui lòng nhập tên danh mục",
-                "name.unique" => "Danh mục đã tồn tại",
-                "name.max" => "Tên danh mục không quá 40 ký tự",
+                "title.required" => "Vui lòng nhập tên danh mục",
+                "title.unique" => "Danh mục đã tồn tại",
+                "title.max" => "Tên danh mục không quá 40 ký tự",
                 "slug.required" => "Vui lòng nhập slug",
                 "slug.unique" => "Slug đã tồn tại",
                 "slug.max" => "Slug không quá 255 ký tự",
                 "status.required" => "Vui lòng chọn trạng thái"
         ]);
-        $category->category_lv1_id = $request->category_lv1_id;
         $category->stt = $request->stt;
-        $category->keywords = $request->keywords;
-        $category->name = $request->name;
+        $category->title = $request->title;
         $category->status = $request->status;
-        $category->description = $request->description;
         $category->slug = $request->slug;
         
         if($category->save()){
@@ -157,7 +141,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::find($id);
+        $category = Category_LV1::find($id);
         if($category->delete()){
             return response()->json([
                 'status' => 1,
@@ -173,7 +157,7 @@ class CategoryController extends Controller
 
     public function noiBac($id,$noiBac)
     {
-        $category = Category::find($id);
+        $category = Category_LV1::find($id);
         $category->noi_bac = $noiBac;
         if ($category->save()) {
             return response()->json([
@@ -190,7 +174,7 @@ class CategoryController extends Controller
 
     public function status($id,$status)
     {
-        $category = Category::find($id);
+        $category = Category_LV1::find($id);
         $category->status = $status;
         if ($category->save()) {
             return response()->json([
@@ -213,7 +197,7 @@ class CategoryController extends Controller
             return back()->withInput()->with(["type" => "danger", "message" => "Không có dữ liệu để xóa."]);
         }
         if (count($list_id) == 1 && isset($list_id[0]->id)) {
-            $category = Category::find($list_id[0]->id);
+            $category = Category_LV1::find($list_id[0]->id);
             if ($category->delete()) {
                 return redirect()->route("admin.category.index")->with(["type" => "success", "message" => "Xoá thành công!"]);
             } else {
@@ -221,7 +205,7 @@ class CategoryController extends Controller
             }
         } else {
             foreach ($list_id as $key => $value) {
-                $category = Category::find($value->id);
+                $category = Category_LV1::find($value->id);
                 
                 $category->delete();
             }
@@ -233,7 +217,7 @@ class CategoryController extends Controller
         $data = $request->array_id;
         //dd($data);
         foreach ($data as $key => $value) {
-            $category = Category::find($value);
+            $category = Category_LV1::find($value);
             $category->stt = $key;
             $category->save();
         }

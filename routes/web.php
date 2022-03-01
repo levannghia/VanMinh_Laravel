@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\GalleryController;
 use App\Http\Controllers\admin\AuthenticationController;
+use App\Http\Controllers\admin\CategoryLV1Controller;
 use App\Http\Controllers\admin\NewsController;
 use App\Http\Controllers\admin\NhaDatController;
 use App\Http\Controllers\admin\PageController;
@@ -31,6 +32,7 @@ use App\Http\Controllers\site\HomeController;
 //USER
 Route::get("/", [HomeController::class, "index"])->name('home');
 Route::post("/show-map", [HomeController::class, "showMap"])->name('show.map');
+Route::post("/get-product-by-category", [HomeController::class, "getProductByCategory"])->name('show.product.category');
 
 
 //ADMIN
@@ -41,7 +43,7 @@ Route::prefix('admin')->group(function () {
     Route::post("/login", [AuthenticationController::class, "postLogin"])->name("admin.post.login");
     Route::get("/logout", [AuthenticationController::class, "logout"])->name("admin.logout");
     Route::get("/create", [AuthenticationController::class, "create"])->name("admin.create");
-    Route::middleware(['check.login'])->group(function(){
+    Route::middleware(['check.login'])->group(function () {
         //admin
         Route::name("admin.")->controller(AuthenticationController::class)->group(function () {
             Route::get('/profile', 'getProfile')->name('profile');
@@ -54,6 +56,19 @@ Route::prefix('admin')->group(function () {
             Route::get('/', 'index')->name('index');
             // Route::post('/orders', 'store');
         });
+        //Category LV1
+        Route::name('admin.category.lv1.')->prefix('category-lv-1')->controller(CategoryLV1Controller::class)->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('/add', 'create')->name('add');
+            Route::post('/store', 'store')->name('store');
+            Route::get('/edit/{id}', 'edit')->name('edit');
+            Route::post('/update/{id}', 'update')->name('update');
+            Route::get('/delete-all/{id}', 'deleteAll')->name('delete.all');
+            Route::get('/noi-bac/{id}/{noiBac}', 'noiBac')->name('noi.bac');
+            Route::get('/status/{id}/{status}', 'status')->name('status');
+            Route::post('/resorting', 'resortPosition')->name('resorting');
+        });
+
         //Category
         Route::name('admin.category.')->prefix('category')->controller(CategoryController::class)->group(function () {
             Route::get('/', 'index')->name('index');
@@ -64,8 +79,9 @@ Route::prefix('admin')->group(function () {
             Route::get('/delete-all/{id}', 'deleteAll')->name('delete.all');
             Route::get('/noi-bac/{id}/{noiBac}', 'noiBac')->name('noi.bac');
             Route::get('/status/{id}/{status}', 'status')->name('status');
+            Route::post('/resorting', 'resortPosition')->name('resorting');
         });
-        
+
         //Product
         Route::name('admin.product.')->prefix('product')->controller(ProductController::class)->group(function () {
             Route::get('/', 'index')->name('index');
@@ -154,7 +170,7 @@ Route::prefix('admin')->group(function () {
         Route::name('admin.seo.page.')->prefix('seo-page')->controller(SeoPageController::class)->group(function () {
             Route::get('/{type}', 'getSeoPage')->name('get');
             Route::post('/{id}', 'postSeoPage')->name('post');
-            
+
             // Route::get('/status/{id}/{status}', 'status')->name('status');
             // Route::post('/resorting', 'resortPosition')->name('resorting');
         });
@@ -164,13 +180,13 @@ Route::prefix('admin')->group(function () {
             Route::get('/logo', 'getLogo')->name('logo');
             Route::get('/favicon', 'getFavicon')->name('favicon');
             Route::post('/photo/{id}', 'postPhoto')->name('post.photo');
-            
+
             Route::get('/add/{type}', 'create')->name('create.list');
             Route::post('/store/{type}', 'store')->name('store');
             Route::get('/{type}', 'index')->name('index');
             Route::get('/edit/{id}', 'edit')->name('edit');
             Route::post('/update/{id}', 'update')->name('update');
-           
+
             Route::get('/delete/{id}', 'destroy')->name('delete');
             Route::get('/delete-all/{id}', 'deleteAll')->name('delete.all');
             Route::get('/status/{id}/{status}', 'status')->name('status');

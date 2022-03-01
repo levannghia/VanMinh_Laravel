@@ -13,11 +13,11 @@
                                 Basic form layout
                             </p> --}}
                         @include('admin.inc.error')
-                        <form class="forms-sample" method="POST" action="{{ route('admin.category.store') }}">
+                        <form class="forms-sample" method="POST" action="{{ route('admin.category.lv1.store') }}">
                             @csrf
                             <div class="form-group">
                                 <label for="slug">Tên danh mục</label>
-                                <input type="text" class="form-control" value="{{ old('name') }}" id="slug" name="name"
+                                <input type="text" class="form-control" value="{{ old('title') }}" id="slug" name="title"
                                     placeholder="* Tên phòng" onkeyup="changeToString()">
                             </div>
                             <div class="form-group">
@@ -25,32 +25,12 @@
                                 <input type="text" class="form-control" id="convert_slug" name="slug"
                                     value="{{ old('slug') }}" placeholder="* slug">
                             </div>
-                            <div class="form-group">
-                                <label for="exampleTextarea1">Keyword (seo)</label>
-                                <textarea class="form-control" id="exampleTextarea1" rows="4"
-                                    name="keywords">{{old('keywords')}}</textarea>
-                            </div>
                             {{-- <div class="form-group">
                                 <label for="exampleInputEmail1">Giá phòng</label>
                                 <input type="text" class="form-control" id="exampleInputEmail1" name="price"
                                     value="{{ old('price') }}" placeholder="* Giá phòng">
                             </div> --}}
                             <div class="form-group">
-                                <label for="exampleTextarea1">Danh mục cấp 1</label>
-                                <select class="js-example-basic-multiple w-100" name="category_lv1_id">
-                                    <option value="1"><-------Vui lòng chọn danh mục lv1-------></option>
-                                    @foreach ($category_lv1 as $item)
-                                    <option value="{{$item->id}}">{{$item->title}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleTextarea1">Mô tả</label>
-                                <textarea class="form-control" id="exampleTextarea1" rows="4"
-                                    name="description"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleTextarea1">Trạng thái</label>
                                 <select class="js-example-basic-multiple w-100" name="status">
                                     <option value="1">Hiện</option>
                                     <option value="0">Ẩn</option>
@@ -62,7 +42,7 @@
                                     value="{{ old('stt', 1) }}">
                             </div>
                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                            <a href="{{route('admin.category.index')}}" class="btn btn-light">Cancel</a>
+                            <a href="{{route('admin.category.lv1.index')}}" class="btn btn-light">Cancel</a>
                         </form>
                     </div>
                 </div>
@@ -73,11 +53,6 @@
     @push('script')
 
         <script>
-            CKEDITOR.replace('description', {
-            filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
-            filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-            filebrowserWindowWidth: '1000',
-            filebrowserWindowHeight: '700'
-        });
+            
         </script>
     @endpush

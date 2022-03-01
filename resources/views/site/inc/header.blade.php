@@ -17,8 +17,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <ul class="navbar-nav ml-auto">
-                    <a href="tel:0776768999" class="dt"><span>077 67 68 999 <p class="tell-people">(CSKH)</p></span>
-                        <span>077 67 68 999 <p class="tell-people">(BS. HUNG)</p></span></a>
+                    <a href="tel:0776768999" class="dt"><span>{{$settings['HOTLINE']}} <p class="tell-people">(CSKH)</p></span>
+                        <span>{{$settings['PHONE']}} <p class="tell-people">(BS. HUNG)</p></span></a>
                 </ul>
             </div>
         </nav>
@@ -44,7 +44,7 @@
                         <a class="nav-link" href="#">SẢN PHẨM</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">MUA BÁN NHÀ ĐẤT</a>
+                        <a class="nav-link disabled" href="#">MUA BÁN</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">TIN TỨC</a>

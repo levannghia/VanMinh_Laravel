@@ -7,8 +7,8 @@
             <form>
                 <div class="card-body">
                     <h4 class="card-title">{{ $row->desc }}</h4>
-                    <a href="{{ route('admin.standard.add') }}" class="btn btn-info mb-3"><i class="fa fa-plus"></i>
-                        Thêm</a>
+                    <a href="{{route('admin.category.lv1.add')}}" class="btn btn-info mb-3"><i
+                        class="fa fa-plus"></i> Thêm</a>
                     <div class="row">
                         <div class="col-12">
                             <div class="table-responsive">
@@ -17,24 +17,29 @@
                                         <tr>
                                             <th></th>
                                             <th>STT</th>
-                                            <th>Photo</th>
-                                            <th>Tiêu đề</th>
-                                            <th>Mô tả</th>
+                                            <th>Tên danh mục</th>
+                                            {{-- <th>Giá</th> --}}
+                                            <th>Created at</th>
+                                            <th>Nổi bật</th>
                                             <th>Hiển thị</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody class="order_position">
-                                        @if (isset($standard))
-                                            @foreach ($standard as $item)
+                                        @if (isset($category))
+                                            @foreach ($category as $item)
                                                 <tr id="{{$item->id}}" title="Kéo thả chuột để sắp xếp">
                                                     <th><input type="checkbox" name="check[]" value="{{ $item->id }}" />
                                                     </th>
                                                     <td>{{ $item->stt }}</td>
-                                                    <td><img src="/upload/images/standard/thumb/{{ $item->photo }}"
-                                                            class="img-fluid" alt=""></td>
-                                                    <td><a href="{{ route('admin.standard.edit', $item->id) }}" title="Chỉnh sửa { $item->title }}">{{ $item->title }}</a></td>
-                                                    <td>{{ $item->description }}</td>
+                                                    <td><a href="{{ route('admin.category.lv1.edit', $item->id) }}" title="Chỉnh sửa {{ $item->title }}">{{ $item->title }}</a></td>
+                                                    {{-- <td>{{ number_format($item->price, 0, ',', '.') }} đ</td> --}}
+                                                    <td>{{ $item->created_at->diffForHumans() }}</td>
+                                                    <td><input type="checkbox" name="check_noi_bac[]"
+                                                            {{ $item->noi_bac == 1 ? 'checked' : '' }}
+                                                            id="check-nb-{{ $item->id }}"
+                                                            data-id-nb="{{ $item->id }}">
+                                                    </td>
                                                     <td>
                                                         <input type="checkbox" name="check_status[]"
                                                             {{ $item->status == 1 ? 'checked' : '' }}
@@ -57,15 +62,15 @@
                                                                 <a class="dropdown-item" href="#" style="color: #5646ff"><i
                                                                         class="fa fa-eye"></i> View</a>
                                                                 <a class="dropdown-item"
-                                                                    href="{{ route('admin.standard.edit', $item->id) }}"
+                                                                    href="{{ route('admin.category.lv1.edit', $item->id) }}"
                                                                     style="color: rgb(197, 197, 16)"><i
                                                                         class="fa fa-pencil"></i>
                                                                     Edit</a>
-                                                                <a class="dropdown-item" data-id="{{ $item->id }}"
-                                                                    href="#" style="color: rgb(248, 21, 21)"
-                                                                    data-name="{{ $item->title }}"><i
-                                                                        class="fa fa-trash-o"></i>
-                                                                    Delete</a>
+                                                                <a class="dropdown-item" href="#"
+                                                                    data-id-category="{{ $item->id }}"
+                                                                    style="color: rgb(248, 21, 21)"
+                                                                    data-name-category="{{ $item->name }}"><i
+                                                                        class="fa fa-trash-o"></i> Delete</a>
                                                                 {{-- <div class="dropdown-divider"></div>
                                                             <a class="dropdown-item" href="#">Separated link</a> --}}
                                                             </div>
@@ -91,7 +96,7 @@
                                     onclick="javascript:checkDelBoxes($(this).closest('form').get(0), 'check[]', false);return false;"><i
                                         class="fe-x"></i> Hủy bỏ</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" delete-all="true" url="/admin/news/delete-all"
+                                <a class="dropdown-item text-danger" delete-all="true" url="/admin/category-lv-1/delete-all"
                                     href="#"><i class="fe-trash-2"></i> Xóa</a>
                             </div>
                         </div>
@@ -104,8 +109,8 @@
 @push('script')
     <script>
         $(document).ready(function() {
-            $(function() {
-                $('.order_position').sortable({
+
+            $('.order_position').sortable({     
                     placeholder: "ui-state-highlight",
                     update: function(event, ui) {
                         var array_id = [];
@@ -115,10 +120,9 @@
                         //alert(array_id);
                         $.ajax({
                             headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr(
-                                    'content'),
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
                             },
-                            url: "{{ route('admin.standard.resorting') }}",
+                            url: "{{route('admin.category.lv1.resorting')}}",
                             method: "POST",
                             data: {
                                 array_id: array_id,
@@ -129,7 +133,43 @@
                             }
                         });
                     }
-                });
+            });
+
+            $("[data-id-nb]").click(function() {
+                var id_nb = $(this).attr("data-id-nb");
+                var check = document.getElementById('check-nb-' + id_nb).checked;
+                var _token = "{{ csrf_token() }}";
+                if (check == true) {
+                    $.ajax({
+                        url: "/admin/category-lv-1/noi-bac/" + id_nb + "/" + 1,
+                        type: "GET",
+                        data: {
+                            id: id_nb,
+                            _token: _token
+                        },
+                        success: function(data) {
+                            if (data.status == 1) {
+                                console.log(data.msg);
+                            }
+                        }
+                    });
+                } else {
+                    $.ajax({
+                        url: "/admin/category-lv-1/noi-bac/" + id_nb + "/" + 0,
+                        type: "GET",
+                        data: {
+                            id: id_nb,
+                            _token: _token
+                        },
+                        success: function(data) {
+                            if (data.status == 1) {
+                                console.log(data.msg);
+                            } else {
+                                console.log(data.msg);
+                            }
+                        }
+                    });
+                }
             });
 
             $("[data-id-status]").click(function() {
@@ -138,7 +178,7 @@
                 var _token = "{{ csrf_token() }}";
                 if (check == true) {
                     $.ajax({
-                        url: "/admin/tieu-chi/status/" + id_status + "/" + 1,
+                        url: "/admin/category-lv-1/status/" + id_status + "/" + 1,
                         type: "GET",
                         data: {
                             id: id_status,
@@ -154,7 +194,7 @@
                     });
                 } else {
                     $.ajax({
-                        url: "/admin/tieu-chi/status/" + id_status + "/" + 0,
+                        url: "/admin/category-lv-1/status/" + id_status + "/" + 0,
                         type: "GET",
                         data: {
                             id: id_status,
@@ -167,11 +207,13 @@
                         }
                     });
                 }
+
+                // alert(id_nb);
             });
 
-            $("[data-id]").click(function() {
-                let id = $(this).attr("data-id");
-                let name = $(this).attr("data-name");
+            $("[data-id-category]").click(function() {
+                let id = $(this).attr("data-id-category");
+                let name = $(this).attr("data-name-category");
                 swal({
                         title: "Are you sure?",
                         text: "Bạn có chắc muốn xóa danh muc: " + name,
@@ -181,11 +223,11 @@
                     })
                     .then((willDelete) => {
                         if (willDelete) {
-                            swal("Xóa thành công phòng này", {
+                            swal("Xóa thành công danh mục này", {
                                 icon: "success",
                             });
                             $.ajax({
-                                url: "/admin/tieu-chi/delete/" + id,
+                                url: "/admin/category-lv-1/delete/" + id,
                                 type: "GET",
                                 data: {
                                     id: id

@@ -14,27 +14,24 @@
                                     <thead>
                                         <tr>
                                             <th></th>
-                                            <th>#</th>
-                                            <th>Tên danh mục</th>
-                                            {{-- <th>Giá</th> --}}
+                                            <th>STT</th>
+                                            <th>Danh mục cấp 1</th>
+                                            <th>Tên danh mục</th>                                       
                                             <th>Created at</th>
                                             <th>Nổi bật</th>
                                             <th>Hiển thị</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        @php
-                                            $i = 1;
-                                        @endphp
+                                    <tbody class="order_position">
                                         @if (isset($category))
                                             @foreach ($category as $item)
-                                                <tr>
+                                                <tr id="{{$item->id}}" title="Kéo thả chuột để sắp xếp">
                                                     <th><input type="checkbox" name="check[]" value="{{ $item->id }}" />
                                                     </th>
-                                                    <td>{{ $i++ }}</td>
-                                                    <td><a href="{{ route('admin.category.edit', $item->id) }}" title="Chỉnh sửa {{ $item->name }}">{{ $item->name }}</a></td>
-                                                    {{-- <td>{{ number_format($item->price, 0, ',', '.') }} đ</td> --}}
+                                                    <td>{{ $item->stt }}</td>
+                                                    <td>{{$item->title}}</td>
+                                                    <td><a href="{{ route('admin.category.edit', $item->id) }}" title="Chỉnh sửa {{ $item->name }}">{{ $item->name }}</a></td>                                        
                                                     <td>{{ $item->created_at->diffForHumans() }}</td>
                                                     <td><input type="checkbox" name="check_noi_bac[]"
                                                             {{ $item->noi_bac == 1 ? 'checked' : '' }}
@@ -110,6 +107,31 @@
 @push('script')
     <script>
         $(document).ready(function() {
+
+            $('.order_position').sortable({     
+                    placeholder: "ui-state-highlight",
+                    update: function(event, ui) {
+                        var array_id = [];
+                        $('.order_position tr').each(function() {
+                            array_id.push($(this).attr('id'));
+                        });
+                        //alert(array_id);
+                        $.ajax({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                            },
+                            url: "{{route('admin.category.resorting')}}",
+                            method: "POST",
+                            data: {
+                                array_id: array_id,
+                            },
+                            success: function(data) {
+                                alert("Sắp xếp thành công");
+                                location.reload();
+                            }
+                        });
+                    }
+            });
 
             $("[data-id-nb]").click(function() {
                 var id_nb = $(this).attr("data-id-nb");

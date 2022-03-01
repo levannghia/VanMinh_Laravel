@@ -2,11 +2,11 @@
     function chemistry(evt, cityName) {
         var i, tabcontent, tablinks;
 
-        tabcontent = document.getElementsByClassName("tab-content");
+        tabcontent = document.getElementsByClassName("tab-content0");
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
-        tablinks = document.getElementsByClassName("tablinks");
+        tablinks = document.getElementsByClassName("tablinks0");
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
@@ -17,11 +17,11 @@
     function medicalEquipment(evt, cityName) {
         var i, tabcontent, tablinks;
 
-        tabcontent = document.getElementsByClassName("tab-content2");
+        tabcontent = document.getElementsByClassName("tab-content1");
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
-        tablinks = document.getElementsByClassName("tablinks2");
+        tablinks = document.getElementsByClassName("tablinks1");
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
