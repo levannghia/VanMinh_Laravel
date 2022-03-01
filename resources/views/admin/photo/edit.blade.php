@@ -26,6 +26,11 @@
                                         id="slug" name="title" placeholder="* Tiêu đề">
                                 </div>
                                 <div class="form-group">
+                                    <label for="slug">Mô tả</label>
+                                    <input type="text" class="form-control" value="{{ old('description',$data->description) }}" id="slug" name="description"
+                                        placeholder="* Mô tả">
+                                </div>
+                                <div class="form-group">
                                     <label for="slug">Link</label>
                                     <input type="text" class="form-control" value="{{ old('link', $data->link) }}"
                                         id="slug" name="link" placeholder="* Link mạng xã hội">

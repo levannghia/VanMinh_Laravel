@@ -13,6 +13,7 @@ use App\Http\Controllers\admin\PhotoController;
 use App\Http\Controllers\admin\StandardController;
 use App\Http\Controllers\admin\VideoController;
 use App\Http\Controllers\admin\ConfigController;
+use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\SeoPageController;
 use App\Http\Controllers\site\HomeController;
 
@@ -29,6 +30,7 @@ use App\Http\Controllers\site\HomeController;
 
 //USER
 Route::get("/", [HomeController::class, "index"])->name('home');
+Route::post("/show-map", [HomeController::class, "showMap"])->name('show.map');
 
 
 //ADMIN
@@ -179,6 +181,19 @@ Route::prefix('admin')->group(function () {
         Route::name('admin.config.')->prefix('config')->controller(ConfigController::class)->group(function () {
             Route::get('/', 'index')->name('index');
             Route::post('/update', 'update')->name('update');
+        });
+
+        //Contact
+        Route::name('admin.contact.')->prefix('contact')->controller(ContactController::class)->group(function () {
+            Route::get('/', 'index')->name('index');
+            // Route::get('/add', 'create')->name('add');
+            // Route::post('/store', 'store')->name('store');
+            Route::get('/edit/{id}', 'edit')->name('edit');
+            Route::post('/update/{id}', 'update')->name('update');
+            Route::get('/delete/{id}', 'destroy')->name('delete');
+            Route::get('/delete-all/{id}', 'deleteAll')->name('delete.all');
+            // Route::get('/noi-bac/{id}/{noiBac}', 'noiBac')->name('noi.bac');
+            Route::get('/status/{id}/{status}', 'status')->name('status');
         });
     });
 });

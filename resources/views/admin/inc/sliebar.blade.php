@@ -98,7 +98,7 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="pages/ui-features/notifications.html">
+            <a class="nav-link" href="#">
                 <i class="mdi mdi-bell menu-icon"></i>
                 <span class="menu-title">Quản lý đơn hàng</span>
             </a>

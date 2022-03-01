@@ -20,12 +20,15 @@ class NhaDatController extends Controller
      */
     public function index()
     {
+        $settings = Config::all(['name', 'value'])->keyBy('name')->transform(function ($setting) {
+            return $setting->value; // return only the value
+        })->toArray();
         $row = json_decode(json_encode([
             "title" => "Quản lý nhà đất",
             "desc" => "Danh sách nhà đất"
         ]));
         $nhaDat = Products::orderBy('id','DESC')->where('type',1)->get();
-        return view('admin.nhaDat.index',compact('nhaDat','row'));
+        return view('admin.nhaDat.index',compact('settings','nhaDat','row'));
     }
 
     /**
@@ -58,7 +61,7 @@ class NhaDatController extends Controller
             return $setting->value; // return only the value
         })->toArray();
         $request->validate([
-            'name' => 'required|unique:products,name|max:40',
+            'name' => 'required|unique:products,name|max:255',
             'slug' => 'required|unique:products,slug|max:255',
             'area' => 'required|max:15',
             'content' => 'required',
@@ -69,7 +72,7 @@ class NhaDatController extends Controller
                 "category_id.required" => "Vui lòng chọn danh mục",
                 "name.required" => "Vui lòng nhập tên sản phẩm",
                 "name.unique" => "Sản phẩm đã tồn tại",
-                "name.max" => "Tên sản phẩm không quá 40 ký tự",
+                "name.max" => "Tên sản phẩm không quá 255 ký tự",
                 "slug.required" => "Vui lòng nhập slug",
                 "slug.unique" => "Slug đã tồn tại",
                 "slug.max" => "Slug không quá 255 ký tự",
@@ -91,7 +94,7 @@ class NhaDatController extends Controller
         $nhaDat->address = $request->address;
         $nhaDat->area = $request->area;
         $nhaDat->status = $request->status;
-        // $nhaDat->description = $request->description;
+        $nhaDat->description = $request->description;
         $nhaDat->content = $request->content;
         $nhaDat->slug = $request->slug;
         
@@ -163,17 +166,17 @@ class NhaDatController extends Controller
         })->toArray();
         $nhaDat = Products::find($id);
         $request->validate([
-            'name' => 'required|unique:products,name,'.$nhaDat->id.'|max:40',
+            'name' => 'required|unique:products,name,'.$nhaDat->id.'|max:255',
             'slug' => 'required|unique:products,slug,'.$nhaDat->id.'|max:255',
             'area' => 'required|max:15',
             'content' => 'required',
             'status' => 'required',
             'address' => 'required',
-            'photo' => 'required|mimes:jpg,png,jpeg,gif'
+            'photo' => 'mimes:jpg,png,jpeg,gif'
         ],[
                 "name.required" => "Vui lòng nhập tên sản phẩm",
                 "name.unique" => "Sản phẩm đã tồn tại",
-                "name.max" => "Tên sản phẩm không quá 40 ký tự",
+                "name.max" => "Tên sản phẩm không quá 255 ký tự",
                 "slug.required" => "Vui lòng nhập slug",
                 "slug.unique" => "Slug đã tồn tại",
                 "slug.max" => "Slug không quá 255 ký tự",
@@ -191,7 +194,7 @@ class NhaDatController extends Controller
         $nhaDat->keywords = $request->keywords;
         $nhaDat->area = $request->area;
         $nhaDat->status = $request->status;
-        // $nhaDat->description = $request->description;
+        $nhaDat->description = $request->description;
         $nhaDat->content = $request->content;
         $nhaDat->slug = $request->slug;
         

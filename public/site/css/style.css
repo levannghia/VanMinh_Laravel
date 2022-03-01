@@ -286,7 +286,7 @@ a:hover {
 
 .info p {
     margin-bottom: 0;
-    padding: 0 19px;
+    padding: 0 5px;
 }
 
 #Capa_1 {
@@ -315,7 +315,7 @@ a:hover {
 
 .cover {
     /* margin: 5px; */
-    border: 1px gray solid;
+    border: 1px #d3d0d0 solid;
     margin-bottom: 20px;
 }
 

@@ -29,7 +29,7 @@
                                         @php
                                             $i = 1;
                                         @endphp
-                                        @if (isset($new))
+                                        @if (isset($news))
 
 
                                             @foreach ($news as $item)

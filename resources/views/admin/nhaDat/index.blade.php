@@ -22,7 +22,7 @@
                                             <th>Diện tích</th>
                                             <th>Giá</th>
                                             <th>Gallery</th>
-                                            <th>Created at</th>
+                                            {{-- <th>Created at</th> --}}
                                             <th>Nổi bật</th>
                                             <th>Hiển thị</th>
                                             <th>Actions</th>
@@ -44,7 +44,7 @@
                                                 <td>{{ $item->area }}</td>
                                                 <td>
                                                     @if (!$item->price)
-                                                        <a href="tel:0343434232"><span
+                                                        <a href="tel:{{$settings['PHONE']}}"><span
                                                                 class="badge bg-soft-danger text-danger shadow-none">Liên hệ</span></a>
                                                     @else
                                                         {{ number_format($item->price, 0, ',', '.') }} đ
@@ -70,7 +70,7 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>{{ $item->created_at->diffForHumans() }}</td>
+                                                {{-- <td>{{ $item->created_at->diffForHumans() }}</td> --}}
                                                 <td><input type="checkbox" name="check_noi_bac[]"
                                                         {{ $item->noi_bac == 1 ? 'checked' : '' }}
                                                         id="check-nb-{{ $item->id }}"
@@ -81,7 +81,6 @@
                                                         {{ $item->status == 1 ? 'checked' : '' }}
                                                         id="check-status-{{ $item->id }}"
                                                         data-id-status="{{ $item->id }}">
-
                                                 </td>
                                                 <td>
                                                     <div class="dropdown">

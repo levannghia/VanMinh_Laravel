@@ -22,13 +22,16 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $settings = Config::all(['name', 'value'])->keyBy('name')->transform(function ($setting) {
+            return $setting->value; // return only the value
+        })->toArray();
         $row = json_decode(json_encode([
             "title" => "Product",
             "desc" => "Danh sách sản phẩm"
         ]));
         $product = Products::select('products.photo' ,'products.id', 'products.name','products.status', 'products.noi_bac', 'products.created_at', 'products.price', 'categories.name AS category_name')
         ->join('categories','categories.id','=','products.category_id')->where('type',0)->orderBy('products.id','DESC')->get();
-        return view('admin.product.index',compact('product','row'));
+        return view('admin.product.index',compact('settings','product','row'));
     }
 
     /**
@@ -61,7 +64,7 @@ class ProductController extends Controller
             return $setting->value; // return only the value
         })->toArray();
         $request->validate([
-            'name' => 'required|unique:products,name|max:40',
+            'name' => 'required|unique:products,name|max:255',
             'slug' => 'required|unique:products,slug|max:255',
             'category_id' => 'required',
             // 'description' => 'required',
@@ -71,7 +74,7 @@ class ProductController extends Controller
                 "category_id.required" => "Vui lòng chọn danh mục",
                 "name.required" => "Vui lòng nhập tên sản phẩm",
                 "name.unique" => "Sản phẩm đã tồn tại",
-                "name.max" => "Tên sản phẩm không quá 40 ký tự",
+                "name.max" => "Tên sản phẩm không quá 255 ký tự",
                 "slug.required" => "Vui lòng nhập slug",
                 "slug.unique" => "Slug đã tồn tại",
                 "slug.max" => "Slug không quá 255 ký tự",
@@ -161,7 +164,7 @@ class ProductController extends Controller
         })->toArray();
         $product = Products::find($id);
         $this->validate($request, [
-            'name' => 'required|unique:products,name,'.$product->id.'|max:40',
+            'name' => 'required|unique:products,name,'.$product->id.'|max:255',
             'slug' => 'required|unique:products,slug, '.$product->id.'|max:255',
             'category_id' => 'required',
             'status' => 'required',
@@ -170,7 +173,7 @@ class ProductController extends Controller
             "category_id.required" => "Vui lòng chọn danh mục",
             "name.required" => "Vui lòng nhập tên sản phẩm",
             "name.unique" => "Sản phẩm đã tồn tại",
-            "name.max" => "Tên sản phẩm không quá 40 ký tự",
+            "name.max" => "Tên sản phẩm không quá 255 ký tự",
             "slug.required" => "Vui lòng nhập slug",
             "slug.unique" => "Slug đã tồn tại",
             "slug.max" => "Slug không quá 255 ký tự",

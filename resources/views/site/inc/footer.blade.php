@@ -1,10 +1,26 @@
+<div class="blocks-contact">
+    <div class="container">
+        <div class="row color-p">
+            @foreach ($social_footer as $item)
+            <div class="col-md-4  contact-padding">
+                <div class="contact-us">
+                    <img src="/upload/images/photo/thumb/{{ $item->photo }}" alt="">
+                    <p class="name-contact">{{$item->title}}</p>
+                </div>
+                <p class="favourite">{{$item->description}}</p>
+                <a href="{{$item->link}}" target="_blank" class="link-contact">Tham Gia ngay</a>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
 <footer>
     <div class="container">
         <div class="row">
             <div class="col-md-4 footer-item">
                 <h4>Giới thiệu công ty</h4>
                 <p class="des-company">
-                    {{$settings['GIOI_THIEU_CONG_TY']}}
+                    {!! $footer->content !!}
                 </p>
             </div>
             <div class="col-md-4 Policy footer-item">

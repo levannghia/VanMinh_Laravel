@@ -13,7 +13,7 @@ class PageController extends Controller
     {
         $page = DB::table('pages')->where('slug',$slug)->first();
         $row = json_decode(json_encode([
-            "title" => "Cập nhật trang: " . $page->name,
+            "title" => "Cập nhật trang " . $page->name,
             "desc" => "Cập nhật trang: " . $page->name
         ]));
         return view("admin.pages.index",compact('page', 'row'));

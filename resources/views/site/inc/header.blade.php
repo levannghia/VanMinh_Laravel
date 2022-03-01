@@ -35,25 +35,25 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav pd-li">
                     <li class="nav-item active pd-li">
-                        <a class="nav-link pd-li" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link pd-li" href="#">TRANG CHỦ <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#">Features</a>
+                        <a class="nav-link " href="#">GIỚI THIỆU</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="#">SẢN PHẨM</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link disabled" href="#">MUA BÁN NHÀ ĐẤT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">TIN TỨC</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="#">VIDEO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link disabled" href="#">LIÊN HỆ</a>
                     </li>
                 </ul>
             </div>

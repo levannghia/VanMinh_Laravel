@@ -67,11 +67,11 @@
                                         <input type="text" class="form-control" value="{{ old('website',$settings['WEBSITE']) }}"
                                             name="website">
                                     </div>
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label for="exampleTextarea1">Giới thiệu công ty:</label>
                                         <textarea class="form-control" id="exampleTextarea1" rows="8"
                                             name="gioi_thieu_CT">{{ old('gioi_thieu_CT',$settings['GIOI_THIEU_CONG_TY']) }}</textarea>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

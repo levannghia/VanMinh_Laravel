@@ -44,7 +44,7 @@
                                                     <td>{{ $item->category_name }}</td>
                                                     <td>
                                                         @if (!$item->price)
-                                                            <a href="tel:0343434232"><span
+                                                            <a href="tel:{{$settings['PHONE']}}"><span
                                                                     class="badge bg-soft-danger text-danger shadow-none">Liên
                                                                     hệ</span></a>
                                                         @else

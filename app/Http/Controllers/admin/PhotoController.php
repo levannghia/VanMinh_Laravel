@@ -123,12 +123,14 @@ class PhotoController extends Controller
             $thumb_size = json_decode($settings["THUMB_SIZE_SOCIAL_TOP"]);
             $data->link = $request->link;
             $data->title = $request->title;
+            $data->description = $request->description;
         }elseif($type == "partner"){
             $data->title = $request->title;
             $thumb_size = json_decode($settings["THUMB_SIZE_PARTNER"]);
         }elseif($type == "social-footer"){
             $data->link = $request->link;
             $data->title = $request->title;
+            $data->description = $request->description;
             $thumb_size = json_decode($settings["THUMB_SIZE_SOCIAL_FOOTER"]);
         }
         $data->status = $request->status;
@@ -186,12 +188,14 @@ class PhotoController extends Controller
             $thumb_size = json_decode($settings["THUMB_SIZE_SOCIAL_TOP"]);
             $data->link = $request->link;
             $data->title = $request->title;
+            $data->description = $request->description;
         }elseif($data->type == "partner"){
             $data->title = $request->title;
             $thumb_size = json_decode($settings["THUMB_SIZE_PARTNER"]);
         }elseif($data->type == "social-footer"){
             $data->link = $request->link;
             $data->title = $request->title;
+            $data->description = $request->description;
             $thumb_size = json_decode($settings["THUMB_SIZE_SOCIAL_FOOTER"]);
         }
         if ($request->hasFile('photo')) {
@@ -207,7 +211,6 @@ class PhotoController extends Controller
             //resize file befor to upload large
             if ($file->getClientOriginalExtension() != "svg") {
                 $image_resize = Image::make($file->getRealPath());
-                $thumb_size = json_decode($settings["THUMB_SIZE_SLIDER"]);  
                 $image_resize->fit($thumb_size->width,$thumb_size->height);
 
                 $image_resize->save('upload/images/photo/thumb/' . $file_name);

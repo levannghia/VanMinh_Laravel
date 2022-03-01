@@ -122,7 +122,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-md-4 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
@@ -341,168 +341,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Expenses</h5>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td class="border-top-0">
-                                        <img src="../../images/dashboard/dribbble.svg"
-                                            class="custom-box-shadow" alt="dribbble">
-                                    </td>
-                                    <td class="border-top-0">
-                                        <p class="font-weight-medium">Dribbble LLC.</p>
-                                        <p class="text-muted mb-0">Ad Marketing Account</p>
-                                    </td>
-                                    <td class="border-top-0">
-                                        <h4 class="text-success">+$36</h4>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="../../images/dashboard/facebook.svg"
-                                            class="custom-box-shadow" alt="fb">
-                                    </td>
-                                    <td>
-                                        <p class="font-weight-medium">Facebook Org</p>
-                                        <p class="text-muted mb-0">Ad Marketing Account</p>
-                                    </td>
-                                    <td>
-                                        <h4 class="text-danger">-$23</h4>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="../../images/dashboard/dropbox.svg"
-                                            class="custom-box-shadow" alt="dropbox">
-                                    </td>
-                                    <td>
-                                        <p class="font-weight-medium">Dropbox Inc</p>
-                                        <p class="text-muted mb-0">Ad Marketing Account</p>
-                                    </td>
-                                    <td>
-                                        <h4 class="text-danger">-$19</h4>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="../../images/dashboard/chevrolet.svg"
-                                            class="custom-box-shadow" alt="chevrolet">
-                                    </td>
-                                    <td>
-                                        <p class="font-weight-medium">Chevrolet</p>
-                                        <p class="text-muted mb-0">Ad Marketing Account</p>
-                                    </td>
-                                    <td>
-                                        <h4 class="text-primary">-$12</h4>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="card-title">User statitics</h5>
-                        <div class="dropdown mb-3 mb-md-0">
-                            <button
-                                class="btn btn-sm btn-outline-light btn-rounded dropdown-toggle text-dark btn-hover-border-only hover-box-shadow-0"
-                                type="button" id="dropdownMenuDate3" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="true">
-                                2018
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right"
-                                aria-labelledby="dropdownMenuDate3">
-                                <a class="dropdown-item" href="#">2015</a>
-                                <a class="dropdown-item" href="#">2016</a>
-                                <a class="dropdown-item" href="#">2017</a>
-                                <a class="dropdown-item" href="#">2018</a>
-                            </div>
-                        </div>
-                    </div>
-                    <canvas id="user-statitics-chart"></canvas>
-                    <div class="d-flex justify-content-around mt-3 pt-4 pt-md-0">
-                        <div class="text-center">
-                            <h3 class="font-weight-normal text-primary">+40%</h3>
-                            <p class="font-weight-medium mb-0">Growth</p>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="font-weight-normal text-danger">-20%</h3>
-                            <p class="font-weight-medium mb-0">Orders</p>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="font-weight-normal text-success">+75%</h3>
-                            <p class="font-weight-medium mb-0">Sales</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between flex-wrap">
-                        <h5 class="card-title">Total collected</h5>
-                        <div class="dropdown mb-3 mb-md-0">
-                            <button
-                                class="btn btn-sm btn-outline-light btn-rounded dropdown-toggle text-dark btn-hover-border-only hover-box-shadow-0"
-                                type="button" id="dropdownMenuDate4" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="true">
-                                2018
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right"
-                                aria-labelledby="dropdownMenuDate4">
-                                <a class="dropdown-item" href="#">2015</a>
-                                <a class="dropdown-item" href="#">2016</a>
-                                <a class="dropdown-item" href="#">2017</a>
-                                <a class="dropdown-item" href="#">2018</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="d-flex justify-content-between align-items-center flex-wrap pt-4 pb-3 mt-2">
-                        <h1 class="mb-0">$4519277</h1>
-                        <p class="text-success font-weight-bold mb-0"><span
-                                class="mdi mdi-arrow-up mr-1"></span>4.487%</p>
-                    </div>
-                </div>
-                <div
-                    class="card-body d-xl-flex justify-content-around justify-content-lg-center align-items-center flex-wrap pt-4 pb-4 bg-light">
-                    <div class="border-right-xl pr-0 pr-xl-4 mt-2 text-center text-xl-left">
-                        <p class="text-dark">Outstanding</p>
-                        <h2 class="text-dark pt-2 mb-0">$389</h2>
-                    </div>
-                    <div class="pl-0 pl-xl-4 mt-4 mt-xl-2 text-center text-xl-left">
-                        <p class="text-dark">Overdue</p>
-                        <h2 class="text-dark pt-2 mb-0">$143</h2>
-                    </div>
-                </div>
-                <div
-                    class="card-body d-flex justify-content-between align-items-end pt-2 mb-2 flex-wrap">
-                    <div class="pt-3">
-                        <p class="text-dark mb-3">Total clients</p>
-                        <h2 class="text-dark mb-0">189</h2>
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-primary btn-sm btn-icon-text">
-                            <i class="mdi mdi-account-group-outline btn-icon-prepend"></i>
-                            See all clients
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
+    </div> --}}
+    {{-- <div class="row">
         <div class="col-md-8 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
@@ -667,6 +507,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 @endsection

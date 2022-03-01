@@ -62,10 +62,10 @@ class ConfigController extends Controller
         $seo_keyword->value = $request->seo_keyword;
         $seo_title = Config::find($settings['SEO_TITLE']);
         $seo_title->value = $request->seo_title;
-        $gioi_thieu_CT = Config::find($settings['GIOI_THIEU_CONG_TY']);
-        $gioi_thieu_CT->value = $request->gioi_thieu_CT;
+        // $gioi_thieu_CT = Config::find($settings['GIOI_THIEU_CONG_TY']);
+        // $gioi_thieu_CT->value = $request->gioi_thieu_CT;
       
-        if($gioi_thieu_CT->save() && $phone->save() && $title->save() && $address->save() && $email->save() && $zalo->save() && $website->save() && $map_toa_do->save() && 
+        if($phone->save() && $title->save() && $address->save() && $email->save() && $zalo->save() && $website->save() && $map_toa_do->save() && 
         $map_iframe->save() && $analytics->save() && $master_tool->save() && $phan_trang_bv->save() && $phan_trang_sp->save() && $hotline->save() && $head_js->save() && 
         $seo_description->save() && $seo_keyword->save() && $seo_title->save() && $fanpage->save()){
             return redirect()->back()->with(["type"=>"success","message"=>"Cập nhật thành công"]);

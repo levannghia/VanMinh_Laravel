@@ -37,11 +37,11 @@
                                 <input type="text" class="form-control" value="{{ old('address',$nhaDat->address) }}" id="address" name="address"
                                     required>
                             </div>
-                            {{-- <div class="form-group">
+                            <div class="form-group">
                                 <label for="exampleTextarea1">Mô tả tóm tắt</label>
                                 <textarea class="form-control" id="exampleTextarea1" rows="4"
                                     name="description">{{ old('description',$nhaDat->description) }}</textarea>
-                            </div> --}}
+                            </div>
                             <div class="form-group">
                                 <label for="exampleTextarea1">Nội dung</label>
                                 <textarea class="form-control" id="exampleTextarea1" rows="6"

@@ -71,29 +71,34 @@
                     </a>
                 </div>
             </li> --}}
+            @php
+                $contact = DB::table('contacts')->where('status',0)->count();
+            @endphp
             <li class="nav-item dropdown">
                 <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center"
                     id="notificationDropdown" href="#" data-toggle="dropdown">
                     <i class="mdi mdi-bell-outline mx-0"></i>
+                    @if ($contact != 0)
                     <span class="count"></span>
+                    @endif
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
                     aria-labelledby="notificationDropdown">
-                    <p class="mb-0 font-weight-normal float-left dropdown-header"> Notifications</p>
-                    <a class="dropdown-item preview-item">
+                    <p class="mb-0 font-weight-normal float-left dropdown-header"> Thông báo</p>
+                    <a class="dropdown-item preview-item" href="{{route('admin.contact.index')}}">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-primary">
-                                <i class="mdi mdi-information mx-0"></i>
+                                <i class="mdi mdi-account-box mx-0"></i>
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <h6 class="preview-subject font-weight-normal">Application Error</h6>
+                            <h6 class="preview-subject font-weight-normal">Liên hệ</h6>
                             <p class="font-weight-light small-text text-muted mb-0">
-                                Just now
+                                {{$contact}} tin nhắn mới
                             </p>
                         </div>
                     </a>
-                    <a class="dropdown-item preview-item">
+                    {{-- <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-primary">
                                 <i class="mdi mdi-settings mx-0"></i>
@@ -105,7 +110,7 @@
                                 Private message
                             </p>
                         </div>
-                    </a>
+                    </a> --}}
                     <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-primary">
@@ -113,7 +118,7 @@
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                            <h6 class="preview-subject font-weight-normal">Đơn đặt hàng</h6>
                             <p class="font-weight-light small-text text-muted mb-0">
                                 2 days ago
                             </p>
