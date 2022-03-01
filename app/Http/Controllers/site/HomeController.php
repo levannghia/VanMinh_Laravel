@@ -36,10 +36,10 @@ class HomeController extends Controller
         ->join('categories_lv1','categories_lv1.id','=','categories.category_lv1_id')->where('categories.noi_bac', 1)->where('categories.status',1)->orderBy('categories.stt', 'ASC')->get();
         // dd($category_noibac);
         $nhaDat = Products::where('status', 1)->where('noi_bac', 1)->orderBy('id', 'DESC')->where('type', 1)->limit(8)->get();
-        $cate_product = Products::select('products.id','products.name','products.price','products.view','products.photo','categories.name AS category_name')
-        ->join('categories', 'categories.id','=','products.category_id')
-        ->where('categories.id',$category_noibac[0]['id'])->where('products.type',0)->where('products.status',1)->orderBy('categories.stt', 'ASC')->paginate($settings['PHAN_TRANG_PRODUCT']);
-        return view('site.home.index', compact('category_lv1','settings', 'image', 'category', 'new_product', 'standard', 'news', 'nhaDat','cate_product'));
+        // $cate_product = Products::select('products.id','products.name','products.price','products.view','products.photo','categories.name AS category_name')
+        // ->join('categories', 'categories.id','=','products.category_id')
+        // ->where('categories.id',$category_noibac[0]['id'])->where('products.type',0)->where('products.status',1)->orderBy('categories.stt', 'ASC')->paginate($settings['PHAN_TRANG_PRODUCT']);
+        return view('site.home.index', compact('category_lv1','settings', 'image', 'category', 'new_product', 'standard', 'news', 'nhaDat'));
     }
 
     public function showMap(Request $request)
@@ -88,26 +88,26 @@ class HomeController extends Controller
             </div>
         </div>';
         }
-        $output .= '</div>
-        <nav aria-label="Page navigation " class="pagination-product">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>';
+        $output .= "</div>".$cate_product->links();
+        // <nav aria-label="Page navigation " class="pagination-product">
+        //         <ul class="pagination">
+        //             <li class="page-item">
+        //                 <a class="page-link" href="#" aria-label="Previous">
+        //                     <span aria-hidden="true">&laquo;</span>
+        //                     <span class="sr-only">Previous</span>
+        //                 </a>
+        //             </li>
+        //             <li class="page-item"><a class="page-link" href="#">1</a></li>
+        //             <li class="page-item"><a class="page-link" href="#">2</a></li>
+        //             <li class="page-item"><a class="page-link" href="#">3</a></li>
+        //             <li class="page-item">
+        //                 <a class="page-link" href="#" aria-label="Next">
+        //                     <span aria-hidden="true">&raquo;</span>
+        //                     <span class="sr-only">Next</span>
+        //                 </a>
+        //             </li>
+        //         </ul>
+        //     </nav>
         echo $output;
     }
 }

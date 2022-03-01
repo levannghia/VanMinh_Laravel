@@ -32,7 +32,7 @@ use App\Http\Controllers\site\HomeController;
 //USER
 Route::get("/", [HomeController::class, "index"])->name('home');
 Route::post("/show-map", [HomeController::class, "showMap"])->name('show.map');
-Route::post("/get-product-by-category", [HomeController::class, "getProductByCategory"])->name('show.product.category');
+Route::get("/home", [HomeController::class, "getProductByCategory"])->name('show.product.category');
 
 
 //ADMIN

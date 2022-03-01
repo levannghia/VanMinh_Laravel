@@ -58,8 +58,6 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" href="{{route('admin.category.lv1.index')}}">Danh mục cấp 1</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('admin.category.index')}}">Danh mục cấp 2</a></li>
-                    <li class="nav-item"><a class="nav-link"
-                            href="{{route('admin.category.add')}}">Thêm danh mục</a></li>
                     {{-- <li class="nav-item"><a class="nav-link"
                             href="pages/forms/validation.html">Validation</a></li>
                     <li class="nav-item"><a class="nav-link" href="pages/forms/wizard.html">Wizard</a></li> --}}

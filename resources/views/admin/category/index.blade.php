@@ -7,6 +7,8 @@
             <form>
                 <div class="card-body">
                     <h4 class="card-title">{{ $row->desc }}</h4>
+                    <a href="{{route('admin.category.add')}}" class="btn btn-info mb-3"><i
+                        class="fa fa-plus"></i> Thêm</a>
                     <div class="row">
                         <div class="col-12">
                             <div class="table-responsive">
