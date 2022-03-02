@@ -110,4 +110,10 @@ class HomeController extends Controller
         //     </nav>
         echo $output;
     }
+
+    public function Search(Request $request)
+    {
+        $data = Products::where("name", "like", '%' . $request->q . '%')->where('status',1)->orderBy('id', 'desc')->paginate(8);
+        dd($data);
+    }
 }

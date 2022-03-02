@@ -8,9 +8,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <form class="form-inline my-2 my-lg-0 form-search">
+            <form class="form-inline my-2 my-lg-0 form-search" action="{{route('search.product')}}">
                 <h2 class="form-title">CÔNG TY TNHH THIẾT BỊ VĂN MINH</h2>
-                <input class="form-control mr-sm-2 btn-input" type="search" placeholder="Nhập sản phẩm cần tìm"
+                <input class="form-control mr-sm-2 btn-input" type="search" name="q" placeholder="Nhập sản phẩm cần tìm"
                     aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">TIỀM KIẾM</button>
             </form>
@@ -35,25 +35,25 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav pd-li">
                     <li class="nav-item active pd-li">
-                        <a class="nav-link pd-li" href="#">TRANG CHỦ <span class="sr-only">(current)</span></a>
+                        <a class="nav-link pd-li" href="/">TRANG CHỦ <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#">GIỚI THIỆU</a>
+                        <a class="nav-link " href="/gioi-thieu">GIỚI THIỆU</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">SẢN PHẨM</a>
+                        <a class="nav-link" href="{{route('get.product')}}">SẢN PHẨM</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">MUA BÁN</a>
+                        <a class="nav-link disabled" href="{{route('get.nha.dat')}}">MUA BÁN</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">TIN TỨC</a>
+                        <a class="nav-link" href="{{route('get.news')}}">TIN TỨC</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">VIDEO</a>
+                        <a class="nav-link" href="{{route('get.video')}}">VIDEO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">LIÊN HỆ</a>
+                        <a class="nav-link disabled" href="/lien-he">LIÊN HỆ</a>
                     </li>
                 </ul>
             </div>

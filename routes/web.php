@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\site\ProductSiteController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\GalleryController;
 use App\Http\Controllers\admin\AuthenticationController;
@@ -15,8 +16,12 @@ use App\Http\Controllers\admin\StandardController;
 use App\Http\Controllers\admin\VideoController;
 use App\Http\Controllers\admin\ConfigController;
 use App\Http\Controllers\admin\ContactController;
+use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\SeoPageController;
 use App\Http\Controllers\site\HomeController;
+use App\Http\Controllers\site\NewsSiteController;
+use App\Http\Controllers\site\PageSiteController;
+use App\Http\Controllers\site\VideoSiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +38,21 @@ use App\Http\Controllers\site\HomeController;
 Route::get("/", [HomeController::class, "index"])->name('home');
 Route::post("/show-map", [HomeController::class, "showMap"])->name('show.map');
 Route::get("/home", [HomeController::class, "getProductByCategory"])->name('show.product.category');
+Route::get("/search", [HomeController::class, "Search"])->name('search.product');
+//Product
+Route::get("/san-pham/{slug}", [ProductSiteController::class, "getProductBySlug"])->name('get.product.slug');
+Route::get("/san-pham", [ProductSiteController::class, "getAllProduct"])->name('get.product');
+Route::get("/mua-ban-nha-dat/{slug}", [ProductSiteController::class, "getNhaDatBySlug"])->name('get.nha.dat.slug');
+Route::get("/mua-ban-nha-dat", [ProductSiteController::class, "getAllNhaDat"])->name('get.nha.dat');
 
+//News
+Route::get("/tin-tuc/{slug}", [NewsSiteController::class, "getNewsBySlug"])->name('get.news.slug');
+Route::get("/tin-tuc", [NewsSiteController::class, "getAllNews"])->name('get.news');
+//page
+Route::get("/lien-he", [PageSiteController::class, "getPageLienHe"])->name('get.page.lien.he');
+Route::get("/gioi-thieu", [PageSiteController::class, "getPageGioiThieu"])->name('get.page.gioi.thieu');
+//video
+Route::get("/video", [VideoSiteController::class, "getAllVideo"])->name('get.video');
 
 //ADMIN
 
@@ -210,6 +229,19 @@ Route::prefix('admin')->group(function () {
             Route::get('/delete-all/{id}', 'deleteAll')->name('delete.all');
             // Route::get('/noi-bac/{id}/{noiBac}', 'noiBac')->name('noi.bac');
             Route::get('/status/{id}/{status}', 'status')->name('status');
+        });
+
+         //order
+         Route::name('admin.order.')->prefix('don-hang')->controller(OrderController::class)->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('/add', 'create')->name('add');
+            Route::post('/store', 'store')->name('store');
+            Route::get('/edit/{id}', 'edit')->name('edit');
+            Route::post('/update/{id}', 'update')->name('update');
+            Route::get('/delete/{id}', 'destroy')->name('delete');
+            Route::get('/delete-all/{id}', 'deleteAll')->name('delete.all');
+            Route::post('/status', 'status')->name('status');
+            Route::post('/resorting', 'resortPosition')->name('resorting');
         });
     });
 });

@@ -97,7 +97,7 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('admin.order.index')}}">
                 <i class="mdi mdi-bell menu-icon"></i>
                 <span class="menu-title">Quản lý đơn hàng</span>
             </a>

@@ -4,7 +4,6 @@
 @section('mimeType', $image->mimeType)
 @section('width', $image->width)
 @section('height', $image->height)
-@section('mimeType', $image->mimeType)
 @section('SEO_description', $settings['SEO_DISCRIPTION'])
 @section('content')
     <div class="content">
@@ -25,9 +24,9 @@
                         <h6 class="product-name">{{ $item->name }}</h6>
                         <div class="price-view">
                             @if ($item->price == null)
-                                <p class="product-price">Giá: <a href="" class="contact-product">liên hệ</a> </p>
+                                <p class="product-price">Giá: <a href="{{$settings['PHONE']}}" class="contact-product">liên hệ</a> </p>
                             @else
-                                <p class="product-price">Giá: <a href=""
+                                <p class="product-price">Giá: <a href="{{route('get.product.slug',$item->slug)}}"
                                         class="contact-product">{{ number_format($item->price, 0, ',', '.') }} đ</a> </p>
                             @endif
                             <p class="product-view">Lượt xem: {{ $item->view }}</p>
@@ -431,14 +430,14 @@
                                         <g>
                                             <path style="fill:white;"
                                                 d="M118.1,235.517c7.898,0,14.31-6.032,14.31-13.483c0-7.441,0-13.473,0-13.473
-                                                                                    c39.069-3.579,64.932-24.215,64.932-57.785v-0.549c0-34.119-22.012-49.8-65.758-59.977V58.334c6.298,1.539,12.82,3.72,19.194,6.549
-                                                                                    c10.258,4.547,22.724,1.697,28.952-8.485c6.233-10.176,2.866-24.47-8.681-29.654c-11.498-5.156-24.117-8.708-38.095-10.236V8.251
-                                                                                    c0-4.552-6.402-8.251-14.305-8.251c-7.903,0-14.31,3.514-14.31,7.832c0,4.335,0,7.843,0,7.843
-                                                                                    c-42.104,3.03-65.764,25.591-65.764,58.057v0.555c0,34.114,22.561,49.256,66.862,59.427v33.021
-                                                                                    c-10.628-1.713-21.033-5.243-31.623-10.65c-11.281-5.755-25.101-3.72-31.938,6.385c-6.842,10.1-4.079,24.449,7.294,30.029
-                                                                                    c16.709,8.208,35.593,13.57,54.614,15.518v13.755C103.79,229.36,110.197,235.517,118.1,235.517z M131.301,138.12
-                                                                                    c14.316,4.123,18.438,8.257,18.438,15.681v0.555c0,7.979-5.776,12.651-18.438,14.033V138.12z M86.999,70.153v-0.549
-                                                                                    c0-7.152,5.232-12.657,18.71-13.755v29.719C90.856,81.439,86.999,77.305,86.999,70.153z" />
+                                                c39.069-3.579,64.932-24.215,64.932-57.785v-0.549c0-34.119-22.012-49.8-65.758-59.977V58.334c6.298,1.539,12.82,3.72,19.194,6.549
+                                                c10.258,4.547,22.724,1.697,28.952-8.485c6.233-10.176,2.866-24.47-8.681-29.654c-11.498-5.156-24.117-8.708-38.095-10.236V8.251
+                                                c0-4.552-6.402-8.251-14.305-8.251c-7.903,0-14.31,3.514-14.31,7.832c0,4.335,0,7.843,0,7.843
+                                                c-42.104,3.03-65.764,25.591-65.764,58.057v0.555c0,34.114,22.561,49.256,66.862,59.427v33.021
+                                                c-10.628-1.713-21.033-5.243-31.623-10.65c-11.281-5.755-25.101-3.72-31.938,6.385c-6.842,10.1-4.079,24.449,7.294,30.029
+                                                c16.709,8.208,35.593,13.57,54.614,15.518v13.755C103.79,229.36,110.197,235.517,118.1,235.517z M131.301,138.12
+                                                c14.316,4.123,18.438,8.257,18.438,15.681v0.555c0,7.979-5.776,12.651-18.438,14.033V138.12z M86.999,70.153v-0.549
+                                                c0-7.152,5.232-12.657,18.71-13.755v29.719C90.856,81.439,86.999,77.305,86.999,70.153z" />
                                         </g>
                                     </svg>
                                     @if ($item->price == null)
@@ -462,165 +461,6 @@
                     </div>
                 @endforeach
             </div>
-            {{-- <div class="row distance">
-                <div class="col-md-3 real-estate">
-                    <div class="cover">
-                        <img src="{{ asset('site/images/thiet-ke-khong-ten-192969_440x440.png') }}" alt=""
-                            class="img-padding">
-                        <div class="cover-bottom">
-                            <h6>Bán nhà đường Thăng long Phường 4 Quận Tân Bình</h6>
-                            <div class="info">
-                                <?xml version="1.0" encoding="iso-8859-1"?>
-                                <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 235.517 235.517"
-                                    style="enable-background:new 0 0 235.517 235.517;" xml:space="preserve">
-                                    <g>
-                                        <path style="fill:white;"
-                                            d="M118.1,235.517c7.898,0,14.31-6.032,14.31-13.483c0-7.441,0-13.473,0-13.473
-                                            c39.069-3.579,64.932-24.215,64.932-57.785v-0.549c0-34.119-22.012-49.8-65.758-59.977V58.334c6.298,1.539,12.82,3.72,19.194,6.549
-                                            c10.258,4.547,22.724,1.697,28.952-8.485c6.233-10.176,2.866-24.47-8.681-29.654c-11.498-5.156-24.117-8.708-38.095-10.236V8.251
-                                            c0-4.552-6.402-8.251-14.305-8.251c-7.903,0-14.31,3.514-14.31,7.832c0,4.335,0,7.843,0,7.843
-                                            c-42.104,3.03-65.764,25.591-65.764,58.057v0.555c0,34.114,22.561,49.256,66.862,59.427v33.021
-                                            c-10.628-1.713-21.033-5.243-31.623-10.65c-11.281-5.755-25.101-3.72-31.938,6.385c-6.842,10.1-4.079,24.449,7.294,30.029
-                                            c16.709,8.208,35.593,13.57,54.614,15.518v13.755C103.79,229.36,110.197,235.517,118.1,235.517z M131.301,138.12
-                                            c14.316,4.123,18.438,8.257,18.438,15.681v0.555c0,7.979-5.776,12.651-18.438,14.033V138.12z M86.999,70.153v-0.549
-                                            c0-7.152,5.232-12.657,18.71-13.755v29.719C90.856,81.439,86.999,77.305,86.999,70.153z" />
-                                    </g>
-                                </svg>
-                                <p>14 tỷ</p>
-                                <p>Diện tích: <a href="">ssss<sup>2</sup></a></p>
-                            </div>
-                            <div class="acreage"><svg id="Capa_2" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 384 512">
-                                    <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                    <path style="fill:white;"
-                                        d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z" />
-                                </svg> Xem bản đồ
-                            </div>
-                            <p class="des">Nhà đẹp, năm ngay khu văn phòng công ty, trung tâm thương mại</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 real-estate">
-                    <div class="cover">
-                        <img src="{{ asset('site/images/thiet-ke-khong-ten-192969_440x440.png') }}" alt=""
-                            class="img-padding">
-                        <div class="cover-bottom">
-                            <h6>Bán nhà đường Thăng long Phường 4 Quận Tân Bình</h6>
-                            <div class="info">
-                                <?xml version="1.0" encoding="iso-8859-1"?>
-                                <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 235.517 235.517"
-                                    style="enable-background:new 0 0 235.517 235.517;" xml:space="preserve">
-                                    <g>
-                                        <path style="fill:white;"
-                                            d="M118.1,235.517c7.898,0,14.31-6.032,14.31-13.483c0-7.441,0-13.473,0-13.473
-                                                c39.069-3.579,64.932-24.215,64.932-57.785v-0.549c0-34.119-22.012-49.8-65.758-59.977V58.334c6.298,1.539,12.82,3.72,19.194,6.549
-                                                c10.258,4.547,22.724,1.697,28.952-8.485c6.233-10.176,2.866-24.47-8.681-29.654c-11.498-5.156-24.117-8.708-38.095-10.236V8.251
-                                                c0-4.552-6.402-8.251-14.305-8.251c-7.903,0-14.31,3.514-14.31,7.832c0,4.335,0,7.843,0,7.843
-                                                c-42.104,3.03-65.764,25.591-65.764,58.057v0.555c0,34.114,22.561,49.256,66.862,59.427v33.021
-                                                c-10.628-1.713-21.033-5.243-31.623-10.65c-11.281-5.755-25.101-3.72-31.938,6.385c-6.842,10.1-4.079,24.449,7.294,30.029
-                                                c16.709,8.208,35.593,13.57,54.614,15.518v13.755C103.79,229.36,110.197,235.517,118.1,235.517z M131.301,138.12
-                                                c14.316,4.123,18.438,8.257,18.438,15.681v0.555c0,7.979-5.776,12.651-18.438,14.033V138.12z M86.999,70.153v-0.549
-                                                c0-7.152,5.232-12.657,18.71-13.755v29.719C90.856,81.439,86.999,77.305,86.999,70.153z" />
-                                    </g>
-                                </svg>
-                                <p>14 tỷ</p>
-                                <p>Diện tích: <a href="">ssss<sup>2</sup></a></p>
-                            </div>
-                            <div class="acreage"><svg id="Capa_2" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 384 512">
-                                    <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                    <path style="fill:white;"
-                                        d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z" />
-                                </svg> Xem bản đồ
-                            </div>
-                            <p class="des">Nhà đẹp, năm ngay khu văn phòng công ty, trung tâm thương mại</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 real-estate">
-                    <div class="cover">
-                        <img src="{{ asset('site/images/thiet-ke-khong-ten-192969_440x440.png') }}" alt=""
-                            class="img-padding">
-                        <div class="cover-bottom">
-                            <h6>Bán nhà đường Thăng long Phường 4 Quận Tân Bình</h6>
-                            <div class="info">
-                                <?xml version="1.0" encoding="iso-8859-1"?>
-                                <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 235.517 235.517"
-                                    style="enable-background:new 0 0 235.517 235.517;" xml:space="preserve">
-                                    <g>
-                                        <path style="fill:white;"
-                                            d="M118.1,235.517c7.898,0,14.31-6.032,14.31-13.483c0-7.441,0-13.473,0-13.473
-                                                c39.069-3.579,64.932-24.215,64.932-57.785v-0.549c0-34.119-22.012-49.8-65.758-59.977V58.334c6.298,1.539,12.82,3.72,19.194,6.549
-                                                c10.258,4.547,22.724,1.697,28.952-8.485c6.233-10.176,2.866-24.47-8.681-29.654c-11.498-5.156-24.117-8.708-38.095-10.236V8.251
-                                                c0-4.552-6.402-8.251-14.305-8.251c-7.903,0-14.31,3.514-14.31,7.832c0,4.335,0,7.843,0,7.843
-                                                c-42.104,3.03-65.764,25.591-65.764,58.057v0.555c0,34.114,22.561,49.256,66.862,59.427v33.021
-                                                c-10.628-1.713-21.033-5.243-31.623-10.65c-11.281-5.755-25.101-3.72-31.938,6.385c-6.842,10.1-4.079,24.449,7.294,30.029
-                                                c16.709,8.208,35.593,13.57,54.614,15.518v13.755C103.79,229.36,110.197,235.517,118.1,235.517z M131.301,138.12
-                                                c14.316,4.123,18.438,8.257,18.438,15.681v0.555c0,7.979-5.776,12.651-18.438,14.033V138.12z M86.999,70.153v-0.549
-                                                c0-7.152,5.232-12.657,18.71-13.755v29.719C90.856,81.439,86.999,77.305,86.999,70.153z" />
-                                    </g>
-                                </svg>
-                                <p>14 tỷ</p>
-                                <p>Diện tích: <a href="">ssss<sup>2</sup></a></p>
-                            </div>
-                            <div class="acreage"><svg id="Capa_2" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 384 512">
-                                    <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                    <path style="fill:white;"
-                                        d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z" />
-                                </svg> Xem bản đồ
-                            </div>
-                            <p class="des">Nhà đẹp, năm ngay khu văn phòng công ty, trung tâm thương mại</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 real-estate">
-                    <div class="cover">
-                        <img src="{{ asset('site/images/thiet-ke-khong-ten-192969_440x440.png') }}" alt=""
-                            class="img-padding">
-                        <div class="cover-bottom">
-                            <h6>Bán nhà đường Thăng long Phường 4 Quận Tân Bình</h6>
-                            <div class="info">
-                                <?xml version="1.0" encoding="iso-8859-1"?>
-                                <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 235.517 235.517"
-                                    style="enable-background:new 0 0 235.517 235.517;" xml:space="preserve">
-                                    <g>
-                                        <path style="fill:white;"
-                                            d="M118.1,235.517c7.898,0,14.31-6.032,14.31-13.483c0-7.441,0-13.473,0-13.473
-                                            c39.069-3.579,64.932-24.215,64.932-57.785v-0.549c0-34.119-22.012-49.8-65.758-59.977V58.334c6.298,1.539,12.82,3.72,19.194,6.549
-                                            c10.258,4.547,22.724,1.697,28.952-8.485c6.233-10.176,2.866-24.47-8.681-29.654c-11.498-5.156-24.117-8.708-38.095-10.236V8.251
-                                            c0-4.552-6.402-8.251-14.305-8.251c-7.903,0-14.31,3.514-14.31,7.832c0,4.335,0,7.843,0,7.843
-                                            c-42.104,3.03-65.764,25.591-65.764,58.057v0.555c0,34.114,22.561,49.256,66.862,59.427v33.021
-                                            c-10.628-1.713-21.033-5.243-31.623-10.65c-11.281-5.755-25.101-3.72-31.938,6.385c-6.842,10.1-4.079,24.449,7.294,30.029
-                                            c16.709,8.208,35.593,13.57,54.614,15.518v13.755C103.79,229.36,110.197,235.517,118.1,235.517z M131.301,138.12
-                                            c14.316,4.123,18.438,8.257,18.438,15.681v0.555c0,7.979-5.776,12.651-18.438,14.033V138.12z M86.999,70.153v-0.549
-                                            c0-7.152,5.232-12.657,18.71-13.755v29.719C90.856,81.439,86.999,77.305,86.999,70.153z" />
-                                    </g>
-                                </svg>
-                                <p>14 tỷ</p>
-                                <p>Diện tích: <a href="">ssss<sup>2</sup></a></p>
-                            </div>
-                            <div class="acreage"><svg id="Capa_2" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 384 512">
-                                    <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                    <path style="fill:white;"
-                                        d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z" />
-                                </svg> Xem bản đồ
-                            </div>
-                            <p class="des">Nhà đẹp, năm ngay khu văn phòng công ty, trung tâm thương mại</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div> --}}
 
         </div>
     </div>
@@ -761,22 +601,6 @@
 @push('script_site')
     <script>
         $(document).ready(function() {
-            $('.pagination a').unbind('click').on('click', function(e) {
-                e.preventDefault();
-                console.log("OK");
-                var page = $(this).attr('href').split('page=')[1];
-                getPosts(page);
-            });
-
-            function getPosts(page) {
-                $.ajax({
-                        type: "GET",
-                        url: '/home?page=' + page
-                    })
-                    .success(function(data) {
-                        $('body').html(data);
-                    });
-            }
 
             loadCate1();
             loadCate2()

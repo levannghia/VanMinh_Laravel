@@ -24,6 +24,11 @@
                                     value="{{ old('slug', $product->slug) }}" placeholder="* slug">
                             </div>
                             <div class="form-group">
+                                <label for="slug">Giá</label>
+                                <input type="text" class="form-control" value="{{ old('price', $product->price) }}"
+                                    name="price" placeholder="* giá">
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleTextarea1">Keywords (seo)</label>
                                 <textarea class="form-control" id="exampleTextarea1" rows="4"
                                     name="keywords">{{ old('keywords', $product->keywords) }}</textarea>
