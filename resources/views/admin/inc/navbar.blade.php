@@ -73,12 +73,13 @@
             </li> --}}
             @php
                 $contact = DB::table('contacts')->where('status',0)->count();
+                $order = DB::table('orders')->where('status',0)->count();
             @endphp
             <li class="nav-item dropdown">
                 <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center"
                     id="notificationDropdown" href="#" data-toggle="dropdown">
                     <i class="mdi mdi-bell-outline mx-0"></i>
-                    @if ($contact != 0)
+                    @if ($contact != 0 || $order != 0)
                     <span class="count"></span>
                     @endif
                 </a>
@@ -111,7 +112,7 @@
                             </p>
                         </div>
                     </a> --}}
-                    <a class="dropdown-item preview-item">
+                    <a class="dropdown-item preview-item" href="{{route('admin.order.index')}}">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-primary">
                                 <i class="mdi mdi-account-box mx-0"></i>
@@ -120,7 +121,7 @@
                         <div class="preview-item-content">
                             <h6 class="preview-subject font-weight-normal">Đơn đặt hàng</h6>
                             <p class="font-weight-light small-text text-muted mb-0">
-                                2 days ago
+                                {{$order}} đơn đặt hàng mới
                             </p>
                         </div>
                     </a>
