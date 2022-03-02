@@ -11,7 +11,7 @@
         //Active class can be hard coded directly in html file also as required
 
         function addActiveClass(element) {
-            if (current === "") {
+            if (current === "admin") {
                 //for root url
                 if (element.attr('href').indexOf("index.html") !== -1) {
                     element.parents('.nav-item').last().addClass('active');

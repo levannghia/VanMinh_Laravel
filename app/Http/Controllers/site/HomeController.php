@@ -70,7 +70,7 @@ class HomeController extends Controller
         $p ="";
         $cate_product = Products::select('products.id','products.name','products.price','products.view','products.photo','categories.name AS category_name')
         ->join('categories', 'categories.id','=','products.category_id')
-        ->where('categories.id',$request->id)->where('products.type',0)->where('products.status',1)->orderBy('stt', 'ASC')->paginate($settings['PHAN_TRANG_PRODUCT']);
+        ->where('categories.id',$request->id)->where('products.type',0)->where('products.noi_bac',1)->where('products.status',1)->orderBy('stt', 'ASC')->paginate($settings['PHAN_TRANG_PRODUCT']);
         $output .= '<div class="row">';
         foreach ($cate_product as $key => $item) {
             if($item->price == NULL){
@@ -88,7 +88,7 @@ class HomeController extends Controller
             </div>
         </div>';
         }
-        $output .= "</div>".$cate_product->links();
+        $output .= "</div>";
         // <nav aria-label="Page navigation " class="pagination-product">
         //         <ul class="pagination">
         //             <li class="page-item">
