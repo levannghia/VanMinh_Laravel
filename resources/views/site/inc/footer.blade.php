@@ -17,13 +17,13 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 footer-item">
+            <div class="col-md-4 col-6 footer-item">
                 <h4>Giới thiệu công ty</h4>
                 <p class="des-company">
                     {!! $footer->content !!}
                 </p>
             </div>
-            <div class="col-md-4 Policy footer-item">
+            <div class="col-md-4 Policy col-6 footer-item">
                 <h4>Chính sách</h4>
                 <a href="">Hình Thức Thanh Toán</a>
                 <a href="">Chính Sách Bán Hàng</a>
@@ -32,7 +32,7 @@
                 <a href="">Chính Sách Bảo Mật</a>
                 <a href="">FAQs</a>
             </div>
-            <div class="col-md-4 footer-item">
+            <div class="col-md-4 col-12 footer-item">
                 <h4>Bản Đồ Địa Điểm</h4>
                 <p class="map">
                     {!! $settings['MAP_IFRAME'] !!}
