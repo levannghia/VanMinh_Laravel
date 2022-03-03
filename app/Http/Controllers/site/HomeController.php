@@ -80,13 +80,18 @@ class HomeController extends Controller
             }
             $output .= '
             <div class="col-md-3 col-6 img-flu">
-            <a href=""><img src="/upload/images/product/thumb/'.$item->photo.'" alt="">
-            <h6 class="product-name">'.$item->name.'</h6>
-            </a>
-            <div class="price-view">
-                '.$p.'
-                <p class="product-view">Lượt xem: '.$item->view.'</p>
-            </div>
+                <div class="border-col">
+                <div class="detail-product-link">
+                    <a href=""><img src="/upload/images/product/thumb/'.$item->photo.'" alt="">
+                    </a>
+                    </div>
+                    <a href=""><h6 class="product-name">'.$item->name.'</h6></a>
+                    
+                    <div class="price-view">
+                        '.$p.'
+                        <p class="product-view">Lượt xem: '.$item->view.'</p>
+                    </div>
+                </div>
         </div>';
         }
         $output .= '</div>

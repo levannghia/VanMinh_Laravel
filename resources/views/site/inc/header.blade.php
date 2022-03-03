@@ -64,56 +64,59 @@
         </div>
     </div>
     <div class="menu-header" id="myHeader">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-green">
-            <!-- <a class="navbar-brand danh-muc pd-li" href="#"><img src="images/taxes-menu-icon.png" alt=""> DANH MỤC SẢN PHẨM</a> -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav pd-li menu-category">
-                    <li class="nav-item active pd-li icon-size">
-                        <a class="nav-link  pd-li" href="/"><img src="{{asset('site/images/taxes-menu-icon.png')}}" alt="">DANH MỤC SẢN PHẨM</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="/">TRANG CHỦ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="/gioi-thieu">GIỚI THIỆU</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">SẢN PHẨM</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="">MUA BÁN</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">TIN TỨC</a>
-                    </li>
-                    <li class="nav-item">
-<a class="nav-link" href="">VIDEO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="/lien-he">LIÊN HỆ</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-green">
+                <!-- <a class="navbar-brand danh-muc pd-li" href="#"><img src="images/taxes-menu-icon.png" alt=""> DANH MỤC SẢN PHẨM</a> -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav pd-li menu-category">
+                        <li class="nav-item active pd-li icon-size">
+                            <a class="nav-link  pd-li" href="/"><img src="{{asset('site/images/taxes-menu-icon.png')}}"
+                                    alt="">DANH MỤC SẢN PHẨM</a>
+                        </li>
+                        <li class="nav-item bg-ani">
+                            <a class="nav-link " href="/">TRANG CHỦ</a>
+                        </li>
+                        <li class="nav-item bg-ani">
+                            <a class="nav-link " href="/gioi-thieu">GIỚI THIỆU</a>
+                        </li>
+                        <li class="nav-item bg-ani">
+                            <a class="nav-link" href="">SẢN PHẨM</a>
+                        </li>
+                        <li class="nav-item bg-ani">
+                            <a class="nav-link disabled" href="">MUA BÁN</a>
+                        </li>
+                        <li class="nav-item bg-ani">
+                            <a class="nav-link" href="">TIN TỨC</a>
+                        </li>
+                        <li class="nav-item bg-ani">
+                            <a class="nav-link" href="">VIDEO</a>
+                        </li>
+                        <li class="nav-item bg-ani">
+                            <a class="nav-link disabled" href="/lien-he">LIÊN HỆ</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </div>
 </header>
 <script>
-window.onscroll = function() {myFunction()};
+window.onscroll = function() {
+    myFunction()
+};
 
 var header = document.getElementById("myHeader");
 var sticky = header.offsetTop;
 
 function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
 }
 </script>

@@ -16,9 +16,11 @@ header {
     align-items: center;
 
 }
-.cover a{
+
+.cover a {
     color: black;
 }
+
 .top-header-block .company-address {
     margin-bottom: 0px;
     padding: 13px 0;
@@ -330,9 +332,17 @@ a:hover {
     padding-right: 15px;
     padding-left: 15px;
 }
-.price-view{
+
+.price-view {
     position: relative;
+    justify-content: space-between;
+        padding: 0 5px;
 }
+.border-col .product-name{
+    text-align: center;
+    font-size: 17px;
+}
+
 .col-2dot4 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 20%;
@@ -389,9 +399,8 @@ a:hover {
     .price-view {
         display: block !important;
     }
-
-    .product-views {
-        position: relative !important;
+    blockquote .name-customer:before {
+        left: 40px !important;
     }
 
     .form-search {
@@ -403,8 +412,8 @@ a:hover {
     }
 
     .tab-chem span {
-        display: none !important; 
-        
+        display: none !important;
+
     }
 
     .tell-people {
@@ -446,12 +455,10 @@ a:hover {
         display: block !important;
     }
 
-    .product-views {
-        position: relative !important;
-    }
+
     .tab-chem span {
-        display: none !important; 
-        
+        display: none !important;
+
     }
 }
 
@@ -467,9 +474,6 @@ a:hover {
         display: block !important;
     }
 
-    .product-views {
-        position: relative !important;
-    }
 }
 
 @media (min-width: 1140px) {
@@ -481,17 +485,12 @@ a:hover {
     }
 
     .product-view {
-        position: absolute;
+        /* position: absolute; */
         right: 0;
     }
+
     .price-view {
         display: flex !important;
-    }
-    .product-views {
-        position: absolute;
-        display: flex;
-        right: 0;
-        top: 0;
     }
 }
 
@@ -504,7 +503,9 @@ a:hover {
     color: black;
     padding: 5px 0;
 }
-
+.detail-product-link .product-name{
+    color: white;
+}
 .contact-product {
     color: red;
 }
@@ -627,9 +628,11 @@ a:hover {
     display: flex;
     align-items: center;
 }
-.acreage span{
+
+.acreage span {
     padding-left: 5px;
 }
+
 .real-estate img {
     padding: 10px;
     width: 100%;
@@ -971,4 +974,37 @@ nav.navbar {
     padding-left: 39px;
     padding-right: 39px;
 }
+.border-col{
+    background: wheat;
+    border-radius: 5px;
+}
 /* animation */
+.bg-ani {
+    -webkit-transition: background-color 0.8s ease-out;
+    -moz-transition: background-color 0.8s ease-out;
+    -o-transition: background-color 0.8s ease-out;
+    transition: background-color 0.8s ease-out;
+}
+
+.bg-ani:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.detail-product-link{
+    background: linear-gradient(#dd1818, #333333);
+    font-family: 'PT Sans', sans-serif;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+}
+.detail-product-link img{
+    width: 100%;
+    height: auto;
+    transition: all 0.6s ease;
+}
+.detail-product-link:hover img{
+    opacity: 0.4;
+    transform: scale(1.1);
+}
