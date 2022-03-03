@@ -38,7 +38,7 @@
         </div>
         @foreach ($category_lv1 as $key => $value)
         <div class="tab-chem">
-            <span class="left-content">{{ $value->title }}
+            <p class="left-content">{{ $value->title }}
                 <svg id="title-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                     version="1.1" width="400" height="400" viewBox="0 0 400 400" xml:space="preserve">
                     <g transform="matrix(1 0 0 1 200 200)" id="96y6mOHc-6wU-Zbhjml11">
@@ -49,7 +49,7 @@
                             stroke-linecap="round" />
                     </g>
                 </svg>
-            </span>
+            </p>
             <?php
                     $category_noibac = DB::table('categories')
                         ->select('categories.name', 'categories.id', 'categories.slug')
@@ -129,7 +129,7 @@
 
 {{-- {{$cate_product->links()}} --}}
 {{-- <div class="tab-chem vt">
-                <span class="left-content">Vật tư y tế
+                <p class="left-content">Vật tư y tế
                     <svg id="title-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         version="1.1" width="400" height="400" viewBox="0 0 400 400" xml:space="preserve">
                         <g transform="matrix(1 0 0 1 200 200)" id="96y6mOHc-6wU-Zbhjml11">
@@ -140,7 +140,7 @@
                                 stroke-linecap="round" />
                         </g>
                     </svg>
-                </span>
+                </p>
                 <span class="tablinks2" onclick="medicalEquipment(event, 'medical-equipment-1')">Máy tạo
                     oxy</span>
                 <span class="tablinks2" onclick="medicalEquipment(event, 'medical-equipment-2')">Máy đo nồng độ
@@ -377,9 +377,9 @@
     @foreach ($nhaDat as $item)
     <div class="col-md-3 img-flu real-estate">
         <div class="cover">
-            <img src="/upload/images/nhaDat/thumb/{{ $item->photo }}" alt="" class="img-padding">
+            <a href=""><img src="/upload/images/nhaDat/thumb/{{ $item->photo }}" alt="" class="img-padding">
             <div class="cover-bottom">
-                <h6>{{ $item->name }}</h6>
+                <h6>{{ $item->name }}</h6></a>
                 <div class="info">
                     <?xml version="1.0" encoding="iso-8859-1"?>
                     <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->

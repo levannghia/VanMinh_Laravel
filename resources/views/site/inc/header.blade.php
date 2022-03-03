@@ -51,7 +51,7 @@
                         aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">TIỀM KIẾM</button>
                 </form>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse phone-contact" id="navbarSupportedContent">
 
                     <ul class="navbar-nav ml-auto">
                         <a href="tel:0776768999" class="dt"><span>{{$settings['HOTLINE']}} <p class="tell-people">(CSKH)
@@ -63,48 +63,57 @@
             </nav>
         </div>
     </div>
-    <div class="menu-header">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav header-navbar-list">
-                            <li class="nav-item header-navbar-item active">
-                                <a href="#" class="header-navbar-link">
-                                    <img src="{{ asset('site/images/taxes-menu-icon.png') }}" class="danh-muc-menu" />
-                                    Danh Mục Sản phẩm</a>
-                            </li>
-                            <li class="nav-item header-navbar-item">
-                                <a href="index.php" class="header-navbar-link">Trang chủ</a>
-                            </li>
-                            <li class="nav-item header-navbar-item">
-                                <a href="gioi-thieu.php" class="header-navbar-link">Giới thiệu</a>
-                            </li>
-                            <li class="nav-item header-navbar-item">
-                                <a href="cong-trinh.php" class="header-navbar-link">Công trình</a>
-                            </li>
-                            <li class="nav-item header-navbar-item">
-                                <a href="dich-vu.php" class="header-navbar-link">Dịch vụ</a>
-                            </li>
-                            <li class="nav-item header-navbar-item">
-                                <a href="tin-tuc.php" class="header-navbar-link">Tin tức</a>
-                            </li>
-                            <li class="nav-item header-navbar-item">
-                                <a href="video.php" class="header-navbar-link">Video</a>
-                            </li>
-                            <li class="nav-item header-navbar-item">
-                                <a href="lien-he.php" class="header-navbar-link">Liên hệ</a>
-                            </li>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
+    <div class="menu-header" id="myHeader">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-green">
+            <!-- <a class="navbar-brand danh-muc pd-li" href="#"><img src="images/taxes-menu-icon.png" alt=""> DANH MỤC SẢN PHẨM</a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav pd-li menu-category">
+                    <li class="nav-item active pd-li icon-size">
+                        <a class="nav-link  pd-li" href="/"><img src="{{asset('site/images/taxes-menu-icon.png')}}" alt="">DANH MỤC SẢN PHẨM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/gioi-thieu">GIỚI THIỆU</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">SẢN PHẨM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="">MUA BÁN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">TIN TỨC</a>
+                    </li>
+                    <li class="nav-item">
+<a class="nav-link" href="">VIDEO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="/lien-he">LIÊN HỆ</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
     </div>
 </header>
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>

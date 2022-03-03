@@ -44,13 +44,13 @@
         <div class="row bg-contact">
             <div class="col-md-3">
                 <div class="contact-us">
-                    <img src="{{asset('site/images/map.png')}}" alt="">
+                    <img src="{{asset('site/images/map-icon.png')}}" alt="">
                     <p class="name-contact">{{$settings['ADDRESS']}}</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="contact-us">
-                    <img src="{{asset('site/images/map.png')}}" alt="">
+                    <img src="{{asset('site/images/phone-icon.png')}}" alt="">
                     <p class="name-contact">Hotline <br>
                         {{$settings['HOTLINE']}}
                     </p>
@@ -58,7 +58,7 @@
             </div>
             <div class="col-md-3">
                 <div class="contact-us">
-                    <img src="{{asset('site/images/map.png')}}" alt="">
+                    <img src="{{asset('site/images/mail.png')}}" alt="">
                     <p class="name-contact">Email CSKH: <br>
                         {{$settings['EMAIL']}}
                     </p>
@@ -66,7 +66,7 @@
             </div>
             <div class="col-md-3">
                 <div class="contact-us">
-                    <img src="{{asset('site/images/map.png')}}" alt="">
+                    <img src="{{asset('site/images/web.png')}}" alt="">
                     <p class="name-contact">Website <br>
                         {{$settings['WEBSITE']}}</p>
                 </div>
