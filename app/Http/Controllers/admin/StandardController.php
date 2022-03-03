@@ -121,11 +121,14 @@ class StandardController extends Controller
             return $setting->value; // return only the value
         })->toArray();
         $standard = Standard::find($id);
-        $row = json_decode(json_encode([
-            "title" => "Cập nhật tiêu chí",
-            "desc" => "Cập nhật tiêu chí: " . $standard->title
-        ]));
-        return view("admin.standard.edit",compact('standard','row', 'settings'));
+        if(isset($standard)){
+            $row = json_decode(json_encode([
+                "title" => "Cập nhật tiêu chí",
+                "desc" => "Cập nhật tiêu chí: " . $standard->title
+            ]));
+            return view("admin.standard.edit",compact('standard','row', 'settings'));
+        }
+        return abort(404);
     }
 
     /**

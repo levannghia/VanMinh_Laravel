@@ -73,7 +73,8 @@ Route::prefix('admin')->group(function () {
         //dashboard
         Route::name("admin.dashboard.")->controller(DashboardController::class)->group(function () {
             Route::get('/', 'index')->name('index');
-            // Route::post('/orders', 'store');
+            Route::post('/', 'thongKe')->name('thong.ke');
+            // Route::get('/test', 'test');
         });
         //Category LV1
         Route::name('admin.category.lv1.')->prefix('category-lv-1')->controller(CategoryLV1Controller::class)->group(function () {
@@ -236,7 +237,7 @@ Route::prefix('admin')->group(function () {
             Route::get('/', 'index')->name('index');
             Route::get('/add', 'create')->name('add');
             Route::post('/store', 'store')->name('store');
-            Route::get('/edit/{id}', 'edit')->name('edit');
+            Route::get('/{id}', 'orderDetail')->name('edit');
             Route::post('/update/{id}', 'update')->name('update');
             Route::get('/delete/{id}', 'destroy')->name('delete');
             Route::get('/delete-all/{id}', 'deleteAll')->name('delete.all');

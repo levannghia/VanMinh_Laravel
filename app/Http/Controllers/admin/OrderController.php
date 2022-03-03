@@ -5,6 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Config;
 
 class OrderController extends Controller
 {
@@ -61,9 +63,26 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function orderDetail($id)
     {
-        //
+        $settings = Config::all(['name', 'id'])->keyBy('name')->transform(function ($setting) {
+            return $setting->id;
+        })->toArray();
+        $order = Order::find($id);
+        
+        if(isset($order)){
+            $row = json_decode(json_encode([
+                "title" => "Chi tiết đơn hàng",
+                "desc" => "Chi tiết đơn hàng: " . $order->ma_donhang
+            ]));
+            $orderDetail = DB::table('order_detail')->select('products.id','products.type','products.price','products.name','products.photo','products.slug','order_detail.quantiti')
+            ->join('orders','orders.id','=','order_detail.order_id')
+            ->join('products','products.id','=','order_detail.product_id')
+            ->where('orders.id',$id)->get();
+
+            return view('admin.order.order_detail',compact('row','order','orderDetail','settings'));
+        }
+        return abort(404);
     }
 
     /**

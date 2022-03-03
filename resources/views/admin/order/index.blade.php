@@ -42,7 +42,7 @@
                                                     <td>{{ $item->created_at->diffForHumans() }}</td>
                                                     <td id="update_time">{{ $item->updated_at->diffForHumans() }}</td>
                                                     <td>
-                                                        <select class="js-example-basic-multiple w-100" id="order_status"
+                                                        <select class="js-example-basic-multiple w-80" id="order_status"
                                                             name="status" order_id="{{$item->id}}">
                                                             <option value="0" {{ $item->status == 0 ? 'selected' : '' }}>
                                                                 Đang chờ xử lý</option>

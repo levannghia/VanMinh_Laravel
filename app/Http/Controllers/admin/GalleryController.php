@@ -20,13 +20,16 @@ class GalleryController extends Controller
     public function index($id)
     {
         $product = Products::find($id);
-        $row = json_decode(json_encode([
-            "title" => "Gallery - " . $product->name,
-            "desc" => "Gallery - " . $product->name
-        ]));
-        $gallery = Gallery::select('galleries.photo', 'galleries.id', 'galleries.created_at', 'galleries.updated_at', 'galleries.stt','galleries.status')
-            ->join('products', 'products.id', '=', 'galleries.product_id')->where('galleries.product_id', $id)->orderBy('galleries.stt', 'ASC')->get();
-        return view('admin.gallery.index', compact('gallery', 'row', 'product'));
+        if(isset($product)){
+            $row = json_decode(json_encode([
+                "title" => "Gallery - " . $product->name,
+                "desc" => "Gallery - " . $product->name
+            ]));
+            $gallery = Gallery::select('galleries.photo', 'galleries.id', 'galleries.created_at', 'galleries.updated_at', 'galleries.stt','galleries.status')
+                ->join('products', 'products.id', '=', 'galleries.product_id')->where('galleries.product_id', $id)->orderBy('galleries.stt', 'ASC')->get();
+            return view('admin.gallery.index', compact('gallery', 'row', 'product'));
+        }
+        return abort(404);
     }
 
     /**
@@ -40,11 +43,14 @@ class GalleryController extends Controller
         $settings = Config::all(['name', 'value'])->keyBy('name')->transform(function ($setting) {
             return $setting->value; // return only the value
         })->toArray();
-        $row = json_decode(json_encode([
-            "title" => "Create gallery - " . $product->name,
-            "desc" => "Thêm gallery - " . $product->name
-        ]));
-        return view('admin.gallery.add', compact('row', 'product', 'settings'));
+        if(isset($product)){
+            $row = json_decode(json_encode([
+                "title" => "Create gallery - " . $product->name,
+                "desc" => "Thêm gallery - " . $product->name
+            ]));
+            return view('admin.gallery.add', compact('row', 'product', 'settings'));
+        }
+        return abort(404);
     }
 
     /**
@@ -118,16 +124,18 @@ class GalleryController extends Controller
     {
         $gallery = Gallery::find($id);
 
-        $row = json_decode(json_encode([
-            "title" => "Update gallery",
-            "desc" => "Cập nhật gallery"
-        ]));
-        
         $settings = Config::all(['name', 'value'])->keyBy('name')->transform(function ($setting) {
             return $setting->value; // return only the value
         })->toArray();
-
-        return view('admin.gallery.edit',compact('settings','gallery','row'));
+        if(isset($gallery)){
+            $row = json_decode(json_encode([
+                "title" => "Update gallery",
+                "desc" => "Cập nhật gallery"
+            ]));
+            
+            return view('admin.gallery.edit',compact('settings','gallery','row'));
+        }
+        abort(404);
     }
 
     /**

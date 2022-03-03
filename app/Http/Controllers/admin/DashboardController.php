@@ -21,69 +21,29 @@ class DashboardController extends Controller
         return view('admin.dashboard.index',compact('row'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        
-    }
+   public function thongKe(Request $request)
+   {
+    $row = json_decode(json_encode([
+        "title" => "Dashboard",
+        "desc" => "Dashboard"
+    ]));
+        // $year = $request->year;
+        return view('admin.dashboard.index',compact('row'));
+   }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+//    public function test()
+//    {
+//        $data = time() - 600;
+//        $ht = time();
+//        $kq = $ht + 300;
+//        $n = $ht - $data;
+//        echo $n;
+//     //    echo date("h:i",$ht);
+//        if($n > 300){
+//             echo "ra";
+//        }else{
+//            echo "sai";
+//        }
+    
+//    }
 }

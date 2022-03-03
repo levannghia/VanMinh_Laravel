@@ -103,12 +103,15 @@ class CategoryController extends Controller
     {
         
         $category = Category::find($id);
-        $row = json_decode(json_encode([
-            "title" => "Update category",
-            "desc" => "Cập nhật - " . $category->name
-        ]));
-        $category_lv1 = Category_LV1::orderBy('stt','ASC')->get();
-        return view('admin.category.edit', compact('category','row','category_lv1'));
+        if(isset($category)){
+            $row = json_decode(json_encode([
+                "title" => "Update category",
+                "desc" => "Cập nhật - " . $category->name
+            ]));
+            $category_lv1 = Category_LV1::orderBy('stt','ASC')->get();
+            return view('admin.category.edit', compact('category','row','category_lv1'));
+        }
+        return abort(404);
     }
 
     /**

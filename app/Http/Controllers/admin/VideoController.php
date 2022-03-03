@@ -118,11 +118,15 @@ class VideoController extends Controller
             return $setting->value; // return only the value
         })->toArray();
         $video = Video::find($id);
-        $row = json_decode(json_encode([
-            "title" => "Update video",
-            "desc" => "Chỉnh sửa video: " . $video->title
-        ]));
-        return view("admin.video.edit",compact('video', 'row', 'settings'));
+        if(isset($video)){
+            $row = json_decode(json_encode([
+                "title" => "Update video",
+                "desc" => "Chỉnh sửa video: " . $video->title
+            ]));
+            return view("admin.video.edit",compact('video', 'row', 'settings'));
+        }
+
+        return abort(404);
     }
 
     /**

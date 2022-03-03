@@ -27,7 +27,7 @@
 
         gtag('config', 'G-J1094H4R78');
     </script> --}}
-    <link rel="stylesheet" href="{{ asset('dashboard/css/vertical-layout-light/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/vertical-layout-light/style.css?v='.time()) }}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{asset('dashboard/images/sotagroup.png')}}" />
 </head>
@@ -84,6 +84,8 @@
     <script src="{{ asset('dashboard/js/typeahead.js') }}"></script>
     <script src="{{ asset('dashboard/js/select2.js') }}"></script>
     <!-- End custom js for this page-->
+    {{-- charjs --}}
+    {{-- <script src="{{ asset('dashboard/js/chart.js?v='.time()) }}"></script> --}}
     <!---- databale -->
     <script src="{{ asset('dashboard/js/data-table.js') }}"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>

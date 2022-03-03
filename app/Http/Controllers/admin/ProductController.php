@@ -147,7 +147,10 @@ class ProductController extends Controller
         ]));
         $category = Category::where('status',1)->orderBy('id','DESC')->get();
         $product = DB::table('products')->where('id',$id)->where('type',0)->first();;
-        return view('admin.product.edit',compact('product', 'category', 'row', 'settings'));
+        if(isset($product)){
+            return view('admin.product.edit',compact('product', 'category', 'row', 'settings'));
+        }
+        return abort(404);
     }
 
     /**
