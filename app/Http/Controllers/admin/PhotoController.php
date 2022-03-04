@@ -162,12 +162,15 @@ class PhotoController extends Controller
             return $setting->value; // return only the value
         })->toArray();
         $data = Photo::find($id);
-        $row = json_decode(json_encode([
-            "title" => "Update photo",
-            "desc" => "Cập nhật photo"
-        ]));
-
-        return view('admin.photo.edit', compact('row', 'data','settings'));
+        if(isset($data)){
+            $row = json_decode(json_encode([
+                "title" => "Update photo",
+                "desc" => "Cập nhật photo"
+            ]));
+    
+            return view('admin.photo.edit', compact('row', 'data','settings'));
+        }
+        return abort(404);
     }
 
     public function update(Request $request, $id)

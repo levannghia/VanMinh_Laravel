@@ -1,9 +1,17 @@
+@php
+$logo = DB::table('photos')->where('type','logo')->first();
+$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+$urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$logo->photo;
+@endphp
 @extends('site.layout')
 @section('SEO_title', $settings['SEO_TITLE'])
 @section('SEO_keywords', $settings['SEO_KEYWORDS'])
+@section('PHOTO',$urlLogo)
+@if (isset($image->mimeType)  && isset($image->width) && isset($image->height))
 @section('mimeType', $image->mimeType)
 @section('width', $image->width)
 @section('height', $image->height)
+@endif
 @section('SEO_description', $settings['SEO_DISCRIPTION'])
 @section('content')
 <div class="content">

@@ -149,7 +149,10 @@ class NhaDatController extends Controller
             "desc" => "Cập nhật nhà đất"
         ]));
         $nhaDat = DB::table('products')->where('id',$id)->where('type',1)->first();
-        return view('admin.nhaDat.edit',compact('nhaDat', 'row', 'settings'));
+        if(isset($nhaDat)){
+            return view('admin.nhaDat.edit',compact('nhaDat', 'row', 'settings'));
+        }
+        return abort(404);
     }
 
     /**

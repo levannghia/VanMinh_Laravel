@@ -91,11 +91,15 @@ class CategoryLV1Controller extends Controller
     {
         
         $category = Category_LV1::find($id);
-        $row = json_decode(json_encode([
-            "title" => "Update category",
-            "desc" => "Cập nhật - " . $category->name
-        ]));
-        return view('admin.categoryLV1.edit', compact('category','row'));
+        if(isset($category)){
+            $row = json_decode(json_encode([
+                "title" => "Update category",
+                "desc" => "Cập nhật - " . $category->name
+            ]));
+            return view('admin.categoryLV1.edit', compact('category','row'));
+        }
+
+        return abort(404);
     }
 
     /**

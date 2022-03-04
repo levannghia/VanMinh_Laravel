@@ -9,7 +9,6 @@ $settings = Config::all(['name', 'value'])->keyBy('name')->transform(function ($
         })->toArray();
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$logo->photo;
 @endphp
 <!doctype html>
 <html lang="en">
@@ -36,7 +35,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
     <meta property="og:title" content="@yield('SEO_title')" />
     <meta property="og:description" content="@yield('SEO_description')" />
     <meta property="og:url" content="{{$url}}" />
-    <meta property="og:image" content="{{$urlLogo}}" />
+    <meta property="og:image" content="@yield('PHOTO')" />
     <meta property="og:image:alt" content="@yield('SEO_title')" />
     <meta property="og:image:type" content="@yield('mimeType')" />
     <meta property="og:image:width" content="@yield('width')" />
@@ -47,7 +46,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
     <meta property="og:url" content="{{$url}}" />
     <meta property="og:title" content="@yield('SEO_title')" />
     <meta property="og:description" content="@yield('SEO_description')" />
-    <meta property="og:image" content="{{$urlLogo}}" />
+    <meta property="og:image" content="@yield('PHOTO')" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="canonical" href="{{$url}}" />
     <!-- Bootstrap CSS -->
@@ -55,7 +54,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="{{ asset('site/css/contact.css?v-'.time()) }}">
     <link rel="stylesheet" href="{{ asset('site/css/style.css?v-'.time()) }}">
     <title>@yield('SEO_title')</title>
     {!! $settings['ANALYTICS'] !!}
@@ -81,6 +80,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
     {{-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script> --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>

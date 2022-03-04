@@ -30788,7 +30788,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar-light .sidebar {
-    background: #ffffff;
+    background: #151313;
 }
 
 .sidebar-light .sidebar .nav .nav-item .nav-link {
@@ -30800,29 +30800,29 @@ div.tagsinput span.tag a {
 }
 
 .sidebar-light .sidebar .nav .nav-item .nav-link i.menu-icon {
-    color: #5646ff;
+    color: white;
 }
 
 .sidebar-light .sidebar .nav .nav-item .nav-link .menu-title {
-    color: #5646ff;
+    color: white;
 }
 
 .sidebar-light .sidebar .nav .nav-item.active>.nav-link {
-    background: #efeff5;
+    background: #686868;
 }
 
 .sidebar-light .sidebar .nav .nav-item.active>.nav-link .menu-title,
 .sidebar-light .sidebar .nav .nav-item.active>.nav-link i {
-    color: #5646ff;
+    color: white;
 }
 
 .sidebar-light .sidebar .nav:not(.sub-menu)>.nav-item:hover>.nav-link {
-    background: #efeff5;
-    color: #56595a;
+    background: #686868;
+    color: white;
 }
 
 .sidebar-light .sidebar .nav.sub-menu .nav-item .nav-link {
-    color: #656565;
+    color: #cec8c8;
 }
 
 .sidebar-light .sidebar .nav.sub-menu .nav-item .nav-link:before {
@@ -30830,12 +30830,12 @@ div.tagsinput span.tag a {
 }
 
 .sidebar-light .sidebar .nav.sub-menu .nav-item .nav-link.active {
-    color: #5646ff;
+    color: yellow;
     background: transparent;
 }
 
 .sidebar-light .sidebar .nav.sub-menu .nav-item .nav-link:hover {
-    color: #000;
+    color: yellow;
 }
 
 .sidebar-light .sidebar .nav.sub-menu .nav-item:hover {
@@ -30875,7 +30875,7 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-brand-wrapper {
-    background: #5646ff;
+    background: black;
     transition: width 0.25s ease, background 0.25s ease;
     -webkit-transition: width 0.25s ease, background 0.25s ease;
     -moz-transition: width 0.25s ease, background 0.25s ease;
