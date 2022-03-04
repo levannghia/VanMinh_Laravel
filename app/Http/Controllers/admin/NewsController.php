@@ -126,14 +126,13 @@ class NewsController extends Controller
             return $setting->value; // return only the value
         })->toArray();
         $news = News::find($id);
-        if(isset($new)){
-            $row = json_decode(json_encode([
-                "title" => "Update news",
-                "desc" => "Chỉnh sửa tin tức: " . $news->title
-            ]));
-            return view("admin.news.edit",compact('news','row', 'settings'));
-        }
-        return abort(404);
+        
+        $row = json_decode(json_encode([
+            "title" => "Update news",
+            "desc" => "Chỉnh sửa tin tức: " . $news->title
+        ]));
+
+        return view("admin.news.edit",compact('news','row', 'settings'));
     }
 
     /**

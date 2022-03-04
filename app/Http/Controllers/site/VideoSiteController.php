@@ -19,7 +19,7 @@ class VideoSiteController extends Controller
                 return $setting->value; // return only the value
             })
             ->toArray();
-        $video = DB::table('videos')->where('status', 1)->orderBy('id', 'DESC')->get();
+        $video = DB::table('videos')->where('status', 1)->orderBy('id', 'DESC')->paginate(3);
         $seoPage = SeoPage::where('type', 'video')->first();
         $image = json_decode(
             $seoPage->options

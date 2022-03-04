@@ -16,21 +16,21 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/seoPage/thumb/'.$
     <div class="main-content-contacts" style="padding-top: 40px;">
         <div class="container">
             <div class="main-content-wrapper">
-                <h2><span class="title">VIDEO</span></h2>
+                <h2><span class="title">TIN TỨC</span></h2>
                 <div id="main-content" class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="row">
-                            @foreach ($video as $item)
-                            <div class="col-md-4">
-                                <iframe style="width: 100%;" height="250" src="https://www.youtube.com/embed/{{$item->link_youtube}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <h6>{{$item->title}}</h6>
-                            </div>
-                            
-                            @endforeach
-                            
+                    @foreach ($news as $item)
+                    <a href="">
+                        <div class="col-md-8">
+                            <div class="card" style="width: 18rem;">
+                                <img src="/upload/images/news/thumb/{{ $item->photo }}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                              </div>
                         </div>
-                        {{$video->links()}}
-                    </div>
+                    </a>
+                    @endforeach
                 </div>
             </div>
         </div>

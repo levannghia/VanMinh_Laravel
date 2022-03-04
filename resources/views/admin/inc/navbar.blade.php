@@ -3,7 +3,7 @@
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
             <a class="navbar-brand brand-logo" href="index.html"><img style="height: 110px; width:158px;" src="{{asset('dashboard/images/sotagroup.png')}}"
                     alt="logo" /></a>
-            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset('dashboard/images/logo-mini.svg')}}"
+            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset('dashboard/images/sotagroup.png')}}"
                     alt="logo"></a>
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                 <span class="mdi mdi-menu"></span>
