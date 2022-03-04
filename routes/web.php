@@ -50,6 +50,7 @@ Route::get("/tin-tuc/{slug}", [NewsSiteController::class, "getNewsBySlug"])->nam
 Route::get("/tin-tuc", [NewsSiteController::class, "getAllNews"])->name('get.news');
 //page
 Route::get("/lien-he", [PageSiteController::class, "getPageLienHe"])->name('get.page.lien.he');
+Route::post("/post-lien-he", [PageSiteController::class, "postLienHe"])->name('post.page.lien.he');
 Route::get("/gioi-thieu", [PageSiteController::class, "getPageGioiThieu"])->name('get.page.gioi.thieu');
 //video
 Route::get("/video", [VideoSiteController::class, "getAllVideo"])->name('get.video');
