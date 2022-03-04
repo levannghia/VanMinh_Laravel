@@ -55,6 +55,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="{{ asset('site/css/style.css?v-'.time()) }}">
     <title>@yield('SEO_title')</title>
     {!! $settings['ANALYTICS'] !!}

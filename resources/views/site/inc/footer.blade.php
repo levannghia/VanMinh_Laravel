@@ -15,6 +15,30 @@
     </div>
 </div>
 <footer>
+    <a class="btn-effect btn-contact-block" href="tel:">
+        <div class="child-nth-1 animate__animated animate__zoomIn"></div>
+        <div class="child-nth-2 animate__animated animate__pulse"></div>
+        <p class="btn-img">
+            <img src="{{asset('site/images/hl.png')}}" alt="">
+        </p>
+    </a>
+    <a class="btn-effect btn-contact-block">
+        <div class="child-nth-1 animate__animated animate__zoomIn"></div>
+        <div class="child-nth-2 animate__animated animate__pulse"></div>
+        <p class="btn-img">
+            <img src="{{asset('site/images/zl.png')}}" alt="">
+        </p>
+    </a>
+    <!-- <a href="" class="call">
+        <p>asdsdaadadad</p>
+        <a class="btn-effect btn-contact-block" href="tel:">
+            <div class="child-nth-1 animate__animated animate__zoomIn"></div>
+            <div class="child-nth-2 animate__animated animate__pulse"></div>
+            <p class="btn-img">
+                <img src="{{asset('site/images/hl.png')}}" alt="">
+            </p>
+        </a>
+    </a> -->
     <div class="container">
         <div class="row">
             <div class="col-md-4 footer-item">
@@ -72,7 +96,8 @@
                 </div>
             </div>
         </div>
-        <p class="Copyright" style="color: white;">Copyright &copy; 2022 Thiết Bị Văn Minh. All rights reserved. Design by SotaGroup
+        <p class="Copyright" style="color: white;">Copyright &copy; 2022 Thiết Bị Văn Minh. All rights reserved. Design
+            by SotaGroup
             Co.,Ltd</p>
     </div>
 </footer>

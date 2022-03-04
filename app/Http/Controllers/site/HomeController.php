@@ -79,13 +79,19 @@ class HomeController extends Controller
                 $p = '<p class="product-price">Giá: <a href="" class="contact-product">'.number_format($item->price, 0, ',', '.').' đ</a> </p>';
             }
             $output .= '
-            <div class="col-2dot4">
-            <img src="/upload/images/product/thumb/'.$item->photo.'" alt="" width="200px">
-            <h6 class="product-name">'.$item->name.'</h6>
-            <div class="price-view">
-                '.$p.'
-                <p class="product-view">Lượt xem: '.$item->view.'</p>
-            </div>
+            <div class="col-md-3 col-6 img-flu">
+                <div class="border-col">
+                <div class="detail-product-link">
+                    <a href=""><img src="/upload/images/product/thumb/'.$item->photo.'" alt="">
+                    </a>
+                    </div>
+                    <a href=""><h6 class="product-name">'.$item->name.'</h6></a>
+                    
+                    <div class="price-view">
+                        '.$p.'
+                        <p class="product-views">Lượt xem: '.$item->view.'</p>
+                    </div>
+                </div>
         </div>';
         }
         $output .= "</div>";
