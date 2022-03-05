@@ -31,7 +31,7 @@
                                                     <th><input type="checkbox" name="check[]" value="{{ $item->id }}" />
                                                     </th>
                                                     <td>{{ $item->stt }}</td>
-                                                    <td><img src="/upload/images/standard/thumb/{{ $item->photo }}"
+                                                    <td><img src="{{asset('public/upload/images/standard/thumb/'.$item->photo)}}"
                                                             class="img-fluid" alt=""></td>
                                                     <td><a href="{{ route('admin.standard.edit', $item->id) }}" title="Chỉnh sửa { $item->title }}">{{ $item->title }}</a></td>
                                                     <td>{{ $item->description }}</td>

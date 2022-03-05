@@ -38,9 +38,9 @@
                                                     <td>
                                                         <a href="{{route('admin.photo.edit',$item->id)}}" title="Chỉnh sửa">
                                                             @if ($item->type == "social-top" || $item->type == "social-footer")
-                                                            <img src="/upload/images/photo/thumb/{{ $item->photo }}" class="" alt=""> 
+                                                            <img src="{{asset('public/upload/images/photo/thumb/'.$item->photo)}}" class="" alt=""> 
                                                             @else
-                                                            <img src="/upload/images/photo/thumb/{{ $item->photo }}"
+                                                            <img src="{{asset('public/upload/images/photo/thumb/'.$item->photo)}}"
                                                             class="" style="height: 70px !important; width: 150px !important; border-radius: unset !important;" alt="">
                                                             @endif
                                                         </a>

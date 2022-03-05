@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Config;
 use App\Models\SeoPage;
 use App\Models\Products;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Cart;
 
@@ -44,21 +45,26 @@ class CartController extends Controller
     {
         //$id = $request->product_id;
         //$product_detail = Products::where('id', $id)->first();
+        $validator = Validator::make($request->all(), [
+            'qty' => 'numeric',
+
+        ], [
+            "qty.numeric" => "Vui lòng nhập số"
+        ]);
+
         $rowId = $request->rowId;
         $qty = $request->qty;
 
-        if(Cart::update($rowId, $qty)){
-            return response()->json([
-                'status' => 1,
-                'msg' => 'update successfully'
-            ]);
-        }else{
-            return response()->json([
-                'status' => 0,
-                'msg' => 'update failed'
-            ]);
+        if (!$validator->passes()) {
+            return response()->json(['status' => 0, 'error' => $validator->errors()->toArray()]);
+        } else {
+            if (Cart::update($rowId, $qty)) {
+                return response()->json([
+                    'status' => 1,
+                    'msg' => 'update successfully'
+                ]);
+            }
         }
-        
     }
 
     public function getCart()
@@ -73,6 +79,6 @@ class CartController extends Controller
         $image = json_decode(
             $seoPage->options
         );
-        return view('site.cart.cart',compact('seoPage','image','settings'));
+        return view('site.cart.cart', compact('seoPage', 'image', 'settings'));
     }
 }

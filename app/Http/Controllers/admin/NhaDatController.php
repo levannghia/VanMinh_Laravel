@@ -106,7 +106,7 @@ class NhaDatController extends Controller
                 $image_resize = Image::make($file->getRealPath());
                 $thumb_size = json_decode($settings["THUMB_SIZE_NHA_DAT"]);
                 $image_resize->fit($thumb_size->width,$thumb_size->height);
-                $image_resize->save('upload/images/nhaDat/thumb/' . $file_name);
+                $image_resize->save('public/upload/images/nhaDat/thumb/' . $file_name);
             }
             // close upload image
             // $file->move("upload/images/product/large/", $file_name);
@@ -203,7 +203,7 @@ class NhaDatController extends Controller
         
         if ($request->hasFile('photo')) {
             $file = $request->photo;
-            $pathDel = 'upload/images/nhaDat/thumb/'.$nhaDat->photo;
+            $pathDel = 'public/upload/images/nhaDat/thumb/'.$nhaDat->photo;
     
             if(file_exists($pathDel)){
                 unlink($pathDel);
@@ -217,7 +217,7 @@ class NhaDatController extends Controller
                 $thumb_size = json_decode($settings["THUMB_SIZE_NHA_DAT"]);
                 $image_resize->fit($thumb_size->width,$thumb_size->height);
 
-                $image_resize->save('upload/images/nhaDat/thumb/' . $file_name);
+                $image_resize->save('public/upload/images/nhaDat/thumb/' . $file_name);
             }
 
             // $file->move("public/upload/images/admins/large", $file_name);
@@ -239,7 +239,7 @@ class NhaDatController extends Controller
     public function destroy($id)
     {
         $product = Products::find($id);
-        $pathDel = 'upload/images/nhaDat/thumb/'.$product->photo;
+        $pathDel = 'public/upload/images/nhaDat/thumb/'.$product->photo;
         
         if($product->delete()){
             if(file_exists($pathDel)){
@@ -301,7 +301,7 @@ class NhaDatController extends Controller
         if (count($list_id) == 1 && isset($list_id[0]->id)) {
             $product = Products::find($list_id[0]->id);
             if ($product->delete()) {
-                $pathDel = 'upload/images/nhaDat/thumb/'.$product->photo;
+                $pathDel = 'public/upload/images/nhaDat/thumb/'.$product->photo;
                 if(file_exists($pathDel)){
                     unlink($pathDel);
                 }
@@ -313,7 +313,7 @@ class NhaDatController extends Controller
             foreach ($list_id as $key => $value) {
                 $product = Products::find($value->id);
                 $product->delete();
-                $pathDel = 'upload/images/nhaDat/thumb/'.$product->photo;
+                $pathDel = 'public/upload/images/nhaDat/thumb/'.$product->photo;
                 if(file_exists($pathDel)){
                     unlink($pathDel);
                 }

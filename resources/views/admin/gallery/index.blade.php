@@ -32,7 +32,7 @@
                                                     </th>
                                                     <td>{{ $item->stt }}</td>
 
-                                                    <td><a href="{{route('admin.gallery.edit', $item->id)}}" title="Chỉnh sửa hình ảnh"><img style="height: 70px !important; width: 150px !important; border-radius: unset !important;" src="/upload/images/gallery/thumb/{{ $item->photo }}"
+                                                    <td><a href="{{route('admin.gallery.edit', $item->id)}}" title="Chỉnh sửa hình ảnh"><img style="height: 70px !important; width: 150px !important; border-radius: unset !important;" src="{{asset('public/upload/images/gallery/thumb/'.$item->photo)}}"
                                                             class="img-fluid" alt=""></a></td>
 
                                                     <td>{{ $item->created_at->diffForHumans() }}</td>

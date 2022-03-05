@@ -1,5 +1,5 @@
 header {
-    background-image: url(/site/images/top-bg.png);
+    background-image: url(/public/site/images/top-bg.png);
     background-repeat: no-repeat;
 }
 
@@ -202,7 +202,7 @@ header {
     display: block;
     width: 125px;
     padding-left: 35px;
-    background: url(/site/images/phone.png) no-repeat left center;
+    background: url(/public/site/images/phone.png) no-repeat left center;
     color: #333;
     font-size: 20px;
     line-height: 18px;
@@ -666,16 +666,18 @@ a:hover {
     margin-bottom: 20px;
     text-align: center;
 }
-.bg-contact{
+
+.bg-contact {
     margin: 0!important;
 }
+
 .container {
     max-width: 1250px;
     padding-right: 15px !important;
     padding-left: 15px !important;
 }
+
 @media (min-width: 1200px) {
-    
     .row-right .carousel-item img {
         height: 400px;
     }
@@ -696,7 +698,7 @@ a:hover {
 
 .banner-criteria {
     margin-top: 60px;
-    background-image: url(/site/images/bg.png);
+    background-image: url(/public/site/images/bg.png);
     background-repeat: no-repeat;
     width: 100%;
     position: relative;
@@ -729,7 +731,7 @@ a:hover {
     left: 40%;
     z-index: 1;
     background-repeat: no-repeat;
-    background-image: url(/site/images/video-icon.png);
+    background-image: url(/public/site/images/video-icon.png);
 }
 
 .video-clip-blocks img {
@@ -867,9 +869,11 @@ blockquote .name-customer:before {
 .color-p p {
     color: white;
 }
-.color-p{
+
+.color-p {
     justify-content: center;
 }
+
 .link-contact {
     padding: 5px 10px;
     background: red;
@@ -933,7 +937,7 @@ blockquote .name-customer:before {
 
 footer {
     padding: 30px 0;
-    background-image: url(/site/images/bg-footer.png);
+    background-image: url(/public/site/images/bg-footer.png);
 }
 
 .footer-item a,

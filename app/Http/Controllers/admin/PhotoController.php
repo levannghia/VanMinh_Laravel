@@ -53,7 +53,7 @@ class PhotoController extends Controller
         $data = Photo::find($id);
         if ($request->hasFile('photo')) {
             $file = $request->photo;
-            $pathDel = 'upload/images/photo/thumb/'.$data->photo;
+            $pathDel = 'public/upload/images/photo/thumb/'.$data->photo;
     
             if(file_exists($pathDel)){
                 unlink($pathDel);
@@ -69,7 +69,7 @@ class PhotoController extends Controller
                 $thumb_size = json_decode($settings["THUMB_SIZE_LOGO"]);  
                 $image_resize->fit($thumb_size->width,$thumb_size->height);
 
-                $image_resize->save('upload/images/photo/thumb/' . $file_name);
+                $image_resize->save('public/upload/images/photo/thumb/' . $file_name);
             }
 
             // $file->move("public/upload/images/admins/large", $file_name);
@@ -144,7 +144,7 @@ class PhotoController extends Controller
                 $image_resize = Image::make($file->getRealPath());
                 
                 $image_resize->fit($thumb_size->width,$thumb_size->height);
-                $image_resize->save('upload/images/photo/thumb/' . $file_name); 
+                $image_resize->save('public/upload/images/photo/thumb/' . $file_name); 
             }
             $data->photo = $file_name;
     
@@ -203,7 +203,7 @@ class PhotoController extends Controller
         }
         if ($request->hasFile('photo')) {
             $file = $request->photo;
-            $pathDel = 'upload/images/photo/thumb/'.$data->photo;
+            $pathDel = 'public/upload/images/photo/thumb/'.$data->photo;
     
             if(file_exists($pathDel)){
                 unlink($pathDel);
@@ -216,7 +216,7 @@ class PhotoController extends Controller
                 $image_resize = Image::make($file->getRealPath());
                 $image_resize->fit($thumb_size->width,$thumb_size->height);
 
-                $image_resize->save('upload/images/photo/thumb/' . $file_name);
+                $image_resize->save('public/upload/images/photo/thumb/' . $file_name);
             }
 
             // $file->move("public/upload/images/admins/large", $file_name);
@@ -232,7 +232,7 @@ class PhotoController extends Controller
     public function destroy($id)
     {
         $data = Photo::find($id);
-        $pathDel = 'upload/images/photo/thumb/'.$data->photo;
+        $pathDel = 'public/upload/images/photo/thumb/'.$data->photo;
         
         if($data->delete()){
             if(file_exists($pathDel)){
@@ -277,7 +277,7 @@ class PhotoController extends Controller
         if (count($list_id) == 1 && isset($list_id[0]->id)) {
             $photo = Photo::find($list_id[0]->id);
             if ($photo->delete()) {
-                $pathDel = 'upload/images/photo/thumb/'.$photo->photo;
+                $pathDel = 'public/upload/images/photo/thumb/'.$photo->photo;
                 if(file_exists($pathDel)){
                     unlink($pathDel);
                 }
@@ -289,7 +289,7 @@ class PhotoController extends Controller
             foreach ($list_id as $key => $value) {
                 $photo = Photo::find($value->id);  
                 $photo->delete();
-                $pathDel = 'upload/images/photo/thumb/'.$photo->photo;
+                $pathDel = 'public/upload/images/photo/thumb/'.$photo->photo;
                 if(file_exists($pathDel)){
                     unlink($pathDel);
                 }

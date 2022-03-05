@@ -79,8 +79,8 @@
             }
         }
         CKEDITOR.replace('content', {
-            filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
-            filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+            filebrowserBrowseUrl: '/public/ckfinder/ckfinder.html',
+            filebrowserUploadUrl: '/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
             filebrowserWindowWidth: '1000',
             filebrowserWindowHeight: '700'
         });

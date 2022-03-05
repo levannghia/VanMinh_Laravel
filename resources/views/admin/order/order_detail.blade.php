@@ -100,7 +100,7 @@
                                                                     value="{{ $item->id }}" />
                                                             </th>
                                                             <td>{{ $i++ }}</td>
-                                                            <td><img src="/upload/images/product/thumb/{{ $item->photo }}"
+                                                            <td><img src="{{asset('public/upload/images/product/thumb/'.$item->photo )}}"
                                                                     class="img-fluid" alt=""></td>
                                                             <td><a href="{{ route('admin.product.edit', $item->id) }}"
                                                                     title="Chỉnh sửa {{ $item->name }}">{{ $item->name }}</a>

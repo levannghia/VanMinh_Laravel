@@ -17,7 +17,7 @@
             <div class="carousel-inner">
                 @foreach ($slider as $key => $item)
                 <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
-                    <img src="/upload/images/photo/thumb/{{ $item->photo }}" class="d-block w-100" alt="...">
+                    <img src="public/upload/images/photo/thumb/{{ $item->photo }}" class="d-block w-100" alt="...">
                 </div>
                 @endforeach
             </div>

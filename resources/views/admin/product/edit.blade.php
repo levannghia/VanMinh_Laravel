@@ -72,7 +72,7 @@
                                     </p>
                                 </span>
                                 <input type="file" class="form-control" id="formFile" name="photo">
-                                <img src="/upload/images/product/thumb/{{ $product->photo }}"
+                                <img src="{{asset('public/upload/images/product/thumb/'.$product->photo)}}"
                                     class="form-control img-fluid" id="previewImage" class="" alt="">
                             </div>
                         </div>
@@ -87,8 +87,8 @@
 @push('script')
     <script>
         CKEDITOR.replace('description', {
-            filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
-            filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+            filebrowserBrowseUrl: '/public/ckfinder/ckfinder.html',
+            filebrowserUploadUrl: '/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
             filebrowserWindowWidth: '1000',
             filebrowserWindowHeight: '700'
         })

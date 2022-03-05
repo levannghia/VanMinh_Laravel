@@ -8,10 +8,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin - @yield('title')</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="{{ asset('dashboard/vendors/iconfonts/mdi/font/css/materialdesignicons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('dashboard/vendors/css/vendor.bundle.base.css') }}">
-    <link rel="stylesheet" href="{{ asset('dashboard/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('dashboard/vendors/iconfonts/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/dashboard/vendors/iconfonts/mdi/font/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/dashboard/vendors/css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/dashboard/vendors/css/vendor.bundle.addons.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/dashboard/vendors/iconfonts/font-awesome/css/font-awesome.min.css') }}">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -27,9 +27,9 @@
 
         gtag('config', 'G-J1094H4R78');
     </script> --}}
-    <link rel="stylesheet" href="{{ asset('dashboard/css/vertical-layout-light/style.css?v='.time()) }}">
+    <link rel="stylesheet" href="{{ asset('public/dashboard/css/vertical-layout-light/style.css?v='.time()) }}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{asset('dashboard/images/sotagroup.png')}}" />
+    <link rel="shortcut icon" href="{{asset('public/dashboard/images/sotagroup.png')}}" />
 </head>
 
 <body class="sidebar-light">
@@ -60,29 +60,29 @@
     <!-- plugins:js -->
     <script src="https://cdn.ckeditor.com/4.17.2/full/ckeditor.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="{{ asset('dashboard/js/ckfinder.js') }}"></script>
-    <script src="{{ asset('dashboard/vendors/js/vendor.bundle.base.js') }}"></script>
-    <script src="{{ asset('dashboard/vendors/js/vendor.bundle.addons.js') }}"></script>
+    <script src="{{ asset('public/dashboard/js/ckfinder.js') }}"></script>
+    <script src="{{ asset('public/dashboard/vendors/js/vendor.bundle.base.js') }}"></script>
+    <script src="{{ asset('public/dashboard/vendors/js/vendor.bundle.addons.js') }}"></script>
     <!-- endinject -->
     <!-- Plugin js for this page-->
     <!-- End plugin js for this page-->
     <!-- inject:js -->
-    <script src="{{ asset('dashboard/js/off-canvas.js?v=' . time()) }}"></script>
-    <script src="{{ asset('dashboard/js/hoverable-collapse.js') }}"></script>
-    <script src="{{ asset('dashboard/js/template.js?v=' . time()) }}"></script>
-    <script src="{{ asset('dashboard/js/settings.js') }}"></script>
-    <script src="{{ asset('dashboard/js/todolist.js') }}"></script>
+    <script src="{{ asset('public/dashboard/js/off-canvas.js?v=' . time()) }}"></script>
+    <script src="{{ asset('public/dashboard/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('public/dashboard/js/template.js?v=' . time()) }}"></script>
+    <script src="{{ asset('public/dashboard/js/settings.js') }}"></script>
+    <script src="{{ asset('public/dashboard/js/todolist.js') }}"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
-    <script src="{{ asset('dashboard/js/dashboard.js') }}"></script>
-    <script src="{{ asset('dashboard/js/form-validation.js?v=' . time()) }}"></script>
-    <script src="{{ asset('dashboard/js/bt-maxLength.js') }}"></script>
+    <script src="{{ asset('public/dashboard/js/dashboard.js') }}"></script>
+    <script src="{{ asset('public/dashboard/js/form-validation.js?v=' . time()) }}"></script>
+    <script src="{{ asset('public/dashboard/js/bt-maxLength.js') }}"></script>
 
     <!-- Custom js for this page-->
-    <script src="{{ asset('dashboard/js/file-upload.js') }}"></script>
-    <script src="{{ asset('dashboard/js/iCheck.js') }}"></script>
-    <script src="{{ asset('dashboard/js/typeahead.js') }}"></script>
-    <script src="{{ asset('dashboard/js/select2.js') }}"></script>
+    <script src="{{ asset('public/dashboard/js/file-upload.js') }}"></script>
+    <script src="{{ asset('public/dashboard/js/iCheck.js') }}"></script>
+    <script src="{{ asset('public/dashboard/js/typeahead.js') }}"></script>
+    <script src="{{ asset('public/dashboard/js/select2.js') }}"></script>
     <!-- End custom js for this page-->
     {{-- charjs --}}
     {{-- <script src="{{ asset('dashboard/js/chart.js?v='.time()) }}"></script> --}}

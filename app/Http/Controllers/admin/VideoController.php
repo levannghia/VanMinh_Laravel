@@ -83,7 +83,7 @@ class VideoController extends Controller
                 $image_resize = Image::make($file->getRealPath());
                 $thumb_size = json_decode($settings["THUMB_SIZE_VIDEO"]);
                 $image_resize->fit($thumb_size->width,$thumb_size->height);
-                $image_resize->save('upload/images/video/thumb/' . $file_name);
+                $image_resize->save('public/upload/images/video/thumb/' . $file_name);
             }
             $video->photo = $file_name;
     
@@ -163,7 +163,7 @@ class VideoController extends Controller
         
         if ($request->hasFile('photo')) {
             $file = $request->photo;
-            $pathDel = 'upload/images/video/thumb/'.$video->photo;
+            $pathDel = 'public/upload/images/video/thumb/'.$video->photo;
     
             if(file_exists($pathDel)){
                 unlink($pathDel);
@@ -177,7 +177,7 @@ class VideoController extends Controller
                 $thumb_size = json_decode($settings["THUMB_SIZE_NEWS"]);
                 $image_resize->fit($thumb_size->width,$thumb_size->height);
 
-                $image_resize->save('upload/images/video/thumb/' . $file_name);
+                $image_resize->save('public/upload/images/video/thumb/' . $file_name);
             }
 
             // $file->move("public/upload/images/admins/large", $file_name);
@@ -199,7 +199,7 @@ class VideoController extends Controller
     public function destroy($id)
     {
         $data = Video::find($id);
-        $pathDel = 'upload/images/video/thumb/'.$data->photo;
+        $pathDel = 'public/upload/images/video/thumb/'.$data->photo;
         
         if($data->delete()){
             if(file_exists($pathDel)){
@@ -261,7 +261,7 @@ class VideoController extends Controller
         if (count($list_id) == 1 && isset($list_id[0]->id)) {
             $video = Video::find($list_id[0]->id);
             if ($video->delete()) {
-                $pathDel = 'upload/images/video/thumb/'.$video->photo;
+                $pathDel = 'public/upload/images/video/thumb/'.$video->photo;
                 if(file_exists($pathDel)){
                     unlink($pathDel);
                 }
@@ -273,7 +273,7 @@ class VideoController extends Controller
             foreach ($list_id as $key => $value) {
                 $video = Video::find($value->id);
                 $video->delete();
-                $pathDel = 'upload/images/video/thumb/'.$video->photo;
+                $pathDel = 'public/upload/images/video/thumb/'.$video->photo;
                 if(file_exists($pathDel)){
                     unlink($pathDel);
                 }

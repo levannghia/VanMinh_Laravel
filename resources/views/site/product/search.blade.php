@@ -1,6 +1,6 @@
 @php
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443 ? 'https://' : 'http://';
-$urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/upload/images/seoPage/thumb/' . $seoPage->photo;
+$urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/seoPage/thumb/' . $seoPage->photo;
 @endphp
 @extends('site.layout')
 @section('SEO_title', $seoPage->title)
@@ -20,7 +20,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/upload/images/seoPage/thumb/' 
 
             <!-- content -->
             <h1 class="product-new">KẾT QUẢ TÌM KIẾM: {{ $search }}</h1>
-            <p style="text-align: center; margin-top: 0;"><img src="{{ asset('site/images/border-xoan.jpg') }}" alt="">
+            <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}" alt="">
             </p>
             <div class="row">
                 @if (count($data) > 0)
@@ -29,7 +29,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/upload/images/seoPage/thumb/' 
                             <div class="border-col">
                                 <div class="detail-product-link">
                                     <a href="{{ route('get.product.slug', $item->slug) }}"><img
-                                            src="/upload/images/product/thumb/{{ $item->photo }}" alt=""
+                                            src="public/upload/images/product/thumb/{{ $item->photo }}" alt=""
                                             width="200px"></a>
                                 </div>
                                 <a href="{{ route('get.product.slug', $item->slug) }}">

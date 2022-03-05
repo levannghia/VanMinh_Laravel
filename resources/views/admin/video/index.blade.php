@@ -34,7 +34,7 @@
                                                 <th><input type="checkbox" name="check[]" value="{{ $item->id }}" />
                                                 </th>
                                                 <td>{{ $i++ }}</td>
-                                                <td><img src="/upload/images/video/thumb/{{ $item->photo }}"
+                                                <td><img src="{{asset('public/upload/images/video/thumb/'.$item->photo)}}"
                                                         class="img-fluid" alt=""></td>
                                                 <td><a href="{{ route('admin.video.edit', $item->id) }}" title="Chỉnh sửa {{ $item->title }}">{{ $item->title }}</a></td>
                                                 <td>{{ $item->created_at->diffForHumans() }}</td>

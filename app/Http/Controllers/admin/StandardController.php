@@ -86,7 +86,7 @@ class StandardController extends Controller
                 $image_resize = Image::make($file->getRealPath());
                 $thumb_size = json_decode($settings["THUMB_SIZE_STANDARD"]);
                 $image_resize->fit($thumb_size->width,$thumb_size->height);
-                $image_resize->save('upload/images/standard/thumb/' . $file_name);
+                $image_resize->save('public/upload/images/standard/thumb/' . $file_name);
             }
             $standard->photo = $file_name;
     
@@ -168,7 +168,7 @@ class StandardController extends Controller
         
         if ($request->hasFile('photo')) {
             $file = $request->photo;
-            $pathDel = 'upload/images/standard/thumb/'.$standard->photo;
+            $pathDel = 'public/upload/images/standard/thumb/'.$standard->photo;
     
             if(file_exists($pathDel)){
                 unlink($pathDel);
@@ -182,7 +182,7 @@ class StandardController extends Controller
                 $thumb_size = json_decode($settings["THUMB_SIZE_STANDARD"]);
                 $image_resize->fit($thumb_size->width,$thumb_size->height);
 
-                $image_resize->save('upload/images/standard/thumb/' . $file_name);
+                $image_resize->save('public/upload/images/standard/thumb/' . $file_name);
             }
 
             // $file->move("public/upload/images/admins/large", $file_name);
@@ -204,7 +204,7 @@ class StandardController extends Controller
     public function destroy($id)
     {
         $data = Standard::find($id);
-        $pathDel = 'upload/images/standard/thumb/'.$data->photo;
+        $pathDel = 'public/upload/images/standard/thumb/'.$data->photo;
         
         if($data->delete()){
             if(file_exists($pathDel)){
@@ -249,7 +249,7 @@ class StandardController extends Controller
         if (count($list_id) == 1 && isset($list_id[0]->id)) {
             $standard = Standard::find($list_id[0]->id);
             if ($standard->delete()) {
-                $pathDel = 'upload/images/standard/thumb/'.$standard->photo;
+                $pathDel = 'public/upload/images/standard/thumb/'.$standard->photo;
                 if(file_exists($pathDel)){
                     unlink($pathDel);
                 }
@@ -261,7 +261,7 @@ class StandardController extends Controller
             foreach ($list_id as $key => $value) {
                 $standard = Standard::find($value->id);
                 $standard->delete();
-                $pathDel = 'upload/images/standard/thumb/'.$standard->photo;
+                $pathDel = 'public/upload/images/standard/thumb/'.$standard->photo;
                 if(file_exists($pathDel)){
                     unlink($pathDel);
                 }

@@ -1,6 +1,6 @@
 @php
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-$urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/seoPage/thumb/'.$seoPage->photo;
+$urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/seoPage/thumb/'.$seoPage->photo;
 @endphp
 @extends('site.layout')
 @section('SEO_title', $seoPage->title)
@@ -20,13 +20,13 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/seoPage/thumb/'.$
           
             <!-- content -->
             <h1 class="product-new">MUA BÁN NHÀ ĐẤT</h1>
-            <p style="text-align: center; margin-top: 0;"><img src="{{ asset('site/images/border-xoan.jpg') }}" alt="">
+            <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}" alt="">
             </p>
             <div class="row">
                 @foreach ($nhaDat as $item)
     <div class="col-md-3 real-estate">
         <div class="cover">
-            <a href="/mua-ban-nha-dat/{{$item->slug}}"><img src="/upload/images/nhaDat/thumb/{{ $item->photo }}" alt="" class="img-padding"></a>
+            <a href="/mua-ban-nha-dat/{{$item->slug}}"><img src="public/upload/images/nhaDat/thumb/{{ $item->photo }}" alt="" class="img-padding"></a>
             <div class="cover-bottom">
                 <a href="/mua-ban-nha-dat/{{$item->slug}}"><h6>{{ $item->name }}</h6></a>
                 <div class="info">

@@ -11,7 +11,7 @@ $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERV
 $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $mxh_top = DB::table('photos')->where('status',1)->where('type','social-top')->orderBy('stt','ASC')->get();
 @endphp
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -22,7 +22,7 @@ $mxh_top = DB::table('photos')->where('status',1)->where('type','social-top')->o
     <meta name="description" content="@yield('SEO_description')" />
     <meta name="theme-color" content="#1E88EC" />
     <meta name="robots" content="index,follow" />
-    <link href="/upload/images/photo/thumb/{{$favicon->photo}}" rel="shortcut icon" type="image/x-icon" />
+    <link href="{{asset('public/upload/images/photo/thumb/'.$favicon->photo)}}" rel="shortcut icon" type="image/x-icon" />
     <meta name="google-site-verification" content="Rtlj-iT3T9o_064yPWlrvfl93FnpLG1uR6oEZFMl_KI" />
     <meta name="geo.region" content="VN" />
     <meta name="geo.placename" content="" />
@@ -56,9 +56,9 @@ $mxh_top = DB::table('photos')->where('status',1)->where('type','social-top')->o
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css">
-    <link rel="stylesheet" href="{{ asset('site/css/contact.css?v-'.time()) }}">
-    <link rel="stylesheet" href="{{ asset('site/css/style.css?v-'.time()) }}">
-    <link rel="stylesheet" href="{{ asset('site/css/cart.css?v-'.time()) }}">
+    <link rel="stylesheet" href="{{ asset('public/site/css/contact.css?v-'.time()) }}">
+    <link rel="stylesheet" href="{{ asset('public/site/css/style.css?v-'.time()) }}">
+    <link rel="stylesheet" href="{{ asset('public/site/css/cart.css?v-'.time()) }}">
     <title>@yield('SEO_title')</title>
     {!! $settings['ANALYTICS'] !!}
     {!! $settings['WEB_MASTER_TOOL'] !!}

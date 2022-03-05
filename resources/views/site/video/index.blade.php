@@ -1,6 +1,6 @@
 @php
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-$urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/seoPage/thumb/'.$seoPage->photo;
+$urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/seoPage/thumb/'.$seoPage->photo;
 @endphp
 @extends('site.layout')
 @section('PHOTO', $urlPhoto)
@@ -17,7 +17,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/seoPage/thumb/'.$
         <div class="container">
             <div class="main-content-wrapper">
                 <h1 class="product-new">VIDEO</h1>
-                <p style="text-align: center; margin-top: 0;"><img src="{{ asset('site/images/border-xoan.jpg') }}" alt="">
+                <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}" alt="">
                 <div id="main-content" class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="row">

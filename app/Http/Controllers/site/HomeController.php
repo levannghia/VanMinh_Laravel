@@ -89,7 +89,7 @@ class HomeController extends Controller
             <div class="col-md-3 col-6 img-flu">
                 <div class="border-col">
                 <div class="detail-product-link">
-                    <a href="/san-pham/'.$item->slug.'"><img src="/upload/images/product/thumb/'.$item->photo.'" alt="">
+                    <a href="/san-pham/'.$item->slug.'"><img src="public/upload/images/product/thumb/'.$item->photo.'" alt="">
                     </a>
                     </div>
                     <a href="/san-pham/'.$item->slug.'"><h6 class="product-name">'.$item->name.'</h6></a>

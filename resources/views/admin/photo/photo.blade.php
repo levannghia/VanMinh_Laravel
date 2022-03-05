@@ -30,7 +30,7 @@
                                     name="photo">
                             </div>
                             <div class="form-group">
-                                <img src="/upload/images/photo/thumb/{{$data->photo}}" id="previewImage" style="width: 120px !important;" class="form-control img-fluid" alt="">
+                                <img src="{{asset('public/upload/images/photo/thumb/'.$data->photo)}}" id="previewImage" style="width: 120px !important;" class="form-control img-fluid" alt="">
                             </div>
                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
                         </form>

@@ -91,7 +91,7 @@ class NewsController extends Controller
                 $image_resize = Image::make($file->getRealPath());
                 $thumb_size = json_decode($settings["THUMB_SIZE_NEWS"]);
                 $image_resize->fit($thumb_size->width,$thumb_size->height);
-                $image_resize->save('upload/images/news/thumb/' . $file_name);
+                $image_resize->save('public/upload/images/news/thumb/' . $file_name);
             }
             $news->photo = $file_name;
     
@@ -177,7 +177,7 @@ class NewsController extends Controller
         
         if ($request->hasFile('photo')) {
             $file = $request->photo;
-            $pathDel = 'upload/images/news/thumb/'.$news->photo;
+            $pathDel = 'public/upload/images/news/thumb/'.$news->photo;
     
             if(file_exists($pathDel)){
                 unlink($pathDel);
@@ -191,7 +191,7 @@ class NewsController extends Controller
                 $thumb_size = json_decode($settings["THUMB_SIZE_NEWS"]);
                 $image_resize->fit($thumb_size->width,$thumb_size->height);
 
-                $image_resize->save('upload/images/news/thumb/' . $file_name);
+                $image_resize->save('public/upload/images/news/thumb/' . $file_name);
             }
 
             // $file->move("public/upload/images/admins/large", $file_name);
@@ -213,7 +213,7 @@ class NewsController extends Controller
     public function destroy($id)
     {
         $data = News::find($id);
-        $pathDel = 'upload/images/news/thumb/'.$data->photo;
+        $pathDel = 'public/upload/images/news/thumb/'.$data->photo;
         
         if($data->delete()){
             if(file_exists($pathDel)){
@@ -275,7 +275,7 @@ class NewsController extends Controller
         if (count($list_id) == 1 && isset($list_id[0]->id)) {
             $news = News::find($list_id[0]->id);
             if ($news->delete()) {
-                $pathDel = 'upload/images/news/thumb/'.$news->photo;
+                $pathDel = 'public/upload/images/news/thumb/'.$news->photo;
                 if(file_exists($pathDel)){
                     unlink($pathDel);
                 }
@@ -287,7 +287,7 @@ class NewsController extends Controller
             foreach ($list_id as $key => $value) {
                 $news = News::find($value->id);
                 $news->delete();
-                $pathDel = 'upload/images/news/thumb/'.$news->photo;
+                $pathDel = 'public/upload/images/news/thumb/'.$news->photo;
                 if(file_exists($pathDel)){
                     unlink($pathDel);
                 }

@@ -1,9 +1,9 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-            <a class="navbar-brand brand-logo" href="index.html"><img style="height: 110px; width:158px;" src="{{asset('dashboard/images/sotagroup.png')}}"
+            <a class="navbar-brand brand-logo" href="index.html"><img style="height: 110px; width:158px;" src="{{asset('public/dashboard/images/sotagroup.png')}}"
                     alt="logo" /></a>
-            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset('dashboard/images/sotagroup.png')}}"
+            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset('public/dashboard/images/sotagroup.png')}}"
                     alt="logo"></a>
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                 <span class="mdi mdi-menu"></span>
@@ -129,7 +129,7 @@
             </li>
             <li class="nav-item nav-profile dropdown mr-0 mr-sm-3">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                    <img src="{{asset('dashboard/images/faces/face28.jpg')}}" alt="profile" />
+                    <img src="{{asset('public/dashboard/images/faces/face28.jpg')}}" alt="profile" />
                     <span class="nav-profile-name mr-2">
                         @if (Auth::check())
                             {{auth()->user()->fullname}}

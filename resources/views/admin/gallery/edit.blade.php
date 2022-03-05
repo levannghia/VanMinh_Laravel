@@ -26,7 +26,7 @@
                                     name="photo">
                             </div>
                             <div class="form-group">
-                                <img src="/upload/images/gallery/thumb/{{ $gallery->photo }}" id="previewImage"
+                                <img src="{{asset('public/upload/images/gallery/thumb/'. $gallery->photo)}}" id="previewImage"
                                     class="img-fluid" alt="">
                             </div>
                             <button type="submit" class="btn btn-primary mr-2">Submit</button>

@@ -51,7 +51,7 @@
                                     </p>
                                 </span>
                                 <input type="file" class="form-control" id="formFile" name="photo">
-                                <img src="/upload/images/standard/thumb/{{ $standard->photo }}" class="form-control img-fluid"
+                                <img src="{{asset('public/upload/images/standard/thumb/'.$standard->photo)}}" class="form-control img-fluid"
                                     id="previewImage" class="" alt="">
                             </div>
                         </div>

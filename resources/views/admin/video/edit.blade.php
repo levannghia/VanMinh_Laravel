@@ -14,7 +14,7 @@
                             @include('admin.inc.error')
                             @csrf
                             <div class="form-group">
-                                <img src="/upload/images/gallery/thumb/{{ $video->photo }}" id="previewImage"
+                                <img src="{{asset('public/upload/images/gallery/thumb/'.$video->photo)}}" id="previewImage"
                                     class="img-fluid" alt="">
                             </div>
                             <div class="form-group">
@@ -56,7 +56,7 @@
                                     </p>
                                 </span>
                                 <input type="file" class="form-control" id="formFile" name="photo">
-                                <img src="/upload/images/video/thumb/{{ $video->photo }}" class="form-control img-fluid"
+                                <img src="{{asset('public/upload/images/video/thumb/'.$video->photo)}}" class="form-control img-fluid"
                                     id="previewImage" class="" alt="">
                             </div>
                         </div>
@@ -71,8 +71,8 @@
 @push('script')
     <script>
         CKEDITOR.replace('content', {
-            filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
-            filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+            filebrowserBrowseUrl: '/public/ckfinder/ckfinder.html',
+            filebrowserUploadUrl: '/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
             filebrowserWindowWidth: '1000',
             filebrowserWindowHeight: '700'
         });

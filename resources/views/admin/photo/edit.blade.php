@@ -78,7 +78,7 @@
                                 </span>
                                 <input type="file" onchange="previewFile(this);" id="formFile" class="form-control"
                                     name="photo">
-                                <img style="width: 100% !important;" src="/upload/images/photo/thumb/{{ $data->photo }}"
+                                <img style="width: 100% !important;" src="{{asset('public/upload/images/photo/thumb/'.$data->photo)}}"
                                     id="previewImage" class="form-control img-fluid" alt="">
                             </div>
                         </div>

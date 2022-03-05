@@ -51,7 +51,7 @@ class SeoPageController extends Controller
         
         if ($request->hasFile('photo')) {
             
-            $pathDel = 'upload/images/seoPage/thumb/' . $seoPage->photo;
+            $pathDel = 'public/upload/images/seoPage/thumb/' . $seoPage->photo;
 
             if (file_exists($pathDel)) {
                 unlink($pathDel);
@@ -65,7 +65,7 @@ class SeoPageController extends Controller
                 $thumb_size = json_decode($settings["THUMB_SIZE_SEO_PAGE"]);
                 $image_resize->fit($thumb_size->width, $thumb_size->height);
 
-                $image_resize->save('upload/images/seoPage/thumb/' . $file_name);
+                $image_resize->save('public/upload/images/seoPage/thumb/' . $file_name);
             }
 
             // $file->move("public/upload/images/admins/large", $file_name);

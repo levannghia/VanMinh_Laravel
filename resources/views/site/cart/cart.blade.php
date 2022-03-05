@@ -1,6 +1,6 @@
 @php
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443 ? 'https://' : 'http://';
-$urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/upload/images/seoPage/thumb/' . $seoPage->photo;
+$urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/seoPage/thumb/' . $seoPage->photo;
 @endphp
 @extends('site.layout')
 @section('PHOTO', $urlPhoto)
@@ -14,9 +14,9 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/upload/images/seoPage/thumb/' 
 @section('SEO_description', $seoPage->description)
 @section('content')
 
-    <div class="container">
+    <div class="container mb-5">
         <h1 class="product-new">GIỎ HÀNG</h1>
-        <p style="text-align: center; margin-top: 0;"><img src="{{ asset('site/images/border-xoan.jpg') }}" alt="">
+        <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}" alt="">
         <div class="row">
             <div class="col-md-7">
                 <table class="table tab-cart">
@@ -33,11 +33,12 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/upload/images/seoPage/thumb/' 
                         @foreach (Cart::content() as $item)
                             <tr>
                                 <th scope="row">
-                                    <input type="text" data-id="cart-qty-{{ $item->id }}" row-id="{{$item->rowId}}" class="text-qty"
-                                        value="{{ $item->qty }}" required>
+                                    <input type="text" id-pr="{{$item->id}}" data-id="cart-qty-{{ $item->id }}" row-id="{{ $item->rowId }}"
+                                        class="text-qty" value="{{ $item->qty }}">
+                                    <p class="error_qty_{{$item->id}} mt-1 mb-0" style="color:#EF8D21;display:none;"></p>
                                 </th>
                                 <td class="img-cart">
-                                    <img src="/upload/images/product/thumb/{{ $item->options->image }}" alt="">
+                                    <img src="public/upload/images/product/thumb/{{ $item->options->image }}" alt="">
                                 </td>
                                 <td>{{ $item->name }}</td>
                                 @if ($item->price != 0)
@@ -72,12 +73,12 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/upload/images/seoPage/thumb/' 
                     <dd>{{ Cart::subtotal() }} đ</dd>
                 </dl>
                 <div class="payment">
-                    <a href="payment/add">Add</a>
+                    <a href="payment/add">Đặt hàng</a>
                     <h4 class="headline-primary">Check out</h3>
-                        <div class="ux-card">
+                        {{-- <div class="ux-card">
                             <a href="/payment/{id}"><img src="https://img1.wsimg.com/fos/react/sprite.svg#visa" height="32"
                                     width="50" /> John Doe</a>
-                        </div>
+                        </div> --}}
                 </div>
             </div>
         </div>
@@ -89,8 +90,9 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/upload/images/seoPage/thumb/' 
             $('[data-id]').keyup(function() {
                 var qty = $(this).val();
                 var rowId = $(this).attr("row-id");
+                var id = $(this).attr("id-pr");
                 var _token = "{{ csrf_token() }}";
-                
+
                 if (qty != "") {
                     $.ajax({
                         method: "POST",
@@ -100,16 +102,24 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/upload/images/seoPage/thumb/' 
                             qty: qty,
                             _token: _token
                         },
+                        beforeSend: function() {
+                            $(".error_qty_"+id).hide();
+                        },
                         success: function(data) {
-                            swal("Sucessfuly, Thank you!", "Cập nhật giỏ hàng thành công",
-                                "success").then((value) => {
-                                if (value) {
-                                    // location.reload();
-                                }
-                                if (value == null) {
-                                    // location.reload();
-                                }
-                            });
+                            if (data.status == 1) {
+                                swal("Sucessfuly, Thank you!", "Cập nhật giỏ hàng thành công",
+                                    "success").then((value) => {
+                                    if (value) {
+                                        // location.reload();
+                                    }
+                                    if (value == null) {
+                                        // location.reload();
+                                    }
+                                });
+                            } else {
+                                data.error.qty != undefined ? $(".error_qty_"+id).html(
+                                data.error.qty).show() : "";
+                            }
                         }
                     });
                 }

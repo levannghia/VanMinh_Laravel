@@ -4,7 +4,7 @@
             @foreach ($social_footer as $item)
             <div class="col-md-4 col-10 contact-padding">
                 <div class="contact-us">
-                    <img src="/upload/images/photo/thumb/{{ $item->photo }}" alt="">
+                    <img src="public/upload/images/photo/thumb/{{ $item->photo }}" alt="">
                     <p class="name-contact">{{$item->title}}</p>
                 </div>
                 <p class="favourite">{{$item->description}}</p>
@@ -19,14 +19,14 @@
         <div class="child-nth-1 animate__animated animate__zoomIn"></div>
         <div class="child-nth-2 animate__animated animate__pulse"></div>
         <p class="btn-img">
-            <img src="{{asset('site/images/hl.png')}}" alt="">
+            <img src="{{asset('public/site/images/hl.png')}}" alt="">
         </p>
     </a>
     <a class="btn-effect btn-contact-block" href="https://zalo.me/{{$settings['ZALO']}}">
         <div class="child-nth-1 animate__animated animate__zoomIn"></div>
         <div class="child-nth-2 animate__animated animate__pulse"></div>
         <p class="btn-img">
-            <img src="{{asset('site/images/zl.png')}}" alt="">
+            <img src="{{asset('public/site/images/zl.png')}}" alt="">
         </p>
     </a>
     <!-- <a href="" class="call">
@@ -35,7 +35,7 @@
             <div class="child-nth-1 animate__animated animate__zoomIn"></div>
             <div class="child-nth-2 animate__animated animate__pulse"></div>
             <p class="btn-img">
-                <img src="{{asset('site/images/hl.png')}}" alt="">
+                <img src="{{asset('public/site/images/hl.png')}}" alt="">
             </p>
         </a>
     </a> -->
@@ -68,13 +68,13 @@
         <div class="row bg-contact">
             <div class="col-md-3">
                 <div class="contact-us">
-                    <img src="{{asset('site/images/map.png')}}" alt="">
+                    <img src="{{asset('public/site/images/map.png')}}" alt="">
                     <p class="name-contact">{{$settings['ADDRESS']}}</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="contact-us">
-                    <img src="{{asset('site/images/map.png')}}" alt="">
+                    <img src="{{asset('public/site/images/map.png')}}" alt="">
                     <p class="name-contact">Hotline <br>
                         {{$settings['HOTLINE']}}
                     </p>
@@ -82,7 +82,7 @@
             </div>
             <div class="col-md-3">
                 <div class="contact-us">
-                    <img src="{{asset('site/images/map.png')}}" alt="">
+                    <img src="{{asset('public/site/images/map.png')}}" alt="">
                     <p class="name-contact">Email CSKH: <br>
                         {{$settings['EMAIL']}}
                     </p>
@@ -90,7 +90,7 @@
             </div>
             <div class="col-md-3">
                 <div class="contact-us">
-                    <img src="{{asset('site/images/map.png')}}" alt="">
+                    <img src="{{asset('public/site/images/map.png')}}" alt="">
                     <p class="name-contact">Website <br>
                         {{$settings['WEBSITE']}}</p>
                 </div>

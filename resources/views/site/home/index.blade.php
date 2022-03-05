@@ -1,7 +1,7 @@
 @php
 $logo = DB::table('photos')->where('type','logo')->first();
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-$urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$logo->photo;
+$urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/photo/thumb/'.$logo->photo;
 @endphp
 @extends('site.layout')
 @section('SEO_title', $settings['SEO_TITLE'])
@@ -23,14 +23,14 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
         <h1 class="product-new">SẢN PHẨM MỚI</h1>
         <p class="sk-fml">Mang lại cho khách hàng những sản phẩm tốt nhất dành cho sức khỏe của gia đình bạn?
         </p>
-        <p style="text-align: center; margin-top: 0;"><img src="{{ asset('site/images/border-xoan.jpg') }}" alt="">
+        <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}" alt="">
         </p>
         <div class="row">
             @foreach ($new_product as $item)
             <div class="col-2dot4 col-sm-2dot4 col-md-2dot4 col-lg-2dot4 col-xl-2dot4">
                 <div class="border-col">
                     <div class="detail-product-link">
-                        <a href="{{route('get.product.slug',$item->slug)}}"><img src="/upload/images/product/thumb/{{ $item->photo }}" alt="" width="200px"></a>
+                        <a href="{{route('get.product.slug',$item->slug)}}"><img src="public/upload/images/product/thumb/{{ $item->photo }}" alt="" width="200px"></a>
                     </div>
                     <a href="{{route('get.product.slug',$item->slug)}}">
                         <h6 class="product-name">{{ $item->name }}</h6>
@@ -118,13 +118,13 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
         @endforeach
 <h1 class="product-new">MUA BÁN NHÀ ĐẤT </h1>
 <p class="sk-fml">Chuyên mua bán nhà đất và kí gữi tại Sài Gòn</p>
-<p style="text-align: center; margin-top: 0;"><img src="{{ asset('site/images/border-xoan.jpg') }}" alt="">
+<p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}" alt="">
 </p>
 <div class="row">
     @foreach ($nhaDat as $item)
     <div class="col-md-3 real-estate">
         <div class="cover">
-            <a href="/mua-ban-nha-dat/{{$item->slug}}"><img src="/upload/images/nhaDat/thumb/{{ $item->photo }}" alt="" class="img-padding"></a>
+            <a href="/mua-ban-nha-dat/{{$item->slug}}"><img src="public/upload/images/nhaDat/thumb/{{ $item->photo }}" alt="" class="img-padding"></a>
             <div class="cover-bottom">
                 <a href="/mua-ban-nha-dat/{{$item->slug}}"><h6>{{ $item->name }}</h6></a>
                 <div class="info">
@@ -197,7 +197,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
                         <image
                             style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
                             vector-effect="non-scaling-stroke"
-                            xlink:href="/upload/images/standard/thumb/{{ $item->photo }}" x="-25" y="-25" width="50"
+                            xlink:href="public/upload/images/standard/thumb/{{ $item->photo }}" x="-25" y="-25" width="50"
                             height="50"></image>
                     </g>
                 </svg>
@@ -213,7 +213,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
     <div class="video-clip">
         <h1 class="product-new">Video Clip</h1>
         <p class="sk-fml">Góc chia sẽ cẩm nang về thiết bị y tế chúng tôi gữi đến các bạn</p>
-        <p style="text-align: center; margin-top: 0;"><img src="{{ asset('site/images/border-xoan.jpg') }}" alt="">
+        <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}" alt="">
         </p>
         <div class="row video-clip-blocks">
             @foreach ($video as $item)
@@ -228,7 +228,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
         <div class="row">
             <div class="col-md-6">
                 <h2 class="news-events-title">TIN TỨC & SỰ KIỆN</h2>
-                <img src="{{ asset('site/images/border.jpg') }}" alt="">
+                <img src="{{ asset('public/site/images/border.jpg') }}" alt="">
                 @foreach ($news as $item)
                 <div class="border-content">
                     <div class="text-news">
@@ -240,7 +240,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
                         </p>
                     </div>
                     <div class="img-news">
-                        <img src="/upload/images/news/thumb/{{ $item->photo }}" alt="">
+                        <img src="public/upload/images/news/thumb/{{ $item->photo }}" alt="">
                     </div>
                 </div>
                 @endforeach
@@ -248,12 +248,12 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
             </div>
             <div class="col-md-6">
                 <h2 class="news-events-title">Ý KIẾN KHÁCH HÀNG</h2>
-                <img src="{{ asset('site/images/border.jpg') }}" alt="">
+                <img src="{{ asset('public/site/images/border.jpg') }}" alt="">
                 <div class="customer-avt">
                     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="{{ asset('site/images/Untitled-3.png') }}" alt="">
+                                <img src="{{ asset('public/site/images/Untitled-3.png') }}" alt="">
                                 <p class="customer-review">Shop luôn nắm bắt sở thích của khách hàng, các mẫu thiết bị
                                     có chất
                                     lượng cao giúp chúng tôi tự tin sử dụng sản phẩm.</p>
@@ -263,7 +263,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
                                 </blockquote>
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ asset('site/images/tien-ne.jpg') }}" alt="">
+                                <img src="{{ asset('public/site/images/tien-ne.jpg') }}" alt="">
                                 <p class="customer-review">Shop luôn nắm bắt sở thích của khách hàng, các mẫu thiết bị
                                     có chất
                                     lượng cao giúp chúng tôi tự tin sử dụng sản phẩm.</p>

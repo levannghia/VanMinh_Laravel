@@ -23,7 +23,7 @@
                                 </span>
                                 <input type="file" class="form-control" id="formFile" name="photo"
                                     onchange="previewFile(this);">
-                                <img style="width: 300px" src="/upload/images/seoPage/thumb/{{ $seoPage->photo }}" class="form-control img-fluid" id="previewImage" class="" alt="">
+                                <img style="width: 300px" src="{{asset('public/upload/images/seoPage/thumb/'.$seoPage->photo)}}" class="form-control img-fluid" id="previewImage" class="" alt="">
                             </div>
                             <div class="form-group">
                                 <div class="seo-e" style="display: flex; justify-content: space-between;">

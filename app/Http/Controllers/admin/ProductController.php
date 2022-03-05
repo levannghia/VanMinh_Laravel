@@ -103,7 +103,7 @@ class ProductController extends Controller
                 $image_resize = Image::make($file->getRealPath());
                 $thumb_size = json_decode($settings["THUMB_SIZE_PRODUCT"]);
                 $image_resize->fit($thumb_size->width,$thumb_size->height);
-                $image_resize->save('upload/images/product/thumb/' . $file_name);
+                $image_resize->save('public/upload/images/product/thumb/' . $file_name);
             }
             // close upload image
             // $file->move("upload/images/product/large/", $file_name);
@@ -194,7 +194,7 @@ class ProductController extends Controller
         
         if ($request->hasFile('photo')) {
             $file = $request->photo;
-            $pathDel = 'upload/images/product/thumb/'.$product->photo;
+            $pathDel = 'public/upload/images/product/thumb/'.$product->photo;
     
             if(file_exists($pathDel)){
                 unlink($pathDel);
@@ -208,7 +208,7 @@ class ProductController extends Controller
                 $thumb_size = json_decode($settings["THUMB_SIZE_PRODUCT"]);
                 $image_resize->fit($thumb_size->width,$thumb_size->height);
 
-                $image_resize->save('upload/images/product/thumb/' . $file_name);
+                $image_resize->save('public/upload/images/product/thumb/' . $file_name);
             }
 
             // $file->move("public/upload/images/admins/large", $file_name);
@@ -230,7 +230,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Products::find($id);
-        $pathDel = 'upload/images/product/thumb/'.$product->photo;
+        $pathDel = 'public/upload/images/product/thumb/'.$product->photo;
         
         if($product->delete()){
             if(file_exists($pathDel)){
@@ -292,7 +292,7 @@ class ProductController extends Controller
         if (count($list_id) == 1 && isset($list_id[0]->id)) {
             $product = Products::find($list_id[0]->id);
             if ($product->delete()) {
-                $pathDel = 'upload/images/product/thumb/'.$product->photo;
+                $pathDel = 'public/upload/images/product/thumb/'.$product->photo;
                 if(file_exists($pathDel)){
                     unlink($pathDel);
                 }
@@ -304,7 +304,7 @@ class ProductController extends Controller
             foreach ($list_id as $key => $value) {
                 $product = Products::find($value->id);
                 $product->delete();
-                $pathDel = 'upload/images/product/thumb/'.$product->photo;
+                $pathDel = 'public/upload/images/product/thumb/'.$product->photo;
                 if(file_exists($pathDel)){
                     unlink($pathDel);
                 }

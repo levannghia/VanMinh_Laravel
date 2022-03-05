@@ -10,11 +10,11 @@
         <div class="main-content">
             <div class="row img-flu ">
                 <div class="col-md-4 col-4 bd-img">
-                    <img src="/upload/images/product/thumb/{{ $product->photo }}" class="noselect" alt="" id="edit-save">
+                    <img src="/public/upload/images/product/thumb/{{ $product->photo }}" class="noselect" alt="" id="edit-save">
                     <div class="row img-smalls-blocks">
                         @foreach ($gallery as $item)
                         <div class="col-md-4 img-circle">
-                            <img src="/upload/images/gallery/thumb/{{ $item->photo }}" class="img-small" alt="">
+                            <img src="{{asset('/public/upload/images/gallery/thumb/'.$item->photo)}}" class="img-small" alt="">
                         </div>
                         @endforeach
                     </div>
@@ -53,11 +53,11 @@
                 </div>
             </div>
             <h1 class="similar-products">Sản phẩm cùng loại</h1>
-            <p style="text-align: center; margin-top: 0;"><img src="{{ asset('site/images/border-xoan.jpg') }}" alt=""></p>
+            <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}" alt=""></p>
             <div class="row img-flu similar">
                 @foreach ($product_cate as $item)
                 <div class="col-md-4 col-6">
-                    <a href="{{route('get.product.slug',$item->slug)}}"><img src="/upload/images/product/thumb/{{ $item->photo }}" class="img-small" alt=""></a>
+                    <a href="{{route('get.product.slug',$item->slug)}}"><img src="{{asset('/public/upload/images/product/thumb/'.$item->photo)}}" class="img-small" alt=""></a>
                     <p><a style="color: black;" href="{{route('get.product.slug',$item->slug)}}">{{$item->name}}</a></p>
                 </div>
                 @endforeach

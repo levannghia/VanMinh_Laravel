@@ -1,6 +1,6 @@
 @php
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443 ? 'https://' : 'http://';
-$urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/upload/images/seoPage/thumb/' . $seoPage->photo;
+$urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/seoPage/thumb/' . $seoPage->photo;
 @endphp
 @extends('site.layout')
 @section('PHOTO', $urlPhoto)
@@ -17,7 +17,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/upload/images/seoPage/thumb/' 
         <div class="container">
             <div class="main-content-wrapper">
                 <h1 class="product-new">TIN TỨC & SỰ KIỆN</h1>
-                <p style="text-align: center; margin-top: 0;"><img src="{{ asset('site/images/border-xoan.jpg') }}"
+                <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}"
                         alt="">
                 <div id="main-content" class="row">
                     {{-- <div class="col-md-6"> --}}
@@ -36,7 +36,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/upload/images/seoPage/thumb/' 
                                         </p>
                                     </div>
                                     <div class="img-news">
-                                        <img src="/upload/images/news/thumb/{{ $item->photo }}" alt="">
+                                        <img src="public/upload/images/news/thumb/{{ $item->photo }}" alt="">
                                     </div>
                                 </div>
                             </a>
