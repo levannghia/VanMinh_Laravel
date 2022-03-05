@@ -70,7 +70,7 @@ class HomeController extends Controller
         ]));
 
         $slider = Photo::where('status',1)->where('type','slide')->orderBy('stt','ASC')->get();
-        $video = Video::where('status',1)->where('noi_bac',1)->orderBy('id','DESC')->get();
+        $video = Video::where('status',1)->where('noi_bac',1)->orderBy('id','DESC')->limit(3)->get();
         $category_lv1 = Category_LV1::where('categories_lv1.status', 1)->where('categories_lv1.noi_bac', 1)->orderBy('categories_lv1.stt', 'ASC')->limit(2)->get();
         $news = News::where('status', 1)->where('noi_bac', 1)->orderBy('id', 'DESC')->limit(2)->get();
         $standard = Standard::where('status', 1)->orderBy('stt', 'ASC')->get();
@@ -163,7 +163,17 @@ class HomeController extends Controller
 
     public function Search(Request $request)
     {
-        $data = Products::where("name", "like", '%' . $request->q . '%')->where('status',1)->orderBy('id', 'desc')->paginate(8);
-        dd($data);
+        $search = $request->q;
+        $data = Products::where("name", "like", '%' . $request->q . '%')->where('status',1)->where('type',0)->orderBy('id', 'desc')->paginate(8);
+        $settings = Config::all(['name', 'value'])
+            ->keyBy('name')
+            ->transform(function ($setting) {
+                return $setting->value; // return only the value
+            })
+            ->toArray();
+        $seoPage = SeoPage::where('type', 'san-pham')->first();
+          
+        return view('site.product.search', compact('data', 'seoPage', 'settings','search'));
+
     }
 }
