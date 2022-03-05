@@ -4,31 +4,17 @@
             <div class="top-header-block">
                 <div class="company-address">
                     <i class="fa fa-map-marker-alt"></i>
-                    <span>Địa chỉ: Số 29 Đường số 4, Khu Phố 17, Phường Bình Hưng Hòa A, Quận Bình Tân, TP. Hồ Chí
-                        Minh</span>
+                    <span>{{$settings['ADDRESS']}}</span>
                 </div>
                 <div class="contact-block">
                     <ul class="contact-block-list">
+                        @foreach ($mxh_top as $item)
                         <li class="contact-block-item">
-                            <a href="#" class="contact-block-link">
-                                <img src="{{asset('site/images/li-1.jpg')}}" alt="">
+                            <a href="{{$item->link}}" class="contact-block-link">
+                                <img src="/upload/images/photo/thumb/{{$item->photo}}" alt="">
                             </a>
                         </li>
-                        <li class="contact-block-item">
-                            <a href="#" class="contact-block-link">
-                                <img src="{{asset('site/images/li-2.jpg')}}" alt="">
-                            </a>
-                        </li>
-                        <li class="contact-block-item">
-                            <a href="#" class="contact-block-link">
-                                <img src="{{asset('site/images/li-3.jpg')}}" alt="">
-                            </a>
-                        </li>
-                        <li class="contact-block-item">
-                            <a href="#" class="contact-block-link">
-                                <img src="{{asset('site/images/li-4.jpg')}}" alt="">
-                            </a>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -72,13 +58,16 @@
                                     alt="">DANH MỤC SẢN PHẨM</a>
                         </li>
                         <li class="nav-item bg-ani">
+                            <a class="nav-link " href="/gioi-thieu">TRANG CHỦ</a>
+                        </li>
+                        <li class="nav-item bg-ani">
                             <a class="nav-link " href="/gioi-thieu">GIỚI THIỆU</a>
                         </li>
                         <li class="nav-item bg-ani">
                             <a class="nav-link" href="{{route('get.product')}}">SẢN PHẨM</a>
                         </li>
                         <li class="nav-item bg-ani">
-                            <a class="nav-link disabled" href="{{route('get.nha.dat')}}">MUA BÁN</a>
+                            <a class="nav-link disabled" href="{{route('get.nha.dat')}}">MUA BÁN NHÀ ĐẤT</a>
                         </li>
                         <li class="nav-item bg-ani">
                             <a class="nav-link" href="{{route('get.news')}}">TIN TỨC</a>

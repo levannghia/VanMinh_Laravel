@@ -14,7 +14,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .cover a {
@@ -58,7 +57,6 @@ header {
 .company-logo {
     position: relative;
     width: 150px;
-
 }
 
 .company-logo .company-logo-link {
@@ -128,7 +126,9 @@ header {
     color: var(--red-light-color);
 }
 
+
 /*  */
+
 .bg-nav {
     background: none !important;
 }
@@ -353,6 +353,7 @@ a:hover {
     max-width: 20%;
 }
 
+
 /* @media (min-width: 540px) {
     .col-sm-2dot4 {
         -webkit-box-flex: 0;
@@ -382,7 +383,10 @@ a:hover {
         top: 10%;
     }
 } */
+
+
 /* responsive */
+
 @media (max-width: 540px) {
     .col-sm-2dot4 {
         -webkit-box-flex: 0;
@@ -390,47 +394,36 @@ a:hover {
         flex: 0 0 50%;
         max-width: 50%;
     }
-
     .form-search {
         width: 100% !important
     }
-
     .col-sm-2dot4 img {
         width: 100% !important;
     }
-
     .price-view {
         display: block !important;
     }
-
     blockquote .name-customer:before {
         left: 40px !important;
     }
-
     .form-search {
         display: flex !important;
     }
-
     .form-search .btn-input {
         width: 69% !important;
     }
-
     .tab-chem span {
         display: none !important;
-
     }
-
     .tell-people {
         font-size: 10px !important;
     }
-
     .phone-contact {
         display: block !important;
         position: absolute;
         right: 25%;
         top: 10%;
     }
-
     #title-svg {
         display: none;
     }
@@ -447,26 +440,20 @@ a:hover {
         flex: 0 0 50% !important;
         max-width: 50% !important;
     }
-
     .phone-contact {
         display: block !important;
         position: absolute;
         right: 25%;
         top: 10%;
     }
-
     .col-md-2dot4 img {
         width: 100% !important;
     }
-
     .price-view {
         display: block !important;
     }
-
-
     .tab-chem span {
         display: none !important;
-
     }
 }
 
@@ -481,7 +468,6 @@ a:hover {
         display: block !important;
         border-bottom: 0 !important;
     }
-
     .left-content {
         position: relative;
         margin-right: auto !important;
@@ -495,7 +481,6 @@ a:hover {
         margin-bottom: 1px !important;
         text-transform: uppercase;
     }
-
     #title-svg {
         display: none;
     }
@@ -508,11 +493,9 @@ a:hover {
         flex: 0 0 33.33%;
         max-width: 33.33%;
     }
-
     .price-view {
         display: block !important;
     }
-
 }
 
 @media (min-width: 1140px) {
@@ -522,12 +505,10 @@ a:hover {
         flex: 0 0 20%;
         max-width: 20%;
     }
-
     .product-view {
         /* position: absolute; */
         right: 0;
     }
-
     .price-view {
         display: flex !important;
     }
@@ -536,7 +517,6 @@ a:hover {
 .col-2dot4 img {
     width: 100%;
 }
-
 
 .product-name {
     color: black;
@@ -583,25 +563,29 @@ a:hover {
     text-transform: uppercase;
 }
 
+
 /* ssssss */
 
-#chemistry-2 {
+
+/* #chemistry-2 {
     display: none;
-}
+} */
 
 #chemistry-2 .col-md-3 img {
     width: 100%;
 }
 
-#chemistry-3 {
+
+/* #chemistry-3 {
     display: none;
 }
 
 #chemistry-4 {
     display: none;
-}
+} */
 
-#medical-equipment-2 {
+
+/* #medical-equipment-2 {
     display: none;
 }
 
@@ -615,7 +599,7 @@ a:hover {
 
 #medical-equipment-5 {
     display: none;
-}
+} */
 
 .img-flu img {
     width: 100% !important;
@@ -687,7 +671,6 @@ a:hover {
     .container {
         max-width: 1250px;
     }
-
     .row-right .carousel-item img {
         height: 400px;
     }
@@ -968,6 +951,7 @@ footer {
     position: absolute;
 }
 
+
 /*  */
 
 div {
@@ -995,20 +979,21 @@ nav.navbar {
     background: var(--green-light-color);
     padding-left: 53px;
     padding-right: 53px;
-
 }
 
 .danh-muc-menu {
     width: 20px;
 }
 
-.header-navbar-link, .header-navbar-category-item a {
+.header-navbar-link,
+.header-navbar-category-item a {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
 }
 
-.header-navbar-item:hover, .header-slider .header-category-item:hover {
+.header-navbar-item:hover,
+.header-slider .header-category-item:hover {
     background: var(--green-light-color);
     color: #fff;
     transition: all 0.3s;
@@ -1023,7 +1008,9 @@ nav.navbar {
     border-radius: 5px;
 }
 
+
 /* animation */
+
 .bg-ani {
     -webkit-transition: background-color 0.8s ease-out;
     -moz-transition: background-color 0.8s ease-out;
@@ -1056,12 +1043,15 @@ nav.navbar {
     transform: scale(1.1);
 }
 
+
 /* Button fb, mess */
-.call{
+
+.call {
     position: fixed;
     top: 50%;
     right: 10%;
 }
+
 .btn-contact-block {
     display: block;
     position: fixed;
@@ -1116,7 +1106,6 @@ nav.navbar {
 }
 
 .btn-contact-block .child-nth-1 {
-
     animation-iteration-count: infinite;
     animation-duration: 1s;
     animation-fill-mode: both;

@@ -68,10 +68,10 @@
                                                                 x-placement="bottom-start"
                                                                 style="position: absolute; transform: translate3d(0px, 46px, 0px); top: 0px; left: 0px; will-change: transform;">
                                                                 <h6 class="dropdown-header">Settings</h6>
-                                                                <a class="dropdown-item" href="#" style="color: #5646ff">
-                                                                    <i class="fa fa-pencil"></i> Xuất file Excel</a>
+                                                                {{-- <a class="dropdown-item" href="#" style="color: #5646ff">
+                                                                    <i class="fa fa-pencil"></i> Xuất file Excel</a> --}}
                                                                 <a class="dropdown-item"
-                                                                    href="{{ route('admin.news.edit', $item->id) }}"
+                                                                    href="{{ route('admin.order.edit', $item->id) }}"
                                                                     style="color: rgb(197, 197, 16)"><i
                                                                     class="fa fa-eye"> </i> Xem đơn hàng</a>
                                                                 <a class="dropdown-item" data-id="{{ $item->id }}"

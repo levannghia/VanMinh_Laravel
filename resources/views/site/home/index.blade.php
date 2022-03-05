@@ -30,9 +30,9 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/upload/images/photo/thumb/'.$log
             <div class="col-2dot4 col-sm-2dot4 col-md-2dot4 col-lg-2dot4 col-xl-2dot4">
                 <div class="border-col">
                     <div class="detail-product-link">
-                        <a href=""><img src="/upload/images/product/thumb/{{ $item->photo }}" alt="" width="200px"></a>
+                        <a href="{{route('get.product.slug',$item->slug)}}"><img src="/upload/images/product/thumb/{{ $item->photo }}" alt="" width="200px"></a>
                     </div>
-                    <a href="">
+                    <a href="{{route('get.product.slug',$item->slug)}}">
                         <h6 class="product-name">{{ $item->name }}</h6>
                     </a>
                     <div class="price-view">
@@ -525,30 +525,12 @@ width="200px">
         <p style="text-align: center; margin-top: 0;"><img src="{{ asset('site/images/border-xoan.jpg') }}" alt="">
         </p>
         <div class="row video-clip-blocks">
+            @foreach ($video as $item)
             <div class="col-md-4">
-                <a class="video text-decoration-none" data-fancybox="video"
-                    data-src="https://www.youtube.com/watch?v=8N-yMfTtiS4" title="Hướng dẫn lái xe số tự động | XEHAY">
-                    <p class="pic-video scale-img"><img onerror="this.src='thumbs/480x360x2/assets/images/noimage.png';"
-                            src="https://img.youtube.com/vi/8N-yMfTtiS4/0.jpg"
-                            alt="Hướng dẫn lái xe số tự động | XEHAY"></p>
-                </a>
+                <iframe style="width: 100%;" height="250" src="https://www.youtube.com/embed/{{$item->link_youtube}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h6>{{$item->title}}</h6>
             </div>
-            <div class="col-md-4">
-                <a class="video text-decoration-none" data-fancybox="video"
-                    data-src="https://www.youtube.com/watch?v=8N-yMfTtiS4" title="Hướng dẫn lái xe số tự động | XEHAY">
-                    <p class="pic-video scale-img"><img onerror="this.src='thumbs/480x360x2/assets/images/noimage.png';"
-                            src="https://img.youtube.com/vi/8N-yMfTtiS4/0.jpg"
-                            alt="Hướng dẫn lái xe số tự động | XEHAY"></p>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a class="video text-decoration-none" data-fancybox="video"
-                    data-src="https://www.youtube.com/watch?v=8N-yMfTtiS4" title="Hướng dẫn lái xe số tự động | XEHAY">
-                    <p class="pic-video scale-img"><img onerror="this.src='thumbs/480x360x2/assets/images/noimage.png';"
-                            src="https://img.youtube.com/vi/8N-yMfTtiS4/0.jpg"
-                            alt="Hướng dẫn lái xe số tự động | XEHAY"></p>
-                </a>
-            </div>
+            @endforeach
         </div>
     </div>
     <div class="news-events">

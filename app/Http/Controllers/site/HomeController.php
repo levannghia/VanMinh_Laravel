@@ -11,6 +11,8 @@ use App\Models\Category_LV1;
 use App\Models\Products;
 use App\Models\Standard;
 use App\Models\News;
+use App\Models\Photo;
+use App\Models\Video;
 
 class HomeController extends Controller
 {
@@ -27,6 +29,9 @@ class HomeController extends Controller
             "width" => 110,
             "height" => 110,
         ]));
+
+        $slider = Photo::where('status',1)->where('type','slide')->orderBy('stt','ASC')->get();
+        $video = Video::where('status',1)->where('noi_bac',1)->orderBy('id','DESC')->get();
         $category_lv1 = Category_LV1::where('categories_lv1.status', 1)->where('categories_lv1.noi_bac', 1)->orderBy('categories_lv1.stt', 'ASC')->limit(2)->get();
         $news = News::where('status', 1)->where('noi_bac', 1)->orderBy('id', 'DESC')->limit(2)->get();
         $standard = Standard::where('status', 1)->orderBy('stt', 'ASC')->get();
@@ -39,7 +44,7 @@ class HomeController extends Controller
         // $cate_product = Products::select('products.id','products.name','products.price','products.view','products.photo','categories.name AS category_name')
         // ->join('categories', 'categories.id','=','products.category_id')
         // ->where('categories.id',$category_noibac[0]['id'])->where('products.type',0)->where('products.status',1)->orderBy('categories.stt', 'ASC')->paginate($settings['PHAN_TRANG_PRODUCT']);
-        return view('site.home.index', compact('category_lv1','settings', 'image', 'category', 'new_product', 'standard', 'news', 'nhaDat'));
+        return view('site.home.index', compact('video','slider','category_lv1','settings', 'image', 'category', 'new_product', 'standard', 'news', 'nhaDat'));
     }
 
     public function showMap(Request $request)
@@ -68,7 +73,7 @@ class HomeController extends Controller
             ->toArray();
         $output = "";
         $p ="";
-        $cate_product = Products::select('products.id','products.name','products.price','products.view','products.photo','categories.name AS category_name')
+        $cate_product = Products::select('products.id','products.name','products.price','products.view','products.slug','products.photo','categories.name AS category_name')
         ->join('categories', 'categories.id','=','products.category_id')
         ->where('categories.id',$request->id)->where('products.type',0)->where('products.noi_bac',1)->where('products.status',1)->orderBy('stt', 'ASC')->paginate($settings['PHAN_TRANG_PRODUCT']);
         $output .= '<div class="row">';
@@ -76,16 +81,16 @@ class HomeController extends Controller
             if($item->price == NULL){
                 $p = '<p class="product-price">Giá: <a href="" class="contact-product">liên hệ</a> </p>';
             }else{
-                $p = '<p class="product-price">Giá: <a href="" class="contact-product">'.number_format($item->price, 0, ',', '.').' đ</a> </p>';
+                $p = '<p class="product-price">Giá: <a href="/san-pham/'.$item->slug.'" class="contact-product">'.number_format($item->price, 0, ',', '.').' đ</a> </p>';
             }
             $output .= '
             <div class="col-md-3 col-6 img-flu">
                 <div class="border-col">
                 <div class="detail-product-link">
-                    <a href=""><img src="/upload/images/product/thumb/'.$item->photo.'" alt="">
+                    <a href="/san-pham/'.$item->slug.'"><img src="/upload/images/product/thumb/'.$item->photo.'" alt="">
                     </a>
                     </div>
-                    <a href=""><h6 class="product-name">'.$item->name.'</h6></a>
+                    <a href="/san-pham/'.$item->slug.'"><h6 class="product-name">'.$item->name.'</h6></a>
                     
                     <div class="price-view">
                         '.$p.'

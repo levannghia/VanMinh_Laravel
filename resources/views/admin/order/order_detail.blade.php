@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleTextarea1">Thời gian đặt hàng</label>
-                                    <input type="text" class="form-control" value="{{$order->created_at}}"
+                                    <input type="text" class="form-control" value="{{ $order->created_at }}"
                                         name="create">
                                 </div>
                             </div>
@@ -167,14 +167,19 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="btn btn-outline-success">Export Excel</a>
+        <button class="btn btn-outline-success" data-toggle="popover"
+            data-content="Chức năng đang cập nhật">Export Excel</button>
+
         {{-- <button type="submit" class="btn btn-primary mr-2">Submit</button> --}}
         {{-- </form> --}}
     </div>
 @endsection
 @push('script')
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
+            $(function() {
+                $('[data-toggle="popover"]').popover()
+            })
             $("#order_status").change(function() {
                 var status = $(this).val();
                 var id = $(this).attr("order_id")
@@ -191,14 +196,14 @@
                     success: function(data) {
                         if (data.status == 1) {
                             swal("Sucessfuly, Thank you!", "Đơn hàng của bạn đã được cập nhật",
-                            "success").then((value) => {
-                            if (value) {
-                                
-                            }
-                            if (value == null) {
-                                
-                            }
-                        });
+                                "success").then((value) => {
+                                if (value) {
+
+                                }
+                                if (value == null) {
+
+                                }
+                            });
                         }
                     }
                 });

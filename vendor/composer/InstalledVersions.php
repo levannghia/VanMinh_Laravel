@@ -25,12 +25,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '3a4900c81d31e043cd6a04d97fad0a655af8a43d',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -464,12 +464,12 @@ private static $installed = array (
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '3a4900c81d31e043cd6a04d97fad0a655af8a43d',
     ),
     'laravel/sail' => 
     array (
@@ -916,6 +916,15 @@ private static $installed = array (
       array (
         0 => '4.2.3',
       ),
+    ),
+    'roumen/sitemap' => 
+    array (
+      'pretty_version' => '8.0.1',
+      'version' => '8.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ae5023139178a8de9b615b21a66368f5025d3a43',
     ),
     'sebastian/cli-parser' => 
     array (
