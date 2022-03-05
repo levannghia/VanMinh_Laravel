@@ -47,27 +47,39 @@ class ProductSiteController extends Controller
                 return $setting->value; // return only the value
             })
             ->toArray();
+        $seoPage = SeoPage::where('type', 'san-pham')->first();
+        $image = json_decode(
+            $seoPage->options
+        );
         $product = DB::table('products')->where('type', 0)->where('status', 1)->paginate($settings['PHAN_TRANG_PRODUCT']);
-        dd($product);
+        return view('site.product.index', compact('product', 'seoPage', 'image', 'settings'));
     }
+
     public function getNhaDatBySlug($slug)
     {
         $product = DB::table('products')->where('type', 1)->where('status', 1)->where('slug', $slug)->first();
         $gallery = DB::table('galleries')->select('galleries.photo')
             ->join('products', 'products.id', '=', 'galleries.product_id')->where('galleries.status', 1)->where('products.id', $product->id)
             ->orderBy('galleries.stt', 'ASC')->get();
-        dd($gallery);
+        dd($product);
     }
 
     public function getAllNhaDat()
     {
+
+
         $settings = Config::all(['name', 'value'])
             ->keyBy('name')
             ->transform(function ($setting) {
                 return $setting->value; // return only the value
             })
             ->toArray();
-        $product = DB::table('products')->where('type', 1)->where('status', 1)->paginate($settings['PHAN_TRANG_PRODUCT']);
-        dd($product);
+        $seoPage = SeoPage::where('type', 'mua-ban-nha-dat')->first();
+        $image = json_decode(
+            $seoPage->options
+        );
+        $nhaDat = DB::table('products')->where('type', 1)->where('status', 1)->paginate($settings['PHAN_TRANG_PRODUCT']);
+
+        return view('site.product.nhaDat',compact('settings','image','nhaDat','seoPage'));
     }
 }

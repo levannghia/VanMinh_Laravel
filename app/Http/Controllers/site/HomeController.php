@@ -13,9 +13,48 @@ use App\Models\Standard;
 use App\Models\News;
 use App\Models\Photo;
 use App\Models\Video;
+use Illuminate\Support\Facades\Redirect;
+use Cart;
 
 class HomeController extends Controller
 {
+    public function saveCart(Request $request)
+    {
+        $id = $request->product_id;
+        $quantiti = $request->quantiti;
+        $product_detail = Products::where('id',$id)->first();
+
+        $data['id'] = $product_detail->id;
+        $data['qty'] = $quantiti;
+        $data['name'] = $product_detail->name;
+        $data['options']['image']= $product_detail->photo;
+        if($product_detail->price != NULL){
+            $data['price'] = $product_detail->price;
+            $data['weight']= $product_detail->price;
+        }else{
+            $data['price'] = 0;
+            $data['weight']= 0;
+        }
+        Cart::add($data);
+        dd(Cart::content());
+    }
+
+    public function deleteCart($rowId) {
+        Cart::update($rowId, 0);
+        return Redirect::to('/cart');
+    }
+
+    public function updateCart(Request $request) {
+        $id = $request->product_id;
+        $product_detail = Products::where('id',$id)->first();
+        $rowId = $request->cart_rowId;
+        $qty = $request->cart_qty;
+
+        
+        Cart::update($rowId, $qty);
+        return Redirect::to('/cart');   
+    }
+
     public function index()
     {
         $settings = Config::all(['name', 'value'])

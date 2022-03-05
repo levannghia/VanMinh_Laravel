@@ -42,7 +42,13 @@
                         </svg>
                         {{$settings['PHONE']}}</a>
                     @endif
-                    
+                    <form action="{{route('save.cart')}}" method="post">
+                        @csrf
+                        <label for="">Số lượng:</label>
+                        <input type="hidden" value="{{$product->id}}" name="product_id">
+                        <input type="number" value="1" name="quantiti">
+                        <input type="submit" value="Add to cart">
+                    </form>
                     <p class="product-des">{!!$product->description!!}</p>
                 </div>
             </div>

@@ -13,10 +13,12 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/upload/images/news/thumb/' . $
 @endif
 @section('SEO_description', $news->keywords)
 @section('content')
-    <div class="main-content-contacts" style="padding-top: 40px;">
+    <div class="main-content-contacts">
         <div class="container">
             <div class="main-content-wrapper">
-                <h2><span class="title">{{ $news->title }}</span></h2>
+                <h1 class="product-new">{{$news->title}}</h1>
+            <p style="text-align: center; margin-top: 0;"><img src="{{ asset('site/images/border-xoan.jpg') }}" alt="">
+            </p>
                 <div id="main-content" class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         {!! $news->content !!}

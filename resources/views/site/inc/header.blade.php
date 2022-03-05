@@ -58,7 +58,7 @@
                                     alt="">DANH MỤC SẢN PHẨM</a>
                         </li>
                         <li class="nav-item bg-ani">
-                            <a class="nav-link " href="/gioi-thieu">TRANG CHỦ</a>
+                            <a class="nav-link " href="/">TRANG CHỦ</a>
                         </li>
                         <li class="nav-item bg-ani">
                             <a class="nav-link " href="/gioi-thieu">GIỚI THIỆU</a>
