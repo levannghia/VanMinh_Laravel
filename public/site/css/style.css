@@ -666,11 +666,16 @@ a:hover {
     margin-bottom: 20px;
     text-align: center;
 }
-
+.bg-contact{
+    margin: 0!important;
+}
+.container {
+    max-width: 1250px;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+}
 @media (min-width: 1200px) {
-    .container {
-        max-width: 1250px;
-    }
+    
     .row-right .carousel-item img {
         height: 400px;
     }
@@ -862,7 +867,9 @@ blockquote .name-customer:before {
 .color-p p {
     color: white;
 }
-
+.color-p{
+    justify-content: center;
+}
 .link-contact {
     padding: 5px 10px;
     background: red;
@@ -878,6 +885,7 @@ blockquote .name-customer:before {
 
 .contact-padding {
     padding: 20px 0 50px;
+    justify-content: center;
 }
 
 .des-company {
@@ -902,10 +910,12 @@ blockquote .name-customer:before {
 .bg-contact {
     background: #006600;
     border-radius: 10px;
+    width: 100%;
 }
 
 .bg-contact .contact-us {
     margin: 0;
+    justify-content: center;
 }
 
 .bg-contact .col-md-3 {

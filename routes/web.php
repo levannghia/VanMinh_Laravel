@@ -22,6 +22,7 @@ use App\Http\Controllers\site\HomeController;
 use App\Http\Controllers\site\NewsSiteController;
 use App\Http\Controllers\site\PageSiteController;
 use App\Http\Controllers\site\VideoSiteController;
+use App\Http\Controllers\site\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,7 +56,8 @@ Route::get("/gioi-thieu", [PageSiteController::class, "getPageGioiThieu"])->name
 //video
 Route::get("/video", [VideoSiteController::class, "getAllVideo"])->name('get.video');
 //Cart
-Route::post("/cart", [HomeController::class, "saveCart"])->name('save.cart');
+Route::post("/carts", [HomeController::class, "saveCart"])->name('save.cart');
+Route::get("/cart", [CartController::class, "getCart"]);
 //ADMIN
 
 Route::prefix('admin')->group(function () {

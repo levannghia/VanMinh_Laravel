@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row color-p">
             @foreach ($social_footer as $item)
-            <div class="col-md-4  contact-padding">
+            <div class="col-md-4 col-10 contact-padding">
                 <div class="contact-us">
                     <img src="/upload/images/photo/thumb/{{ $item->photo }}" alt="">
                     <p class="name-contact">{{$item->title}}</p>
