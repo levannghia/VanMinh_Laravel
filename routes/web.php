@@ -56,8 +56,10 @@ Route::get("/gioi-thieu", [PageSiteController::class, "getPageGioiThieu"])->name
 //video
 Route::get("/video", [VideoSiteController::class, "getAllVideo"])->name('get.video');
 //Cart
-Route::post("/carts", [HomeController::class, "saveCart"])->name('save.cart');
+Route::post("/cart", [CartController::class, "saveCart"])->name('save.cart');
 Route::get("/cart", [CartController::class, "getCart"]);
+Route::get("/delete-cart/{rowId}", [CartController::class, "deleteCart"]);
+Route::post("/update-cart", [CartController::class, "updateCart"])->name('update.cart');
 //ADMIN
 
 Route::prefix('admin')->group(function () {
