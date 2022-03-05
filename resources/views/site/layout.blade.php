@@ -49,6 +49,7 @@ $mxh_top = DB::table('photos')->where('status',1)->where('type','social-top')->o
     <meta property="og:description" content="@yield('SEO_description')" />
     <meta property="og:image" content="@yield('PHOTO')" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0">
     <link rel="canonical" href="{{$url}}" />
     <!-- Bootstrap CSS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -57,6 +58,7 @@ $mxh_top = DB::table('photos')->where('status',1)->where('type','social-top')->o
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css">
     <link rel="stylesheet" href="{{ asset('site/css/contact.css?v-'.time()) }}">
     <link rel="stylesheet" href="{{ asset('site/css/style.css?v-'.time()) }}">
+    <link rel="stylesheet" href="{{ asset('site/css/cart.css?v-'.time()) }}">
     <title>@yield('SEO_title')</title>
     {!! $settings['ANALYTICS'] !!}
     {!! $settings['WEB_MASTER_TOOL'] !!}
