@@ -433,12 +433,12 @@ width="200px">
     @foreach ($nhaDat as $item)
     <div class="col-md-3 real-estate">
         <div class="cover">
-            <img src="/upload/images/nhaDat/thumb/{{ $item->photo }}" alt="" class="img-padding">
+            <a href="/mua-ban-nha-dat/{{$item->slug}}"><img src="/upload/images/nhaDat/thumb/{{ $item->photo }}" alt="" class="img-padding"></a>
             <div class="cover-bottom">
-                <h6>{{ $item->name }}</h6>
+                <a href="/mua-ban-nha-dat/{{$item->slug}}"><h6>{{ $item->name }}</h6></a>
                 <div class="info">
                     <?xml version="1.0" encoding="iso-8859-1"?>
-                    <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                    
                     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 235.517 235.517"
                         style="enable-background:new 0 0 235.517 235.517;" xml:space="preserve">

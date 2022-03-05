@@ -54,7 +54,8 @@ Route::post("/post-lien-he", [PageSiteController::class, "postLienHe"])->name('p
 Route::get("/gioi-thieu", [PageSiteController::class, "getPageGioiThieu"])->name('get.page.gioi.thieu');
 //video
 Route::get("/video", [VideoSiteController::class, "getAllVideo"])->name('get.video');
-
+//Cart
+Route::post("/cart", [HomeController::class, "saveCart"])->name('save.cart');
 //ADMIN
 
 Route::prefix('admin')->group(function () {
