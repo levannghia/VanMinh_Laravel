@@ -41,7 +41,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/seoPage/t
                                                     data-id="cart-qty-{{ $item->id }}" row-id="{{ $item->rowId }}"
                                                     class="text-qty" value="{{ $item->qty }}">
                                                 <p class="error_qty_{{ $item->id }} mt-1 mb-0"
-                                                    style="color:#EF8D21;display:none;">
+                                                    style="color:rgb(238 44 12);display:none;">
                                                 </p>
                                             </th>
                                             <td class="img-cart">
@@ -107,25 +107,25 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/seoPage/t
                             <label for="exampleFormControlInput1" class="form-label">Họ và tên</label>
                             <input type="text" name="name" class="form-control" id="exampleFormControlInput1"
                                 placeholder="" required>
-                            <p class="error_name mt-1 mb-0" style="color:#EF8D21;display:none;"></p>
+                            <p class="error_name mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Số điện thoại</label>
                             <input type="text" name="phone" class="form-control" id="exampleFormControlInput1"
                                 placeholder="" required>
-                            <p class="error_phone mt-1 mb-0" style="color:#EF8D21;display:none;"></p>
+                            <p class="error_phone mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Email</label>
                             <input type="email" name="email" class="form-control" id="exampleFormControlInput1"
                                 placeholder="" required>
-                            <p class="error_email mt-1 mb-0" style="color:#EF8D21;display:none;"></p>
+                            <p class="error_email mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Địa chỉ</label>
                             <input type="text" name="address" class="form-control" id="exampleFormControlInput1"
                                 placeholder="Số nhà, đường" required>
-                            <p class="error_address mt-1 mb-0" style="color:#EF8D21;display:none;"></p>
+                            <p class="error_address mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Tỉnh - Thành phố</label>
@@ -137,27 +137,27 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/seoPage/t
                                     </option>
                                 @endforeach
                             </select>
-                            <p class="error_tinh_tp mt-1 mb-0" style="color:#EF8D21;display:none;"></p>
+                            <p class="error_tinh_tp mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Quận - Huyện</label>
                             <select name="quanHuyen" id="quanHuyen" class="form-select form-control"
                                 aria-label="Default select example">
                             </select>
-                            <p class="error_quanh_huyen mt-1 mb-0" style="color:#EF8D21;display:none;"></p>
+                            <p class="error_quanh_huyen mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Phường - Xã</label>
                             <select name="phuongXa" id="phuongXa" class="form-select form-control"
                                 aria-label="Default select example">
                             </select>
-                            <p class="error_phuong_xa mt-1 mb-0" style="color:#EF8D21;display:none;"></p>
+                            <p class="error_phuong_xa mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Ghi chú</label>
                             <textarea name="note" class="form-control" id="exampleFormControlTextarea1"
                                 rows="4"></textarea>
-                            <p class="error_note mt-1 mb-0" style="color:#EF8D21;display:none;"></p>
+                            <p class="error_note mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
                     </div>
 

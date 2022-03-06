@@ -1,4 +1,9 @@
+@php
+$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+$urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/thumb/'.$product->photo;
+@endphp
 @extends('site.layout')
+@section('PHOTO', $urlPhoto)
 @section('SEO_title', $product->name)
 @section('SEO_keywords', $product->keywords)
 @section('mimeType', "image/jpeg")

@@ -4,7 +4,7 @@
             @foreach ($social_footer as $item)
             <div class="col-md-4 col-10 contact-padding">
                 <div class="contact-us">
-                    <img src="public/upload/images/photo/thumb/{{ $item->photo }}" alt="">
+                    <img src="{{asset('public/upload/images/photo/thumb/'.$item->photo)}}" alt="">
                     <p class="name-contact">{{$item->title}}</p>
                 </div>
                 <p class="favourite">{{$item->description}}</p>

@@ -3,6 +3,7 @@ $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVE
 $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/seoPage/thumb/' . $seoPage->photo;
 @endphp
 @extends('site.layout')
+@section('PHOTO', $urlPhoto)
 @section('SEO_title', $seoPage->title)
 @section('SEO_keywords', $seoPage->keywords)
 @if (isset($image->mimeType) && isset($image->width) && isset($image->height))
