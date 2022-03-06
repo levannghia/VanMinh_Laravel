@@ -51,7 +51,7 @@ class PageSiteController extends Controller
        
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:40',
-            'phone' => 'required|max:11',
+            'phone' => 'required|numeric',
             'address' => 'required',
             'note' => 'required',
             'content' => 'required',
@@ -64,7 +64,7 @@ class PageSiteController extends Controller
             "note.required" => "Vui lòng nhập tiêu đề",
             "content.required" => "Vui lòng nhập nội dung",
             "email.required" => "Vui lòng nhập email",
-            "phone.max" => "Số điện thoại không được dài hơn 11 số",
+            "phone.numeric" => "Trường này phải là số",
             "email.email" => "Vui lòng nhập email"
         ]);
 

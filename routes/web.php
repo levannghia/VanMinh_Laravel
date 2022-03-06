@@ -23,6 +23,8 @@ use App\Http\Controllers\site\NewsSiteController;
 use App\Http\Controllers\site\PageSiteController;
 use App\Http\Controllers\site\VideoSiteController;
 use App\Http\Controllers\site\CartController;
+use App\Http\Controllers\site\LocationController;
+use App\Http\Controllers\site\OrderSiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +62,14 @@ Route::post("/cart", [CartController::class, "saveCart"])->name('save.cart');
 Route::get("/cart", [CartController::class, "getCart"]);
 Route::get("/delete-cart/{rowId}", [CartController::class, "deleteCart"]);
 Route::post("/update-cart", [CartController::class, "updateCart"])->name('update.cart');
+
+//location
+Route::get("/quan-huyen", [LocationController::class, "loadQuanHuyen"]);
+Route::get("/phuong-xa", [LocationController::class, "loadPhuongXa"]);
+
+//order
+Route::post("/order/check-out", [OrderSiteController::class, "checkOut"])->name('check.out');
+
 //ADMIN
 
 Route::prefix('admin')->group(function () {

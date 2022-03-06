@@ -68,8 +68,11 @@ class OrderController extends Controller
         $settings = Config::all(['name', 'id'])->keyBy('name')->transform(function ($setting) {
             return $setting->id;
         })->toArray();
-        $order = Order::find($id);
+        $order = Order::select('orders.id','orders.ma_donhang','orders.phone','orders.name AS name','orders.email','orders.address','orders.note','orders.total_price',
+        'orders.created_at','orders.ward','orders.status','quanhuyen.name AS quanHuyen','tinhthanhpho.name AS tinhTP')
+        ->where('id',$id)->join('quanhuyen','quanhuyen.maqh','=','district')->join('tinhthanhpho','tinhthanhpho.matp','=','city')->first();
         
+        // dd($order);
         if(isset($order)){
             $row = json_decode(json_encode([
                 "title" => "Chi tiết đơn hàng",

@@ -79,6 +79,7 @@ class CartController extends Controller
         $image = json_decode(
             $seoPage->options
         );
-        return view('site.cart.cart', compact('seoPage', 'image', 'settings'));
+        $tinh_tp = DB::table('tinhthanhpho')->get();
+        return view('site.cart.cart', compact('tinh_tp','seoPage', 'image', 'settings'));
     }
 }

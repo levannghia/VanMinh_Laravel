@@ -38,7 +38,7 @@
                                 <div class="form-group">
                                     <label for="slug">Địa chỉ</label>
                                     <input type="text" class="form-control"
-                                        value="{{ $order->address . ', ' . $order->ward . ', ' . $order->district . ', ' . $order->city }}"
+                                        value="{{ $order->address . ', ' . $order->ward . ', ' . $order->quanHuyen . ', ' . $order->tinhTP }}"
                                         name="address">
                                 </div>
                                 <div class="form-group">
@@ -169,6 +169,7 @@
         </div>
         <button class="btn btn-outline-success" data-toggle="popover"
             data-content="Chức năng đang cập nhật">Export Excel</button>
+            <a href="{{ route('admin.order.index') }}" class="btn btn-light">Cancel</a>
 
         {{-- <button type="submit" class="btn btn-primary mr-2">Submit</button> --}}
         {{-- </form> --}}
