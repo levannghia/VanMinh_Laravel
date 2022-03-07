@@ -18,6 +18,7 @@ use App\Http\Controllers\admin\ConfigController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\SeoPageController;
+use App\Http\Controllers\admin\YKienKHControlle;
 use App\Http\Controllers\site\HomeController;
 use App\Http\Controllers\site\NewsSiteController;
 use App\Http\Controllers\site\PageSiteController;
@@ -40,6 +41,7 @@ use App\Http\Controllers\site\OrderSiteController;
 //USER
 Route::get("/", [HomeController::class, "index"])->name('home');
 Route::post("/show-map", [HomeController::class, "showMap"])->name('show.map');
+// Route::get("/site", [HomeController::class, "siteMap"])->name('site.map');
 Route::get("/home", [HomeController::class, "getProductByCategory"])->name('show.product.category');
 Route::get("/search", [HomeController::class, "Search"])->name('search.product');
 //Product
@@ -259,6 +261,19 @@ Route::prefix('admin')->group(function () {
             Route::get('/delete-all/{id}', 'deleteAll')->name('delete.all');
             Route::post('/status', 'status')->name('status');
             Route::post('/resorting', 'resortPosition')->name('resorting');
+        });
+
+        //Ý kiến khách hàng
+        Route::name('admin.y.kien.')->prefix('y-kien-khach-hang')->controller(YKienKHControlle::class)->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('/add', 'create')->name('add');
+            Route::post('/store', 'store')->name('store');
+            Route::get('/edit/{id}', 'edit')->name('edit');
+            Route::post('/update/{id}', 'update')->name('update');
+            Route::get('/delete/{id}', 'destroy')->name('delete');
+            Route::get('/delete-all/{id}', 'deleteAll')->name('delete.all');
+            Route::get('/noi-bac/{id}/{noiBac}', 'noiBac')->name('noi.bac');
+            Route::get('/status/{id}/{status}', 'status')->name('status');
         });
     });
 });

@@ -252,26 +252,20 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/photo/thumb
                 <div class="customer-avt">
                     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="{{ asset('public/site/images/Untitled-3.png') }}" alt="">
-                                <p class="customer-review">Shop luôn nắm bắt sở thích của khách hàng, các mẫu thiết bị
-                                    có chất
-                                    lượng cao giúp chúng tôi tự tin sử dụng sản phẩm.</p>
+                            
+                           
+
+                            @foreach ($review as $key => $item)
+                            <div class="carousel-item {{ $key == 0 ? 'active': '' }}">
+                                <img src="{{ asset('public/upload/images/yKien/thumb/'.$item->photo) }}" alt="">
+                                <p class="customer-review">{!!$item->description!!}</p>
                                 <blockquote>
-                                    <p class="name-customer">Anh: Nguyễn Ngọc Trường</p>
-                                    <p class="address">Tăng Nhơn Phú B, TP. Thủ Đức.</p>
+                                    <p class="name-customer">Anh: {{$item->name}}</p>
+                                    <p class="address">{{$item->address}}</p>
                                 </blockquote>
                             </div>
-                            <div class="carousel-item">
-                                <img src="{{ asset('public/site/images/tien-ne.jpg') }}" alt="">
-                                <p class="customer-review">Shop luôn nắm bắt sở thích của khách hàng, các mẫu thiết bị
-                                    có chất
-                                    lượng cao giúp chúng tôi tự tin sử dụng sản phẩm.</p>
-                                <blockquote>
-                                    <p class="name-customer">Chị: Mỹ Tiên</p>
-                                    <p class="address">Tăng Nhơn Phú B, TP. Thủ Đức.</p>
-                                </blockquote>
-                            </div>
+                            @endforeach
+                            
                         </div>
                     </div>
                 </div>

@@ -60,6 +60,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.y.kien.index')}}">
+                <i class="mdi mdi-bell menu-icon"></i>
+                <span class="menu-title">Ý kiến khách hàng</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false"
                 aria-controls="charts">
                 <i class="mdi mdi-chart-pie menu-icon"></i>
