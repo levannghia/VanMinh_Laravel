@@ -15,6 +15,7 @@
     </div>
 </div>
 <footer>
+    
     <a class="btn-effect btn-contact-block" href="tel:{{$settings['PHONE']}}">
         <div class="child-nth-1 animate__animated animate__zoomIn"></div>
         <div class="child-nth-2 animate__animated animate__pulse"></div>

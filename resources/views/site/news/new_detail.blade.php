@@ -16,9 +16,10 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/news/thum
     <div class="main-content-contacts">
         <div class="container">
             <div class="main-content-wrapper">
-                <h1 class="product-new">{{$news->title}}</h1>
-            <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}" alt="">
-            </p>
+                <h1 class="product-new">{{ $news->title }}</h1>
+                <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}"
+                        alt="">
+                </p>
                 <div id="main-content" class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         {!! $news->content !!}
@@ -26,8 +27,10 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/news/thum
                 </div>
                 {{-- <div class="fb-share-button" data-href="" data-layout="button_count" data-size="small"><a target="_blank" href="{{URL::current()}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div> --}}
                 <div class="share">
-                    <div class="fb-like" data-href="{{URL::current()}}" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
-                <div class="zalo-share-button" data-href="" data-oaid="579745863508352884" data-layout="1" data-color="blue" data-customize="false"></div>
+                    <div class="fb-like" data-href="{{ URL::current() }}" data-width="" data-layout="button_count"
+                        data-action="like" data-size="small" data-share="true"></div>
+                    <div class="zalo-share-button" data-href="" data-oaid="579745863508352884" data-layout="1"
+                        data-color="blue" data-customize="false"></div>
                 </div>
 
             </div>

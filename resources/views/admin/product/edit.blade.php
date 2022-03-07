@@ -33,6 +33,7 @@
                                 <textarea class="form-control" id="exampleTextarea1" rows="4"
                                     name="keywords">{{ old('keywords', $product->keywords) }}</textarea>
                             </div>
+                            
                             <div class="form-group">
                                 <label for="exampleTextarea1">Danh mục</label>
                                 <select class="js-example-basic-multiple w-100" name="category_id">

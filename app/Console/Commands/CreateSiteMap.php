@@ -45,14 +45,25 @@ class CreateSiteMap extends Command
         $sitemap = App::make('sitemap');
         // add home pages mặc định
         $sitemap->add(URL::to('/'), Carbon::now(), 1, 'daily');
-
+        $sitemap->add(URL::to('/lien-he'), Carbon::now(), 1, 'daily');
+        $sitemap->add(URL::to('/san-pham'), Carbon::now(), 1, 'daily');
+        $sitemap->add(URL::to('/mua-ban-nha-dat'), Carbon::now(), 1, 'daily');
+        $sitemap->add(URL::to('/tin-tuc'), Carbon::now(), 1, 'daily');
+        $sitemap->add(URL::to('/gioi-thieu'), Carbon::now(), 1, 'daily');
+        $sitemap->add(URL::to('/video'), Carbon::now(), 1, 'daily');
+        $sitemap->add(URL::to('/cart'), Carbon::now(), 1, 'daily');
         // add san pham
-        $products = DB::table('products')->orderBy('created_at', 'desc')->get();
+        $products = DB::table('products')->where('type', 0)->orderBy('created_at', 'desc')->get();
         foreach ($products as $item) {
             //$sitemap->add(url, thời gian, độ ưu tiên, thời gian quay lại)
             $sitemap->add(route('get.product.slug', $item->slug), $item->updated_at, 1, 'daily');
         }
-
+        // add nha dat
+        $nhaDat = DB::table('products')->where('type', 1)->orderBy('created_at', 'desc')->get();
+        foreach ($nhaDat as $item) {
+            //$sitemap->add(url, thời gian, độ ưu tiên, thời gian quay lại)
+            $sitemap->add(route('get.nha.dat.slug', $item->slug), $item->updated_at, 1, 'daily');
+        }
         // add tin tuc
         $news = DB::table('news')->orderBy('created_at', 'desc')->get();
         foreach ($news as $item) {

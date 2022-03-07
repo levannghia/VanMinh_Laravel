@@ -38,7 +38,7 @@
                                                 <th><input type="checkbox" name="check[]" value="{{ $item->id }}" />
                                                 </th>
                                                 <td>{{ $i++ }}</td>
-                                                <td><img src="{{asset('/upload/images/nhaDat/thumb/'.$item->photo)}}"
+                                                <td><img src="{{asset('public/upload/images/nhaDat/thumb/'.$item->photo)}}"
                                                         class="img-fluid" alt=""></td>
                                                 <td><a href="{{route('admin.nha.dat.edit',$item->id)}}" title="Chỉnh sửa {{$item->name}}">{{ $item->name }}</a></td>
                                                 <td>{{ $item->area }}m<sup>2</sup></td>

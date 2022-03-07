@@ -57,11 +57,17 @@ class ProductSiteController extends Controller
 
     public function getNhaDatBySlug($slug)
     {
-        $product = DB::table('products')->where('type', 1)->where('status', 1)->where('slug', $slug)->first();
+        $settings = Config::all(['name', 'value'])
+            ->keyBy('name')
+            ->transform(function ($setting) {
+                return $setting->value; // return only the value
+            })
+            ->toArray();
+        $nhaDat = DB::table('products')->where('type', 1)->where('status', 1)->where('slug', $slug)->first();
         $gallery = DB::table('galleries')->select('galleries.photo')
-            ->join('products', 'products.id', '=', 'galleries.product_id')->where('galleries.status', 1)->where('products.id', $product->id)
+            ->join('products', 'products.id', '=', 'galleries.product_id')->where('galleries.status', 1)->where('products.id', $nhaDat->id)
             ->orderBy('galleries.stt', 'ASC')->get();
-        dd($product);
+        return view('site.product.nhaDat_detail',compact('nhaDat','gallery','settings'));
     }
 
     public function getAllNhaDat()

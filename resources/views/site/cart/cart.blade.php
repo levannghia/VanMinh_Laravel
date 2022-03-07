@@ -103,31 +103,31 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/seoPage/t
                     @csrf
                     <div class="col-md-12">
 
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="exampleFormControlInput1" class="form-label">Họ và tên</label>
                             <input type="text" name="name" class="form-control" id="exampleFormControlInput1"
                                 placeholder="" required>
                             <p class="error_name mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="exampleFormControlInput1" class="form-label">Số điện thoại</label>
                             <input type="text" name="phone" class="form-control" id="exampleFormControlInput1"
                                 placeholder="" required>
                             <p class="error_phone mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="exampleFormControlInput1" class="form-label">Email</label>
                             <input type="email" name="email" class="form-control" id="exampleFormControlInput1"
                                 placeholder="" required>
                             <p class="error_email mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="exampleFormControlInput1" class="form-label">Địa chỉ</label>
                             <input type="text" name="address" class="form-control" id="exampleFormControlInput1"
                                 placeholder="Số nhà, đường" required>
                             <p class="error_address mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="exampleFormControlInput1" class="form-label">Tỉnh - Thành phố</label>
                             <select id="tinh_tp" name="tinh_tp" class="form-select form-control"
                                 aria-label="Default select example">
@@ -139,21 +139,21 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/seoPage/t
                             </select>
                             <p class="error_tinh_tp mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="exampleFormControlInput1" class="form-label">Quận - Huyện</label>
                             <select name="quanHuyen" id="quanHuyen" class="form-select form-control"
                                 aria-label="Default select example">
                             </select>
                             <p class="error_quanh_huyen mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="exampleFormControlInput1" class="form-label">Phường - Xã</label>
                             <select name="phuongXa" id="phuongXa" class="form-select form-control"
                                 aria-label="Default select example">
                             </select>
                             <p class="error_phuong_xa mt-1 mb-0" style="color:rgb(238 44 12);display:none;"></p>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="exampleFormControlTextarea1" class="form-label">Ghi chú</label>
                             <textarea name="note" class="form-control" id="exampleFormControlTextarea1"
                                 rows="4"></textarea>

@@ -82,7 +82,7 @@
                                 </span>
                                 <input type="file" class="form-control" id="formFile" name="photo"
                                     onchange="previewFile(this);">
-                                <img src="{{asset('/upload/images/nhaDat/thumb/'.$nhaDat->photo)}}" class="form-control img-fluid" id="previewImage" class="" alt="">
+                                <img src="{{asset('public/upload/images/nhaDat/thumb/'.$nhaDat->photo)}}" class="form-control img-fluid" id="previewImage" class="" alt="">
                             </div>
                         </div>
                     </div>

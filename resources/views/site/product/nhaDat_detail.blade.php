@@ -1,15 +1,16 @@
+
 @php
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-$urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/thumb/'.$product->photo;
+$urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/nhaDat/thumb/'.$nhaDat->photo;
 @endphp
 @extends('site.layout')
 @section('PHOTO', $urlPhoto)
-@section('SEO_title', $product->name)
-@section('SEO_keywords', $product->keywords)
-@section('mimeType', "image/jpeg")
+@section('SEO_title', $nhaDat->name)
+@section('SEO_keywords', $nhaDat->keywords)
+@section('mimeType', 'image/jpeg')
 @section('width', 960)
 @section('height', 720)
-@section('SEO_description', $seoPage->description)
+@section('SEO_description', substr($nhaDat->description, 0, 180))
 @section('content')
     <style>
         /* #chitiet-0 {
@@ -70,7 +71,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/th
         }
 
         .preview-thumbnail.nav-tabs li {
-            width: 23%;
+            width: 18%;
             margin-right: 2.5%;
         }
 
@@ -270,8 +271,8 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/th
                     <div class="preview col-md-6">
                         <div class="preview-pic tab-content">
                             <div class="tab-pane active" id="pic-1"><img
-                                    src="{{ asset('public/upload/images/product/thumb/' . $product->photo) }}"
-                                    alt="{{ $product->name }}">
+                                    src="{{ asset('public/upload/images/nhaDat/thumb/' . $nhaDat->photo) }}"
+                                    alt="{{ $nhaDat->name }}">
                             </div>
                             @php
                                 $i = 2;
@@ -279,7 +280,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/th
                             @foreach ($gallery as $item)
                                 <div class="tab-pane" id="pic-{{ $i++ }}"><img
                                         src="{{ asset('/public/upload/images/gallery/thumb/' . $item->photo) }}"
-                                        alt="{{ $product->name }}">
+                                        alt="{{ $nhaDat->name }}">
                                 </div>
                             @endforeach
 
@@ -290,8 +291,8 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/th
                                 HOCWEBGIARE.COM</div> --}}
                             {{-- <div class="menu-icon"><span>Menu</span></div> --}}
                             <li class="active"><a data-target="#pic-1" data-toggle="tab"><img
-                                        src="{{ asset('public/upload/images/product/thumb/' . $product->photo) }}"
-                                        alt="{{ $product->name }}"></a>
+                                        src="{{ asset('public/upload/images/nhaDat/thumb/' . $nhaDat->photo) }}"
+                                        alt="{{ $nhaDat->name }}"></a>
                             </li>
                             @php
                                 $y = 2;
@@ -299,14 +300,14 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/th
                             @foreach ($gallery as $item)
                                 <li><a data-target="#pic-{{ $y++ }}" data-toggle="tab"><img
                                             src="{{ asset('/public/upload/images/gallery/thumb/' . $item->photo) }}"
-                                            alt="{{ $product->name }}"></a>
+                                            alt="{{ $nhaDat->name }}"></a>
                                 </li>
                             @endforeach
 
                         </ul>
                     </div>
                     <div class="details col-md-6">
-                        <h3 class="product-title">{{ $product->name }}</h3>
+                        <h3 class="product-title">{{ $nhaDat->name }}</h3>
                         <div class="rating">
                             <div class="share">
                                 <div class="fb-like" data-href="{{ URL::current() }}" data-width=""
@@ -315,9 +316,9 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/th
                                     data-color="blue" data-customize="false"></div>
                             </div>
                         </div>
-                        <p class="product-description">{!! substr($product->description, 0, 800) .'...' !!}</p>
-                        @if ($product->price != NULL)
-                        <h4 class="price">{{ number_format($product->price, 0, ',', '.') }} đ</h4>
+                        <p class="product-description">{{ $nhaDat->description }}</p>
+                        @if ($nhaDat->price != NULL)
+                        <h4 class="price">Giá bán: {{ number_format($nhaDat->price, 0, ',', '.') }} đ</h4>
                         @else
                         <h4 class="price"><a href="tel:{{$settings['PHONE']}}">Liên hệ</a></h4>
                         <p class="product-price">Giá: 
@@ -343,15 +344,8 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/th
                                 title="Not In store"></span> <span class="color green"></span> <span
                                 class="color blue"></span>
                         </h5> --}}
-                        <form action="{{route('save.cart')}}" method="post">
-                            @csrf
-                            <label for="">Số lượng:</label>
-                            <input type="hidden" value="{{$product->id}}" name="product_id">
-                            <input type="number" class="number-qty" style="width:50px;" value="1" name="quantiti">
-                            <div class="action"> <a href="tel:{{ $settings['PHONE'] }}"> <button type="submit"
-                                class="add-to-cart btn btn-default" type="button">MUA NGAY</button> </a>
-                        </form>
-                        
+                        <div class="action"> <a href="tel:{{ $settings['PHONE'] }}"> <button
+                                    class="add-to-cart btn btn-default" type="button">LIÊN HỆ</button> </a>
                             {{-- <a
                                 href="http://hocwebgiare.com/" target="_blank"> <button class="like btn btn-default"
                                     type="button"><span class="fa fa-heart"></span></button> </a> --}}
@@ -368,7 +362,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/th
             </div>
             <br>
             <div id="chitiet-0" class="content0">
-                {!! $product->description !!}
+                {!! $nhaDat->content !!}
             </div>
             <div id="chitiet-1" class="content0">
                 <div class="fb-comments" data-href="{{ URL::current() }}" data-width="" data-numposts="5"></div>
@@ -380,36 +374,6 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/th
                     data-color="blue" data-customize="false"></div>
             </div>
         </div>
-        <h1 class="product-new">SẢN PHẨM CÙNG LOẠI</h1>
-            <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}" alt="">
-            </p>
-            <div class="row">
-                @foreach ($product_cate as $item)
-                    <div class="col-md-3">
-                        <div class="border-col">
-                            <div class="detail-product-link">
-                                <a href="{{ route('get.product.slug', $item->slug) }}"><img
-                                        src="{{asset('public/upload/images/product/thumb/'.$item->photo)}}" alt="" width="200px"></a>
-                            </div>
-                            <a href="{{ route('get.product.slug', $item->slug) }}">
-                                <h6 class="product-name">{{ $item->name }}</h6>
-                            </a>
-                            <div class="price-view">
-                                @if ($item->price == null)
-                                    <p class="product-price">Giá: <a href="{{ $settings['PHONE'] }}"
-                                            class="contact-product">liên
-                                            hệ</a> </p>
-                                @else
-                                    <p class="product-price">Giá: <a href="{{ route('get.product.slug', $item->slug) }}"
-                                            class="contact-product">{{ number_format($item->price, 0, ',', '.') }} đ</a>
-                                    </p>
-                                @endif
-                                <p class="product-views">Lượt xem: {{ $item->view }}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
     </div>
 @endsection
 @push('script_site')
@@ -440,3 +404,4 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/th
         }
     </script>
 @endpush
+

@@ -54,7 +54,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/seoPage/t
                         </div>
                     @endforeach
                 @else
-                    <h5 style="margin: auto;" class="product-new mb-5">Sản Phẩm không tồn tại!</h5>
+                    <h5 style="margin: auto;" class="product-new mb-5">Sản phẩm không tồn tại!</h5>
                 @endif
             </div>
             {{ $data->links() }}
