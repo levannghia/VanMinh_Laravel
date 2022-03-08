@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 slide-menu">
         <ul class="vertical-menu">
             @foreach ($category as $item)
             <a href="/danh-muc/{{$item->slug}}">

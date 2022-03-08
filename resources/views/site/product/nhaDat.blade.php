@@ -32,9 +32,9 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/seoPage/th
                                 <a href="/mua-ban-nha-dat/{{$item->slug}}"><p><img src="public/upload/images/nhaDat/thumb/{{ $item->photo }}" alt="" class="img-padding"></p></a>
                             </div>
                             <div class="col-md-6 content_tintuc">
-                                <div class="cover-bottom">
+                                <div class="cover-bottom cover-bottom-nhadat">
                                     <a href="/mua-ban-nha-dat/{{$item->slug}}"><h6>{{ $item->name }}</h6></a>
-                                    <div class="info">
+                                    <div class="info info_tintuc">
                                         
                                         @if ($item->price == null)
                                         <div class="acreage">

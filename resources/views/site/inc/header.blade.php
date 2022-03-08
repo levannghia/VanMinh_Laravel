@@ -23,7 +23,7 @@
     <div class="header-content">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-nav">
-                <a class="navbar-brand logo-img" href="#"><img src="{{asset('public/upload/images/photo/thumb/'.$logo->photo)}}"
+                <a class="navbar-brand logo-img" href="#"><img  src="{{asset('public/upload/images/photo/thumb/'.$logo->photo)}}"
                         alt=""></a>
                 <form class="form-inline my-2 my-lg-0 form-search" action="{{route('search.product')}}">
                     <h2 class="form-title"><img src="/public/site/images/vanminh.png"
