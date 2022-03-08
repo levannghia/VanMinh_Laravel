@@ -75,6 +75,7 @@ $mxh_top = DB::table('photos')
     <link rel="stylesheet" href="{{ asset('public/site/css/contact.css?v-' . time()) }}">
     <link rel="stylesheet" href="{{ asset('public/site/css/style.css?v-' . time()) }}">
     <link rel="stylesheet" href="{{ asset('public/site/css/cart.css?v-' . time()) }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>@yield('SEO_title')</title>
     {!! $settings['ANALYTICS'] !!}
     {!! $settings['WEB_MASTER_TOOL'] !!}

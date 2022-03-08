@@ -32,8 +32,8 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/nhaDat/thu
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            overflow-x: hidden;
+            /* font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden; */
         }
 
         img {

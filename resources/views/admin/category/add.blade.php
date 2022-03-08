@@ -73,11 +73,11 @@
     @push('script')
 
         <script>
-            CKEDITOR.replace('description', {
-            filebrowserBrowseUrl: '/public/ckfinder/ckfinder.html',
-            filebrowserUploadUrl: '/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-            filebrowserWindowWidth: '1000',
-            filebrowserWindowHeight: '700'
-        });
+        //     CKEDITOR.replace('description', {
+        //     filebrowserBrowseUrl: '/public/ckfinder/ckfinder.html',
+        //     filebrowserUploadUrl: '/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+        //     filebrowserWindowWidth: '1000',
+        //     filebrowserWindowHeight: '700'
+        // });
         </script>
     @endpush

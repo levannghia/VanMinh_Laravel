@@ -49,6 +49,7 @@ Route::get("/san-pham/{slug}", [ProductSiteController::class, "getProductBySlug"
 Route::get("/san-pham", [ProductSiteController::class, "getAllProduct"])->name('get.product');
 Route::get("/mua-ban-nha-dat/{slug}", [ProductSiteController::class, "getNhaDatBySlug"])->name('get.nha.dat.slug');
 Route::get("/mua-ban-nha-dat", [ProductSiteController::class, "getAllNhaDat"])->name('get.nha.dat');
+Route::get("/danh-muc/{slug}", [ProductSiteController::class, "productCategory"])->name('get.product.category.slug');
 
 //News
 Route::get("/tin-tuc/{slug}", [NewsSiteController::class, "getNewsBySlug"])->name('get.news.slug');

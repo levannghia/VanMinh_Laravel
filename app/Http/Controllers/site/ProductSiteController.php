@@ -7,10 +7,28 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Config;
 use App\Models\Products;
+use App\Models\Category;
 use App\Models\SeoPage;
+use App\Models\Photo;
 
 class ProductSiteController extends Controller
 {
+    public function productCategory($slug)
+    {
+        $settings = Config::all(['name', 'value'])
+            ->keyBy('name')
+            ->transform(function ($setting) {
+                return $setting->value; // return only the value
+            })
+            ->toArray();
+        $slider = Photo::where('status',1)->where('type','slide')->orderBy('stt','ASC')->get();
+        $category = Category::where('status', 1)->orderBy('stt', 'ASC')->get();
+        $category_name = Category::where('status', 1)->where('slug',$slug)->orderBy('stt', 'ASC')->first();
+        $seoPage = SeoPage::where('type', 'danh-muc')->first();
+        $cate_pro = Products::select('products.photo', 'products.name', 'products.price', 'products.slug','products.view')
+        ->join('categories', 'categories.id', '=', 'products.category_id')->where('categories.slug',$slug)->where('products.type', 0)->where('products.status', 1)->paginate($settings['PHAN_TRANG_PRODUCT']);
+        return view('site.product.product_category',compact('cate_pro','seoPage','category','slider','settings','category_name'));
+    }
     public function getProductBySlug($slug)
     {
         $settings = Config::all(['name', 'value'])
@@ -31,8 +49,8 @@ class ProductSiteController extends Controller
                 ->join('products', 'products.id', '=', 'galleries.product_id')->where('galleries.status', 1)->where('products.id', $product->id)
                 ->orderBy('galleries.stt', 'ASC')->get();
             //sp lien quan
-            $product_cate = Products::select('products.photo', 'products.name', 'products.price', 'products.slug')
-                ->join('categories', 'categories.id', '=', 'products.category_id')->where('products.type', 0)->where('products.status', 1)->limit(3)->get();
+            $product_cate = Products::select('products.photo', 'products.name', 'products.price', 'products.slug','products.view')
+                ->join('categories', 'categories.id', '=', 'products.category_id')->where('products.type', 0)->where('products.status', 1)->limit(4)->get();
 
             return view('site.product.product_detail', compact('product', 'gallery', 'seoPage', 'settings', 'product_cate'));
         }

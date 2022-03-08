@@ -31,8 +31,8 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/th
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            overflow-x: hidden;
+            /* font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden; */
         }
 
         img {

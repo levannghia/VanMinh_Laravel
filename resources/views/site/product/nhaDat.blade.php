@@ -31,7 +31,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/seoPage/th
             <div class="cover-bottom">
                 <a href="/mua-ban-nha-dat/{{$item->slug}}"><h6>{{ $item->name }}</h6></a>
                 <div class="info">
-                    <?xml version="1.0" encoding="iso-8859-1"?>
+                   
                     
                     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 235.517 235.517"
