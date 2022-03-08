@@ -77,12 +77,19 @@ width: 40%;
     font-size: 28px;
     font-weight: bold;
 }
-.cover-bottom h6{
+.cover-bottom-nhadat h6{
     color: #333;
     font-size: 20px;
     display: block;
     line-height: normal;
     margin-bottom: 5px;
+    font-weight: bold;
+}
+.cover-bottom h6{
+    font-size: 18px;
+    color: #333;
+    line-height: normal;
+    margin-bottom: 15px;
     font-weight: bold;
 }
 .content_tintuc{
@@ -100,4 +107,20 @@ width: 40%;
 }
 .title_tintuc::after{
     content: none;
+}
+.info_tintuc{
+    flex-direction: column;
+}
+#Capa_1{
+    width: 20px;
+}
+#Capa_2{
+    width: 20px;
+}
+.menu-category .active{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.slide-menu{
+    max-width: 23%;
 }

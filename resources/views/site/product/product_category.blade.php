@@ -18,7 +18,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/seoPage/th
             <!-- Banner - menu -->
 
             {{-- silder --}}
-            @include('site.inc.slide');
+            @include('site.inc.slide')
             <!-- content -->
             <h2 class="product-new">{{$category_name->name}}</h2>
             <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}" alt="">

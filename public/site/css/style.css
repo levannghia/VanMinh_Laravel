@@ -305,7 +305,7 @@ a:hover {
 }
 
 .menu-header ul li {
-    padding-left: 15px;
+    padding-left: 20px;
     padding-right: 15px;
 }
 
@@ -329,7 +329,7 @@ a:hover {
 }
 
 .navbar-nav .active {
-    background: black !important;
+    background: #013300 !important;
 }
 
 .vertical-menu {
@@ -531,7 +531,7 @@ a:hover {
     .phone-contact {
         display: block !important;
         position: absolute;
-        right: 25%;
+        right: 16%;
         top: 10%;
     }
     .col-md-2dot4 img {
@@ -542,6 +542,33 @@ a:hover {
     }
     .tab-chem span {
         display: none !important;
+    }
+    .slide-menu {
+        max-width: 100% !important;
+    }
+    .header-content .form-title img {
+        width: 100%;
+    }
+    .search-from {
+        display: contents;
+    }
+    .logo-img {
+        display: block !important;
+    }
+    .dt {
+        padding-left: 35% !important;
+    }
+    .border-content-tintuc .main-content-a {
+        width: 100% !important;
+    }
+    .cover-bottom {
+        padding: 0 0 0 25px !important;
+    }
+    .contact-us {
+        width: 100% !important;
+    }
+    .bg-contact .contact-us {
+        justify-content: flex-start !important;
     }
 }
 
@@ -556,19 +583,24 @@ a:hover {
         display: block !important;
         border-bottom: 0 !important;
     }
-    .left-content {
-        position: relative;
+    /* .left-content {
+        background: url(/public/site/images/p2.png) right center no-repeat #034235;
         margin-right: auto !important;
-        background: #006600;
         color: white;
-        width: auto !important;
-        border-radius: 20px !important;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
         text-align: center;
-        padding: 14px 20px;
-        margin-left: 0 !important;
-        margin-bottom: 1px !important;
+        margin-left: -37px;
+        padding: 8px 63px 8px 31px;
+        margin-bottom: 0px;
+        margin-top: 3px;
         text-transform: uppercase;
-    }
+        font-family: 'svn-pro';
+        src: url("/public/site/fonts/SVN-Product Sans Regular.ttf");
+        font-style: normal;
+        font-display: block;
+        font-size: 20px;
+    } */
     #title-svg {
         display: none;
     }
