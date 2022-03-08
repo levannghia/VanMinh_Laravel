@@ -24,17 +24,17 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/seoPage/t
                     @foreach ($news as $item)
                         <div class="col-md-6">
                             <a class="main-content-a" href="/tin-tuc/{{$item->slug}}">
-                                <div class="border-content">
+                                <div class="border-content-tintuc">
                                     <div class="row">
                                         <div class="col-md-6 content_image">
-                                            <div class="img-news">
+                                            <div class="img-news img-news-tintuc">
                                                 <img src="public/upload/images/news/thumb/{{ $item->photo }}" alt="">
                                             </div>
                                         </div>
                                         <div class="col-md-6 ">
                                             <div class="text-news">
                                                 <a href="/tin-tuc/{{$item->slug}}">
-                                                    <h4 class="title-news">
+                                                    <h4 class="title-news title_tintuc">
                                                         {{ $item->title }}
                                                     </h4>
                                                 </a>

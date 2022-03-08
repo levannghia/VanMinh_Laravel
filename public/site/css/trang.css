@@ -27,15 +27,16 @@ ul.navbar-nav.ml-auto{
 #navbarSupportedContent{
     margin-left: 5%;
 }
-.img-news{
+.img-news-tintuc{
     margin-right: 4%;
     width: 100%;
     overflow: hidden;
 }
-.img-news img{
+.img-news-tintuc img{
     width: 100%;
+    border-bottom-right-radius: 0;
 }
-.img-news:hover img{
+.img-news-tintuc:hover img{
     transition: 0.3s ease-out;
     transform: scale(1.1,1.1);
 }
@@ -52,7 +53,7 @@ ul.navbar-nav.ml-auto{
     margin-left: 5px;
     margin-bottom: 5px;
 }
-.border-content .main-content-a{
+.border-content-tintuc .main-content-a{
 width: 40%;
 }
 .content_image{
@@ -69,7 +70,7 @@ width: 40%;
     font-size: 20px;
     display: block;
     line-height: normal;
-    margin-bottom: 5px;
+    margin-bottom: 17px;
     font-weight: bold;
 }
 .product-new{
@@ -96,4 +97,7 @@ width: 40%;
 }
 .acre-map span{
     font-weight: 600;
+}
+.title_tintuc::after{
+    content: none;
 }
