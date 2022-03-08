@@ -234,7 +234,6 @@
                                 },
                                 success: function(data) {
                                     if (data.status == 1) {
-
                                         window.location.reload();
                                     }
                                 }

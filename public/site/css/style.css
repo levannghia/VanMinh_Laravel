@@ -368,10 +368,22 @@ a:hover {
     padding-left: 0 !important;
 }
 
+.standard-content {
+    font-family: 'quick-r';
+    src: url("/public/site/fonts/Quicksand-Regular.ttf");
+    font-style: normal;
+    font-display: block;
+}
+
 .product-new {
     margin-top: 50px;
     text-align: center;
     color: #006600;
+    text-transform: uppercase;
+    font-family: 'utm-avob';
+    src: url("/public/site/fonts/UTM AvoBold.ttf");
+    font-style: normal;
+    font-display: block;
 }
 
 .sk-fml {
@@ -805,6 +817,10 @@ a:hover {
 
 .news-events h2 {
     color: #006600;
+    font-family: 'utm-avob';
+    src: url("/public/site/fonts/UTM AvoBold.ttf");
+    font-style: normal;
+    font-display: block;
 }
 
 .news-events {
@@ -845,7 +861,19 @@ a:hover {
 }
 
 .img-news {
-    width: 20%;
+    width: 45%;
+}
+
+.vert {
+    width: 100% !important;
+}
+
+.vert .simply-scroll-clip {
+    width: 100% !important;
+}
+
+.vert .simply-scroll-list li {
+    width: 100% !important;
 }
 
 .img-news img {
@@ -856,6 +884,14 @@ a:hover {
 .title-news {
     position: relative;
 }
+
+
+/* .title-news h4 a {
+    font-family: 'ro-r';
+    src: url("/public/site/fonts/Roboto-Regular.ttf");
+    font-style: normal;
+    font-display: block;
+} */
 
 .title-news::after {
     position: absolute;
@@ -964,6 +1000,13 @@ blockquote .name-customer:before {
 .des-company {
     text-align: justify;
     line-height: 2;
+}
+
+.des-news {
+    font-family: 'svn-pro';
+    src: url("/public/site/fonts/SVN-Product Sans Regular.ttf");
+    font-style: normal;
+    font-display: block;
 }
 
 .Policy {

@@ -68,7 +68,7 @@ $mxh_top = DB::table('photos')
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0">
     <link rel="canonical" href="{{ $url }}" />
     <!-- Bootstrap CSS -->
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"> 
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css">
@@ -79,6 +79,7 @@ $mxh_top = DB::table('photos')
     <link rel="stylesheet" href="{{ asset('public/site/fonts/slick/slick.woff') }}">
     <link rel="stylesheet" href="{{ asset('public/site/css/trang.css?v-' . time()) }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+   
     <title>@yield('SEO_title')</title>
     {!! $settings['ANALYTICS'] !!}
     {!! $settings['WEB_MASTER_TOOL'] !!}
@@ -117,7 +118,22 @@ $mxh_top = DB::table('photos')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-simplyscroll/2.1.1/jquery.simplyscroll.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-simplyscroll/2.1.1/jquery.simplyscroll.css" media="all" type="text/css">
+    <script type="text/javascript">
+        (function($) {
+            $(function() { //on DOM ready
+                $("#scroller").simplyScroll({
+                    customClass: 'vert',
+                    orientation: 'vertical',
+                    auto: true,
+                    manualMode: 'loop',
+                    frameRate: 10,
+                    speed: 0.5
+                });
+            });
+        })(jQuery);
+    </script>
     @stack('script_site')
 </body>
 

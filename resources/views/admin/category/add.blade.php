@@ -38,7 +38,7 @@
                             <div class="form-group">
                                 <label for="exampleTextarea1">Danh mục cấp 1</label>
                                 <select class="js-example-basic-multiple w-100" name="category_lv1_id">
-                                    <option value="1"><-------Vui lòng chọn danh mục lv1-------></option>
+                                    <option value=""><-------Vui lòng chọn danh mục lv1-------></option>
                                     @foreach ($category_lv1 as $item)
                                     <option value="{{$item->id}}">{{$item->title}}</option>
                                     @endforeach

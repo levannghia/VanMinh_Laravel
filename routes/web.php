@@ -101,6 +101,7 @@ Route::prefix('admin')->group(function () {
             Route::get('/add', 'create')->name('add');
             Route::post('/store', 'store')->name('store');
             Route::get('/edit/{id}', 'edit')->name('edit');
+            Route::get('/delete/{id}', 'destroy')->name('delete');
             Route::post('/update/{id}', 'update')->name('update');
             Route::get('/delete-all/{id}', 'deleteAll')->name('delete.all');
             Route::get('/noi-bac/{id}/{noiBac}', 'noiBac')->name('noi.bac');
@@ -115,6 +116,7 @@ Route::prefix('admin')->group(function () {
             Route::post('/store', 'store')->name('store');
             Route::get('/edit/{id}', 'edit')->name('edit');
             Route::post('/update/{id}', 'update')->name('update');
+            Route::get('/delete/{id}', 'destroy')->name('delete');
             Route::get('/delete-all/{id}', 'deleteAll')->name('delete.all');
             Route::get('/noi-bac/{id}/{noiBac}', 'noiBac')->name('noi.bac');
             Route::get('/status/{id}/{status}', 'status')->name('status');
