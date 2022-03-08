@@ -37,7 +37,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/seoPage/th
                             <div class="price-view">
                                 @if ($item->price == null)
                                     <p class="product-price">Giá: <a href="{{ $settings['PHONE'] }}"
-                                            class="contact-product">liên
+                                            class="contact-product">Liên
                                             hệ</a> </p>
                                 @else
                                     <p class="product-price">Giá: <a href="{{ route('get.product.slug', $item->slug) }}"

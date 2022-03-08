@@ -349,8 +349,8 @@ a:hover {
     color: #28a745;
     text-transform: uppercase;
     border-bottom: 1px white solid;
-    font-family: 'svn-pro';
-    src: url("/public/site/fonts/SVN-Product Sans Regular.ttf");
+    font-family: 'ro-r';
+    src: url("/public/site/fonts/Roboto-Regular.ttf");
     font-style: normal;
     font-display: block;
 }
@@ -377,6 +377,17 @@ a:hover {
 
 .product-views {
     color: #6a6363;
+}
+
+.product-title {
+    color: #036403;
+}
+
+.news-lien-quan {
+    background-color: #d6d5d3;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
 }
 
 .product-new {
@@ -712,7 +723,7 @@ a:hover {
 
 .info {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     margin-bottom: 5px;
 }
 
@@ -741,6 +752,11 @@ a:hover {
 
 .acreage span {
     padding-left: 5px;
+    font-weight: 600;
+}
+
+.acreage span:hover {
+    color: #006600;
 }
 
 .real-estate img {
@@ -1017,8 +1033,8 @@ blockquote .name-customer:before {
 }
 
 .des-news {
-    font-family: 'svn-pro';
-    src: url("/public/site/fonts/SVN-Product Sans Regular.ttf");
+    font-family: 'ro-r';
+    src: url("/public/site/fonts/Roboto-Regular.ttf");
     font-style: normal;
     font-display: block;
 }

@@ -32,6 +32,21 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/news/thum
                     <div class="zalo-share-button" data-href="" data-oaid="579745863508352884" data-layout="1"
                         data-color="blue" data-customize="false"></div>
                 </div>
+                <div class="clear" style="padding-bottom: 20px;"></div>
+                <div class="news-lien-quan">
+                    <p style="font-style: italic; font-weight: bold; margin-bottom: 0px;">Bài viết khác:</p>
+                    <ul>
+                        @foreach ($news_lq as $item)
+                            <?php
+                            
+                            $date = new DateTime($item->created_at);
+                        
+                            ?>
+                            <li><a href="/tin-tuc/{{ $item->slug }}" title="{{ $item->title }}">{{ $item->title }}</a>
+                                - {{ $date->format('d/m/Y'); }}</li>
+                        @endforeach
+                    </ul>
+                </div>
 
             </div>
         </div>

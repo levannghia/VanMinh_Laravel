@@ -187,7 +187,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/nhaDat/thu
         .add-to-cart,
         .like {
             background: #006600;
-            padding: 1.2em 1.5em;
+            padding: 0.5em 0.5em;
             border: none;
             text-transform: UPPERCASE;
             font-weight: bold;
@@ -320,7 +320,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/nhaDat/thu
                         @if ($nhaDat->price != NULL)
                         <h4 class="price">Giá bán: {{ number_format($nhaDat->price, 0, ',', '.') }} đ</h4>
                         @else
-                        <h4 class="price"><a href="tel:{{$settings['PHONE']}}">Liên hệ</a></h4>
+                        {{-- <h4 class="price"><a href="tel:{{$settings['PHONE']}}">Liên hệ</a></h4> --}}
                         <p class="product-price">Giá: 
                             <a href="tel:{{$settings['PHONE']}}" class="price-product">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -353,27 +353,28 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/nhaDat/thu
                     </div>
                 </div>
             </div>
-            <div class="thong_tin">
-                <span class="btnXDT tablinks7 hien" onclick="chemistrys(event, 'chitiet-0')">Thông tin
-                    chi tiết
-                </span>
-                <span class="btnTCD tablinks7" style="padding-left: 10px;" onclick="chemistrys(event, 'chitiet-1')">Bình luận
-                </span>
-            </div>
-            <br>
-            <div id="chitiet-0" class="content0">
-                {!! $nhaDat->content !!}
-            </div>
-            <div id="chitiet-1" class="content0">
-                <div class="fb-comments" data-href="{{ URL::current() }}" data-width="" data-numposts="5"></div>
-            </div>
-            <div class="share">
-                <div class="fb-like" data-href="{{ URL::current() }}" data-width=""
-                    data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
-                <div class="zalo-share-button" data-href="" data-oaid="579745863508352884" data-layout="1"
-                    data-color="blue" data-customize="false"></div>
-            </div>
+            
         </div>
+        <div class="thong_tin">
+            <span class="btnXDT tablinks7 hien" onclick="chemistrys(event, 'chitiet-0')">Thông tin
+                chi tiết
+            </span>
+            <span class="btnTCD tablinks7" style="padding-left: 10px;" onclick="chemistrys(event, 'chitiet-1')">Bình luận
+            </span>
+        </div>
+        <br>
+        <div id="chitiet-0" class="content0">
+            {!! $nhaDat->content !!}
+        </div>
+        <div id="chitiet-1" class="content0">
+            <div class="fb-comments" data-href="{{ URL::current() }}" data-width="100%" data-numposts="5"></div>
+        </div>
+        {{-- <div class="share">
+            <div class="fb-like" data-href="{{ URL::current() }}" data-width=""
+                data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+            <div class="zalo-share-button" data-href="" data-oaid="579745863508352884" data-layout="1"
+                data-color="blue" data-customize="false"></div>
+        </div> --}}
     </div>
 @endsection
 @push('script_site')

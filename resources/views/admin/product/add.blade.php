@@ -39,7 +39,7 @@
                                 <label for="exampleTextarea1">Danh mục</label>
                                 <select class="js-example-basic-multiple w-100" name="category_id">
                                     <option value="">
-                                        <---------- Vui lòng chọn danh mục phong -------->
+                                        <---------- Vui lòng chọn danh mục -------->
                                     </option>
                                     @foreach ($category as $item)
                                         <option value="{{ $item->id }}">{{ $item->name }}</option>

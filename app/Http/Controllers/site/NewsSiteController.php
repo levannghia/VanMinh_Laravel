@@ -24,8 +24,9 @@ class NewsSiteController extends Controller
             "height" => 400,
         ]));
         $news = DB::table('news')->where('status', 1)->where('slug', $slug)->first();
+        $news_lq = DB::table('news')->where('status', 1)->where('id','!=',$news->id)->limit(3)->get();
         if(isset($news)){
-            return view('site.news.new_detail',compact('news','image'));
+            return view('site.news.new_detail',compact('news','image','news_lq'));
         }
         return abort(404);
     }

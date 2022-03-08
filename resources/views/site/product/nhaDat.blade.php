@@ -52,7 +52,13 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/seoPage/th
                                     <div class="acreage acre-map">
                                         <i class="bi bi-geo-alt"></i> <span data-id="{{ $item->id }}">Xem bản đồ</span>
                                     </div>
+                                    
+                                    @if (strlen($item->description) >= 150)
+                                    
                                     <p class="des">{{ substr($item->description, 0, 150) . ' [...]' }}</p>
+                                    @else
+                                    <p class="des">{{$item->description}}</p>
+                                    @endif
                                 </div>
                             </div>
                         </div>
