@@ -22,7 +22,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/photo/thum
             {{-- silder --}}
             @include('site.inc.slide')
             <!-- content -->
-            <h1 class="product-new">SẢN PHẨM MỚI</h1>
+            <h2 class="product-new">SẢN PHẨM MỚI</h2>
             <p class="sk-fml">Mang lại cho khách hàng những sản phẩm tốt nhất dành cho sức khỏe của gia đình bạn?
             </p>
             <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}"
@@ -43,7 +43,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/photo/thum
                             <div class="price-view">
                                 @if ($item->price == null)
                                     <p class="product-price">Giá: <a href="{{ $settings['PHONE'] }}"
-                                            class="contact-product">liên
+                                            class="contact-product">Liên
                                             hệ</a> </p>
                                 @else
                                     <p class="product-price">Giá: <a href="{{ route('get.product.slug', $item->slug) }}"
@@ -59,7 +59,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/photo/thum
             @foreach ($category_lv1 as $key => $value)
                 <div class="tab-chem">
                     <p class="left-content">{{ $value->title }}
-                        <svg id="title-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        {{-- <svg id="title-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             version="1.1" width="400" height="400" viewBox="0 0 400 400" xml:space="preserve">
                             <g transform="matrix(1 0 0 1 200 200)" id="96y6mOHc-6wU-Zbhjml11">
                                 <path
@@ -68,7 +68,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/photo/thum
                                     d="M 199.57912 199.57912 L -199.57913000000002 199.57912 L -199.57913000000002 -199.57913000000002 C -199.57913000000002 -199.57913000000002 -146.46465 -153.19866000000002 -64.81482000000003 -25.252530000000007 C 16.83500999999997 102.69359999999999 199.57911999999996 199.57912 199.57911999999996 199.57912 z"
                                     stroke-linecap="round" />
                             </g>
-                        </svg>
+                        </svg> --}}
                     </p>
                     <?php
                     $category_noibac = DB::table('categories')
@@ -123,7 +123,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/photo/thum
                     @endforeach
                 @endif
             @endforeach
-            <h1 class="product-new">MUA BÁN NHÀ ĐẤT </h1>
+            <h2 class="product-new">MUA BÁN NHÀ ĐẤT </h2>
             <p class="sk-fml">Chuyên mua bán nhà đất và kí gữi tại Sài Gòn</p>
             <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}"
                     alt="">
@@ -223,7 +223,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/photo/thum
     </div>
     <div class="container">
         <div class="video-clip">
-            <h1 class="product-new">Video Clip</h1>
+            <h2 class="product-new">Video Clip</h2>
             <p class="sk-fml">Góc chia sẽ cẩm nang về thiết bị y tế chúng tôi gữi đến các bạn</p>
             <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}"
                     alt="">

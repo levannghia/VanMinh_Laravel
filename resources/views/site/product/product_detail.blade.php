@@ -380,7 +380,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/th
                     data-color="blue" data-customize="false"></div>
             </div>
         </div>
-        <h1 class="product-new">SẢN PHẨM CÙNG LOẠI</h1>
+        <h2 class="product-new">SẢN PHẨM CÙNG LOẠI</h2>
             <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}" alt="">
             </p>
             <div class="row">

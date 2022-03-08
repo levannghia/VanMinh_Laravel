@@ -375,6 +375,10 @@ a:hover {
     font-display: block;
 }
 
+.product-views {
+    color: #6a6363;
+}
+
 .product-new {
     margin-top: 50px;
     text-align: center;
@@ -609,31 +613,40 @@ a:hover {
     margin-left: -37px;
     padding: 14px 20px;
     cursor: pointer;
+    text-transform: capitalize;
+    color: #025002;
+    font-family: 'svn-pro';
+    src: url("/public/site/fonts/SVN-Product Sans Regular.ttf");
+    font-style: normal;
+    font-display: block;
 }
 
 .tab-chem {
     margin-top: 50px;
-    border-bottom: #006600 1px solid;
     display: flex;
     list-style: none;
     padding: 0px 20px;
+    background: url(/public/site/images/p3.png)left bottom repeat-x;
 }
 
 .left-content {
-    position: relative;
-    text-align: left;
+    /* background: url(../images/p2.png)right center no-repeat, #034235; */
+    background: url(/public/site/images/p2.png) right center no-repeat #034235;
     margin-right: auto !important;
-    background: #006600;
     color: white;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    border-top-right-radius: 31px;
-    width: 220px;
     text-align: center;
     margin-left: -37px;
-    padding: 14px 20px;
-    margin-bottom: -1px;
+    padding: 8px 63px 8px 31px;
+    margin-bottom: 0px;
+    margin-top: 3px;
     text-transform: uppercase;
+    font-family: 'svn-pro';
+    src: url("/public/site/fonts/SVN-Product Sans Regular.ttf");
+    font-style: normal;
+    font-display: block;
+    font-size: 20px;
 }
 
 

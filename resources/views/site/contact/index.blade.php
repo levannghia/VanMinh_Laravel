@@ -16,7 +16,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/seoPage/th
     <div class="main-content-contacts">
         <div class="container">
             <div class="main-content-wrapper">
-                <h1 class="product-new">{{$page->title}}</h1>
+                <h2 class="product-new">{{$page->title}}</h2>
                 <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}" alt="">
                 <div id="main-content" class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 lienhe">

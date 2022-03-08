@@ -20,7 +20,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/seoPage/th
             {{-- silder --}}
           
             <!-- content -->
-            <h1 class="product-new">SẢN PHẨM</h1>
+            <h2 class="product-new">SẢN PHẨM</h2>
             <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}" alt="">
             </p>
             <div class="row">

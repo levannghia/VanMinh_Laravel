@@ -126,7 +126,7 @@ class HomeController extends Controller
         $output .= '<div class="row">';
         foreach ($cate_product as $key => $item) {
             if($item->price == NULL){
-                $p = '<p class="product-price">Giá: <a href="" class="contact-product">liên hệ</a> </p>';
+                $p = '<p class="product-price">Giá: <a href="" class="contact-product">Liên hệ</a> </p>';
             }else{
                 $p = '<p class="product-price">Giá: <a href="/san-pham/'.$item->slug.'" class="contact-product">'.number_format($item->price, 0, ',', '.').' đ</a> </p>';
             }

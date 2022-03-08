@@ -16,7 +16,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/news/thum
     <div class="main-content-contacts">
         <div class="container">
             <div class="main-content-wrapper">
-                <h1 class="product-new">{{ $news->title }}</h1>
+                <h2 class="product-new">{{ $news->title }}</h2>
                 <p style="text-align: center; margin-top: 0;"><img src="{{ asset('public/site/images/border-xoan.jpg') }}"
                         alt="">
                 </p>
