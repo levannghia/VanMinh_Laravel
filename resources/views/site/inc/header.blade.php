@@ -26,15 +26,18 @@
                 <a class="navbar-brand logo-img" href="#"><img src="{{asset('public/upload/images/photo/thumb/'.$logo->photo)}}"
                         alt=""></a>
                 <form class="form-inline my-2 my-lg-0 form-search" action="{{route('search.product')}}">
-                    <h2 class="form-title">CÔNG TY TNHH THIẾT BỊ VĂN MINH</h2>
-                    <input class="form-control mr-sm-2 btn-input" type="search" name="q"
-                        placeholder="Nhập sản phẩm cần tìm" aria-label="Search" required>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">TIỀM KIẾM</button>
+                    <h2 class="form-title"><img src="/public/site/images/vanminh.png"
+                        alt=""></h2>
+                    <div class="search-from">
+                        <input class="form-control mr-sm-2 btn-input" type="search" name="q"placeholder="Nhập sản phẩm cần tìm" aria-label="Search" required>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">TÌM KIẾM</button>
+                    </div>
                 </form>
                 <div class="collapse navbar-collapse phone-contact" id="navbarSupportedContent">
 
                     <ul class="navbar-nav ml-auto">
-                        <a href="tel:0776768999" class="dt"><span>{{$settings['HOTLINE']}} <p class="tell-people">(CSKH)
+                        <a href="tel:0776768999" class="dt">
+                            <span>{{$settings['HOTLINE']}} <p class="tell-people">(CSKH)
                                 </p></span>
                             <span>{{$settings['PHONE']}} <p class="tell-people">(BS. HUNG)</p></span></a>
                     </ul>
