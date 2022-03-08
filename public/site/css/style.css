@@ -347,12 +347,17 @@ a:hover {
 .li-vertical {
     padding: 10px 0;
     color: #28a745;
+    text-transform: uppercase;
     border-bottom: 1px white solid;
+    font-family: 'svn-pro';
+    src: url("/public/site/fonts/SVN-Product Sans Regular.ttf");
+    font-style: normal;
+    font-display: block;
 }
 
 .vertical-menu li:hover {
-    background: #006600;
-    color: white;
+    /* background: #006600; */
+    color: #ff9a00;
 }
 
 .bg-col-right {
@@ -920,10 +925,18 @@ blockquote .name-customer:before {
     color: white;
     margin-bottom: 0;
     margin-left: 10px;
+    font-family: 'quick-r';
+    src: url("/public/site/fonts/Quicksand-Regular.ttf");
+    font-style: normal;
+    font-display: block;
 }
 
 .color-p p {
     color: white;
+    font-family: 'gmv-din';
+    src: url("/public/site/fonts/GMV_DIN_Pro-Light.ttf");
+    font-style: normal;
+    font-display: block;
 }
 
 .color-p {
@@ -934,7 +947,7 @@ blockquote .name-customer:before {
     padding: 5px 10px;
     background: red;
     color: white;
-    border-radius: 10px;
+    border-radius: 6px;
     margin-bottom: 30px;
     text-transform: uppercase;
 }
@@ -965,6 +978,10 @@ blockquote .name-customer:before {
 .title-company {
     color: #ffcc00;
     text-align: center;
+    font-family: 'utm-avob';
+    src: url("/public/site/fonts/UTM AvoBold.ttf");
+    font-style: normal;
+    font-display: block;
 }
 
 .bg-contact {
@@ -1001,6 +1018,10 @@ footer {
 .footer-item p {
     color: white;
     text-align: left;
+    font-family: 'quick-r';
+    src: url("/public/site/fonts/Quicksand-Regular.ttf");
+    font-style: normal;
+    font-display: block;
 }
 
 .carousel {
