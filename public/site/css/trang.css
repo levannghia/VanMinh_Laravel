@@ -1,0 +1,29 @@
+.form-search{
+    width: 50%;
+    text-align: center;
+    margin-left: 5%;
+}
+.form-title{
+    width: 98%;
+    font-weight: 700;
+}
+.dt{
+    /* width: 40%; */
+    padding-left: 27%;
+}
+.logo-img{
+    display: flex;
+    justify-content: center;
+}
+ul.navbar-nav.ml-auto{
+    width: 100%;
+    margin: 0 !important;
+}
+.dt span{
+    line-height: 1.2;
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 3px 3px 5px #000;
+    font-family: 'UTMAvoBold';
+}
+#navbarSupportedContent{
+    margin-left: 5%;
+}
