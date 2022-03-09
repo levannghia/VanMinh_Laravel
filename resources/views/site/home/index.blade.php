@@ -489,5 +489,6 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/photo/thum
                 });
             });
         })
+        
     </script>
 @endpush

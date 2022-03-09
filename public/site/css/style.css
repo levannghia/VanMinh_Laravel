@@ -571,6 +571,13 @@ a:hover {
     .bg-contact .contact-us {
         justify-content: flex-start !important;
     }
+    .slide-menu {
+        display: none;
+    }
+    .Policy {
+        padding-left: 15px !important;
+        margin-bottom: 10px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -772,6 +779,7 @@ a:hover {
 .info p {
     margin-bottom: 0;
     padding: 0 0 0 5px;
+    display: flex;
 }
 
 #Capa_1 {
