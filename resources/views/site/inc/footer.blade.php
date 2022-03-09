@@ -67,13 +67,13 @@
         </div>
         <h2 class="title-company">CÔNG TY TNHH THIẾT BỊ VĂN MINH</h2>
         <div class="row bg-contact">
-            <div class="col-md-3">
-                <div class="contact-us" style="width: 120%;">
+            <div class="col-lg-3 col-md-6">
+                <div class="contact-us" style="width: 100%;">
                     <img src="{{asset('public/site/images/map.png')}}" alt="">
                     <p class="name-contact">{{$settings['ADDRESS']}}</p>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6">
                 <div class="contact-us">
                     <img src="{{asset('public/site/images/phones.png')}}" alt="">
                     <p class="name-contact">Hotline <br>
@@ -81,7 +81,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6">
                 <div class="contact-us">
                     <img src="{{asset('public/site/images/mail.png')}}" alt="">
                     <p class="name-contact">Email CSKH: <br>
@@ -89,7 +89,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6">
                 <div class="contact-us">
                     <img src="{{asset('public/site/images/web.png')}}" alt="">
                     <p class="name-contact">Website <br>

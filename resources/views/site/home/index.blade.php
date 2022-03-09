@@ -134,7 +134,7 @@ $urlLogo = $protocol . $_SERVER['HTTP_HOST'] . '/public/upload/images/photo/thum
             </p>
             <div class="row">
                 @foreach ($nhaDat as $item)
-                    <div class="col-md-3 real-estate">
+                    <div class="col-lg-3 col-md-6 real-estate">
                         <div class="cover">
                             <a href="/mua-ban-nha-dat/{{ $item->slug }}"><img
                                     src="public/upload/images/nhaDat/thumb/{{ $item->photo }}" alt=""

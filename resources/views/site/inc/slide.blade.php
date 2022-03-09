@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row row-slide">
     <div class="col-md-3 slide-menu">
         <ul class="vertical-menu">
             @foreach ($category as $item)
