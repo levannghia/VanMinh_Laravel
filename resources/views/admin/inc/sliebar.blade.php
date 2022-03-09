@@ -46,6 +46,8 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link"
                             href="{{route('admin.news.index')}}">Tin tức</a></li>
+                            <li class="nav-item"> <a class="nav-link"
+                                href="{{route('admin.y.kien.index')}}">Ý kiến khách hàng</a></li>
                     <li class="nav-item"> <a class="nav-link"
                             href="{{route('admin.video.index')}}">Video</a></li>
                     <li class="nav-item"> <a class="nav-link"
@@ -57,12 +59,6 @@
             <a class="nav-link" href="{{route('admin.order.index')}}">
                 <i class="mdi mdi-bell menu-icon"></i>
                 <span class="menu-title">Quản lý đơn hàng</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.y.kien.index')}}">
-                <i class="mdi mdi-bell menu-icon"></i>
-                <span class="menu-title">Ý kiến khách hàng</span>
             </a>
         </li>
         <li class="nav-item">

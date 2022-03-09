@@ -54,7 +54,7 @@
                                                                 x-placement="bottom-start"
                                                                 style="position: absolute; transform: translate3d(0px, 46px, 0px); top: 0px; left: 0px; will-change: transform;">
                                                                 <h6 class="dropdown-header">Settings</h6>
-                                                                <a class="dropdown-item" href="#" style="color: #5646ff"><i
+                                                                <a class="dropdown-item" href="/" target="_blank" style="color: #5646ff"><i
                                                                         class="fa fa-eye"></i> View</a>
                                                                 <a class="dropdown-item"
                                                                     href="{{ route('admin.standard.edit', $item->id) }}"

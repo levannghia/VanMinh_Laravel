@@ -316,7 +316,11 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/nhaDat/thu
                                     data-color="blue" data-customize="false"></div>
                             </div>
                         </div>
+                        @if (strlen($nhaDat->description) >= 800)
+                        <p class="product-description">{{ substr($nhaDat->description, 0, 800) . '...'}}</p>
+                        @else
                         <p class="product-description">{{ $nhaDat->description }}</p>
+                        @endif
                         @if ($nhaDat->price != NULL)
                         <h4 class="price">Giá bán: {{ number_format($nhaDat->price, 0, ',', '.') }} đ</h4>
                         @else

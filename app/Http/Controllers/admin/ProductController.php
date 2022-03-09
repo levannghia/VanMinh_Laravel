@@ -29,7 +29,7 @@ class ProductController extends Controller
             "title" => "Product",
             "desc" => "Danh sách sản phẩm"
         ]));
-        $product = Products::select('products.photo' ,'products.id', 'products.name','products.status', 'products.noi_bac', 'products.created_at', 'products.price', 'categories.name AS category_name')
+        $product = Products::select('products.slug', 'products.photo' ,'products.id', 'products.name','products.status', 'products.noi_bac', 'products.created_at', 'products.price', 'categories.name AS category_name')
         ->join('categories','categories.id','=','products.category_id')->where('type',0)->orderBy('products.id','DESC')->get();
         return view('admin.product.index',compact('settings','product','row'));
     }

@@ -315,7 +315,11 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/th
                                     data-color="blue" data-customize="false"></div>
                             </div>
                         </div>
+                        @if (strlen($product->description) >= 600)
                         <p class="product-description">{!! substr($product->description, 0, 600) .'...' !!}</p>
+                        @else
+                        <p class="product-description">{!! $product->description !!}</p>
+                        @endif
                         @if ($product->price != NULL)
                         <h4 class="price">{{ number_format($product->price, 0, ',', '.') }} đ</h4>
                         @else
@@ -391,7 +395,7 @@ $urlPhoto = $protocol . $_SERVER['HTTP_HOST'] .'/public/upload/images/product/th
                         <div class="border-col">
                             <div class="detail-product-link">
                                 <a href="{{ route('get.product.slug', $item->slug) }}"><img
-                                        src="{{asset('public/upload/images/product/thumb/'.$item->photo)}}" alt="" width="200px"></a>
+                                        src="{{asset('public/upload/images/product/thumb/'.$item->photo)}}" alt="{{$item->name}}" width="200px"></a>
                             </div>
                             <a href="{{ route('get.product.slug', $item->slug) }}">
                                 <h6 class="product-name">{{ $item->name }}</h6>
