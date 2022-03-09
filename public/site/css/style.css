@@ -621,28 +621,28 @@ a:hover {
     #navbarSupportedContent {
         display: none !important;
     }
-    .slide-menu{
+    .slide-menu {
         display: none;
     }
-    .left-content{
+    .left-content {
         background: #034235 !important;
         border-radius: 20px;
         margin-left: -10px !important;
     }
-    .tab-chem span{
+    .tab-chem span {
         padding: 0;
     }
-    .tab-chem{
+    .tab-chem {
         text-align: center;
     }
-    .row-slide{
+    .row-slide {
         flex-direction: column;
     }
-    .row-right{
+    .row-right {
         max-width: 100%;
         padding-right: 0px !important;
     }
-    .bg-contact .contact-us{
+    .bg-contact .contact-us {
         justify-content: normal !important;
     }
     .Policy {
@@ -1140,6 +1140,7 @@ blockquote .name-customer:before {
     background: #006600;
     border-radius: 10px;
     width: 100%;
+    padding: 15px 0;
 }
 
 .bg-contact .contact-us {
