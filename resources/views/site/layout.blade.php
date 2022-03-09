@@ -78,6 +78,8 @@ $mxh_top = DB::table('photos')
     <link rel="stylesheet" href="{{ asset('public/site/css/cart.css?v-' . time()) }}">
     <link rel="stylesheet" href="{{ asset('public/site/fonts/slick/slick.woff') }}">
     <link rel="stylesheet" href="{{ asset('public/site/css/trang.css?v-' . time()) }}">
+    <link rel="stylesheet" href="{{ asset('public/site/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/site/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
    
     <title>@yield('SEO_title')</title>
@@ -112,6 +114,7 @@ $mxh_top = DB::table('photos')
     <script src="https://sp.zalo.me/plugins/sdk.js"></script>
     <script src="{{ asset('public/site/js/sweetalert.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ asset('public/site/js/owl.carousel.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>

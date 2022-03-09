@@ -419,6 +419,7 @@ a:hover {
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
+    max-width: 100% !important;
 }
 
 .price-view {
@@ -498,7 +499,7 @@ a:hover {
         display: flex !important;
     }
     .form-search .btn-input {
-        width: 69% !important;
+        width: 65% !important;
     }
     .tab-chem span {
         display: none !important;
@@ -526,7 +527,7 @@ a:hover {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 20%;
         flex: 0 0 50% !important;
-        max-width: 50% !important;
+        /* max-width: 50% !important; */
     }
     .phone-contact {
         display: block !important;
@@ -603,6 +604,15 @@ a:hover {
     } */
     #title-svg {
         display: none;
+    }
+    .logo-img {
+        display: none !important;
+    }
+    .form-search {
+        width: 100% !important;
+    }
+    #navbarSupportedContent {
+        display: none !important;
     }
 }
 
@@ -847,6 +857,7 @@ a:hover {
 .criteria-option {
     text-align: center;
     color: white;
+    max-width: 100% !important;
 }
 
 .criteria-option svg {
