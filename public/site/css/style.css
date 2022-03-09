@@ -621,6 +621,34 @@ a:hover {
     #navbarSupportedContent {
         display: none !important;
     }
+    .slide-menu{
+        display: none;
+    }
+    .left-content{
+        background: #034235 !important;
+        border-radius: 20px;
+        margin-left: -10px !important;
+    }
+    .tab-chem span{
+        padding: 0;
+    }
+    .tab-chem{
+        text-align: center;
+    }
+    .row-slide{
+        flex-direction: column;
+    }
+    .row-right{
+        max-width: 100%;
+        padding-right: 0px !important;
+    }
+    .bg-contact .contact-us{
+        justify-content: normal !important;
+    }
+    .Policy {
+        padding-left: 15px !important;
+        margin-bottom: 10px;
+    }
 }
 
 @media (max-width: 960px) {
@@ -1074,7 +1102,7 @@ blockquote .name-customer:before {
 }
 
 .contact-padding {
-    padding: 20px 0 50px;
+    padding: 20px 5px 50px;
     justify-content: center;
 }
 
