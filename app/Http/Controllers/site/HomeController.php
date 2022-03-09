@@ -80,7 +80,7 @@ class HomeController extends Controller
         $slider = Photo::where('status',1)->where('type','slide')->orderBy('stt','ASC')->get();
         $video = Video::where('status',1)->where('noi_bac',1)->orderBy('id','DESC')->limit(3)->get();
         $category_lv1 = Category_LV1::where('categories_lv1.status', 1)->where('categories_lv1.noi_bac', 1)->orderBy('categories_lv1.stt', 'ASC')->limit(2)->get();
-        $news = News::where('status', 1)->where('noi_bac', 1)->orderBy('id', 'DESC')->limit(2)->get();
+        $news = News::where('status', 1)->where('noi_bac', 1)->orderBy('id', 'DESC')->get();
         $standard = Standard::where('status', 1)->orderBy('stt', 'ASC')->get();
         $new_product = Products::where('status', 1)->orderBy('id', 'DESC')->where('type', 0)->limit(5)->get();
         $category = Category::where('status', 1)->orderBy('stt', 'ASC')->get();

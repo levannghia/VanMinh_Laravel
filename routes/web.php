@@ -39,6 +39,9 @@ use App\Http\Controllers\site\OrderSiteController;
 */
 
 //USER
+Route::get('/public', function () {
+    return abort(404);
+});
 Route::get("/", [HomeController::class, "index"])->name('home');
 Route::post("/show-map", [HomeController::class, "showMap"])->name('show.map');
 // Route::get("/site", [HomeController::class, "siteMap"])->name('site.map');

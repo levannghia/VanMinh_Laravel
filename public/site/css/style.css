@@ -1002,7 +1002,8 @@ a:hover {
     font-display: block;
 } */
 
-.title-news::after {
+
+/* .title-news::after {
     position: absolute;
     content: "";
     height: 2px;
@@ -1010,6 +1011,18 @@ a:hover {
     padding: 0 40px;
     left: 0px;
     top: 34px;
+} */
+
+.text-news {
+    margin-right: 5px;
+}
+
+.text-news a {
+    color: #1e88ec;
+}
+
+.text-news:hover a {
+    color: #215488;
 }
 
 .customer-avt {
